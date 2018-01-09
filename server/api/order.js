@@ -25,5 +25,13 @@ router.get('/:id', (req,res,next) => {
     }
 })
 
+// Make a post
+router.post('/', (req,res,next) => {
+    //Update once front end cart population is done with line items
+    Order.create(req.body)
+        .then(order => res.json(order))
+        .catch(next);
+})
+
 
 module.exports = router
