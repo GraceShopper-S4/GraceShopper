@@ -31,10 +31,7 @@ const product = db.define(
     photo: {
       type: Sequelize.STRING,
       defaultValue:
-        "http://www.vector-eps.com/wp-content/gallery/colored-books-design-vectors/colored-book-design-vector6.jpg",
-      validate: {
-        notEmpty: true
-      }
+        "http://www.vector-eps.com/wp-content/gallery/colored-books-design-vectors/colored-book-design-vector6.jpg"
     },
     genre: {
       type: Sequelize.STRING,
