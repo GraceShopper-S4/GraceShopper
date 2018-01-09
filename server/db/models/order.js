@@ -6,8 +6,8 @@ const order = db.define('order', {
         type: Sequelize.FLOAT,
         allowNull: false
     },
-    isActive: {
-        type: Sequelize.BOOLEAN,
+    status: {
+        type: Sequelize.STRING,
         allowNull: false
     }
 });
