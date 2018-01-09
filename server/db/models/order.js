@@ -15,3 +15,5 @@ const order = db.define('order', {
         allowNull: false
     }
 })
+
+module.exports = order;
