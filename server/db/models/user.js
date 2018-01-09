@@ -17,6 +17,12 @@ const User = db.define('user', {
   },
   googleId: {
     type: Sequelize.STRING
+  },
+  shippingAddress: {
+    type: Sequelize.STRING
+  },
+  billingAddress: {
+    type: Sequelize.STRING
   }
 })
 
