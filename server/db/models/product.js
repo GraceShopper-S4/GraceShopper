@@ -7,25 +7,31 @@ const product = db.define(
     title: {
       type: Sequelize.STRING,
       validate: {
-        notEmpty: true
+        notEmpty: true,
+        notNull: true
       }
     },
     description: {
       type: Sequelize.TEXT,
       validate: {
-        notEmpty: true
+        notEmpty: true,
+        notNull: true
       }
     },
     price: {
-      type: Sequelize.FLOAT,
+      type: Sequelize.INTEGER,
       validate: {
-        notEmpty: true
+        notEmpty: true,
+        notNull: true,
+        min: 0
       }
     },
     inventory: {
       type: Sequelize.INTEGER,
       validate: {
-        notEmpty: true
+        notEmpty: true,
+        notNull: true,
+        min: 0
       }
     },
     photo: {
@@ -36,11 +42,11 @@ const product = db.define(
     genre: {
       type: Sequelize.STRING,
       validation: {
-        notEmpty: true
+        notEmpty: true,
+        notNull: true
       }
     }
   },
   {}
 );
-
 module.exports = product

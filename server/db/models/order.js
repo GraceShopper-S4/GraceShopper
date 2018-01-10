@@ -3,12 +3,22 @@ const db = require('../db')
 
 const order = db.define('order', {
     totalPrice: {
-        type: Sequelize.FLOAT,
-        allowNull: false
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        validate: {
+            isEmpty: false,
+            notNull: true,
+            min: 0
+        }
     },
     status: {
-        type: Sequelize.STRING,
-        allowNull: false
+        type: Sequelize.ENUM('Pending', 'Shipped', 'Delivered', 'Cancelled'),
+        defaultValue: 'Pending',
+        allowNull: false,
+        validate: {
+            isEmpty: false,
+            notNull: true
+        }
     }
 });
 
