@@ -8,27 +8,33 @@ const product = db.define(
     title: {
       type: Sequelize.STRING,
       validate: {
-        notEmpty: true
+        notEmpty: true,
+        notNull: true
       }
     },
     description: {
       type: Sequelize.TEXT,
       validate: {
-        notEmpty: true
+        notEmpty: true,
+        notNull: true
       }
     },
     // JM - prefer integer here due to numbers being stored in binary
     price: {
-      type: Sequelize.FLOAT,
+      type: Sequelize.INTEGER,
       validate: {
-        notEmpty: true
+        notEmpty: true,
+        notNull: true,
+        min: 0
       }
     },
     // JM - validate so cannot be negative
     inventory: {
       type: Sequelize.INTEGER,
       validate: {
-        notEmpty: true
+        notEmpty: true,
+        notNull: true,
+        min: 0
       }
     },
     photo: {
@@ -43,11 +49,11 @@ const product = db.define(
     genre: {
       type: Sequelize.STRING,
       validation: {
-        notEmpty: true
+        notEmpty: true,
+        notNull: true
       }
     }
   },
   {}
 );
-
 module.exports = product
