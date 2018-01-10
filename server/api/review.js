@@ -1,6 +1,8 @@
 const {Review,Product} = require('../db/models');
 const app = require('express').Router();
 
+// JM - RESTful routes! Look up restful APIs 
+
 // Post a new review
 app.post('/add', (req,res,next) => {
     Review.create(req.body)

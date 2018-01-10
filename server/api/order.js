@@ -8,7 +8,7 @@ router.get('/', (req,res,next) => {
         .then(orders => res.json(orders))
         .catch(next);
     }
-    else{
+    else {
         res.send("Please login to view orders")
     }
 });
@@ -18,6 +18,7 @@ router.get('/:id', (req,res,next) => {
     if (req.user.id) {
     Order.findOne({where: { id : req.params.id}})
         .then(order => res.json(order))
+        // JM - you will want to bring back the lineitems of this order as well
         .catch(next);
     }
     else{
