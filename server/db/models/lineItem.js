@@ -1,6 +1,8 @@
 const Sequelize = require('sequelize');
 const db = require('../db');
 
+// this is once the order is placed.
+
 const lineItem = db.define('lineItem', {
     price: {
         type: Sequelize.FLOAT,
@@ -15,4 +17,6 @@ const lineItem = db.define('lineItem', {
         allowNull: false
     }
 });
+
+// should we have a getter of a total price = quantity* pricePerItem
 module.exports = lineItem;
