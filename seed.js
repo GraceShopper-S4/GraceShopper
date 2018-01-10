@@ -126,6 +126,15 @@ const seed = () =>
     .then(() => Promise.all(order.map(order => Order.create(order))))
     .then(() => Promise.all(lineItem.map(lineItem => LineItem.create(lineItem))));
 
+
+// JM - could seed using include: [otherModel]. Example is from tripplanner - 
+// https://github.com/FullstackAcademy/1710-FSA-RM-Library/blob/master/01-junior-phase/19-tripplanner-routing/solution/server/seed-ny.js
+// 
+// .create(item, {
+//   include: [otherModel]
+// });
+
+
 const main = () => {
   console.log('Syncing db...');
   db

@@ -2,6 +2,7 @@ const Sequelize = require('sequelize');
 const db = require('../db');
 
 const lineItem = db.define('lineItem', {
+    // JM - integer better
     price: {
         type: Sequelize.INTEGER,
         allowNull: false,

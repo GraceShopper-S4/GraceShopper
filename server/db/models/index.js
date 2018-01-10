@@ -11,10 +11,13 @@ const LineItem = require('./lineItem');
  */
 
 Order.belongsTo(User);
+// JM - User.hasMany(Order)
+
 Order.hasMany(LineItem);
 LineItem.belongsTo(Order);
-Review.belongsTo(Product);
+
 Product.hasMany(Review);
+Review.belongsTo(Product);
 User.hasMany(Review);
 Review.belongsTo(User);
 
