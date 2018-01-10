@@ -16,3 +16,5 @@ router.get('/:orderId', (req, res, next) => {
     .then(order => res.json(order))
     .catch(next)
 })
+
+module.exports = router;
