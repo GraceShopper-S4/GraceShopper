@@ -23,21 +23,21 @@ const postReview = (text,rating) => ({type: POST_REVIEW, text,rating});
  * THUNK CREATORS
  */
 
-export const fetchReviews = (id) => {
+export const fetchReviews = (id) => 
     dispatch => {
         axios.get(`/api/products/${id}/reviews`)
         .then(reviews => dispatch(getReviews(reviews.data)))
         .catch(err)
     }
-}
+
  
-export const writeReview = (text,rating) => {
+export const writeReview = (text,rating) => 
     dispatch => {
         axios.post('/api/reviews', {text,rating})
         .then(() => dispatch(postReview(text,rating)))
         .catch(err)
     }
-}
+
 /**
  * REDUCER
  */

@@ -3,13 +3,9 @@ import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {withRouter, Link} from 'react-router-dom'
 import {logout} from '../store'
-<<<<<<< HEAD
 import {Reviews} from './Reviews'
-
-=======
 import {retrieveProducts} from '../store/products'
 import {DefaultHome} from './DefaultHome'
->>>>>>> master
 /**
  * COMPONENT
  *  The Main component is our 'picture frame' - it displays the navbar and anything
@@ -50,19 +46,10 @@ class Main extends React.Component {
           <DefaultHome products={this.props.products}/>
          
         }
-<<<<<<< HEAD
-      </nav>
-      <hr />
-      {children}
-      <Reviews />
-    </div>
-  )
-=======
       </div>
     )
   }
   
->>>>>>> master
 }
 
 /**
