@@ -19,7 +19,9 @@ LineItem.belongsTo(Order);
 Product.hasMany(Review);
 Review.belongsTo(Product);
 User.hasMany(Review);
+User.hasMany(Order);
 Review.belongsTo(User);
+
 
 /**
  * We'll export all of our models here, so that any time a module needs a model,

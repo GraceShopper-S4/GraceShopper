@@ -1,6 +1,8 @@
 const Sequelize = require('sequelize');
 const db = require('../db');
 
+// this is once the order is placed.
+
 const lineItem = db.define('lineItem', {
     // JM - integer better
     price: {
@@ -22,4 +24,6 @@ const lineItem = db.define('lineItem', {
         }
     }
 });
+
+// should we have a getter of a total price = quantity* pricePerItem
 module.exports = lineItem;

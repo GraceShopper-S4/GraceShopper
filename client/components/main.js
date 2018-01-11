@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {withRouter, Link} from 'react-router-dom'
 import {logout} from '../store'
+import {Reviews} from './Reviews'
 import {retrieveProducts} from '../store/products'
 import {DefaultHome} from './DefaultHome'
 /**
