@@ -1,121 +1,141 @@
 const Sequelize = require('sequelize');
 // const pkg = require('../../package.json');
-const Promise = require('bluebird');
+// const Promise = require('bluebird');
 const { User, Product, Review, Order, LineItem } = require('./server/db/models');
 const db = require('./server/db/db');
 
 const user = [
   {
     email: "sc@gmail.com",
-    password: "abcd"
+    password: "abcd",
+    shippingCity: "New York",
+    shippingState: "NY",
+    shippingZipCode: "11201",
+    billingCity: "New York",
+    billingState: "NY",
+    billingZipCode: "11201"
   },
   {
     email: "ab@gmail.com",
-    password: "hi"
+    password: "asdf",
+    shippingCity: "New Jersey",
+    shippingState: "NJ",
+    shippingZipCode: "07080",
+    billingCity: "New Jersey",
+    billingState: "NJ",
+    billingZipCode: "07080"
   },
   {
     email: "cd@gmail.com",
-    password: "slack"
+    password: "qwer",
+    shippingCity: "San Jose",
+    shippingState: "CA",
+    shippingZipCode: "95138",
+    billingCity: "San Fransisco",
+    billingState: "CA",
+    billingZipCode: "95301"
   },
   {
     email: "ef@gmail.com",
-    password: "nice"
+    password: "zxcv",
+    shippingCity: "Boston",
+    shippingState: "MA",
+    shippingZipCode: "20115",
+    billingCity: "Boston",
+    billingState: "MA",
+    billingZipCode: "20115"
   }
 ];
 
 const product = [
   {
-    title: "Harry Potter",
-    description: "Harry you are a Wizard",
-    price: "10",
-    inventory: "10",
-    genre: "Fiction"
+    title: 'Harry Potter',
+    description: 'Harry you are a Wizard',
+    price: '10',
+    inventory: '10'
+ },
+  {
+    title: 'Cracking the Coding Interview',
+    description: 'Its all about optimization',
+    price: '1000',
+    inventory: '2'
   },
   {
-    title: "Cracking the Coding Interview",
-    description: "Its all about optimization",
-    price: "1000",
-    inventory: "2",
-    genre: "Education"
+    title: 'Twist of Faith',
+    description: 'Its all twisted',
+    price: '15',
+    inventory: '100'
   },
   {
-    title: "Twist of Faith",
-    description: "Its all twisted",
-    price: "15",
-    inventory: "100",
-    genre: "Action"
-  },
-  {
-    title: "Famous Five",
-    description: "Its about an adventure",
-    price: "5",
-    inventory: "1000",
-    genre: "Adventure"
+    title: 'Famous Five',
+    description: 'Its about an adventure',
+    price: '5',
+    inventory: '1000'
   }
 ];
 
 const review = [
   {
-    review: "Great Book",
-    rating: "4",
-    productId: "1",
-    userId: "1"
+    body: 'Great Book',
+    rating: '4',
+    productId: '1',
+    userId: '1'
   },
   {
-    review: "Must Read",
-    rating: "5",
-    productId: "2",
-    userId: "2"
+    body: 'Must Read',
+    rating: '5',
+    productId: '2',
+    userId: '2'
   },
   {
-    review: "Bad Book",
-    rating: "1",
-    productId: "3",
-    userId: "1"
+    body: 'Bad Book',
+    rating: '1',
+    productId: '3',
+    userId: '1'
   },
   {
-    review: "Nice Read",
-    rating: "4",
-    productId: "3",
-    userId: "4"
+    body: 'Nice Read',
+    rating: '4',
+    productId: '3',
+    userId: '4'
   }
 ];
 
 const order = [
   {
-    totalPrice: "1000",
-    status: "Cart",
-    userId: "1"
+    totalPrice: '1000',
+    status: 'Shipped',
+    userId: '1'
   },
   {
-    totalPrice: "10",
-    status: "Checkout",
-    userId: "2"
+    totalPrice: '10',
+    status: 'Shipped',
+    userId: '2'
   },
   {
-    totalPrice: "200",
-    status: "Cart",
-    userId: "2"
+    totalPrice: '200',
+    status: 'Shipped',
+    userId: '2'
   },
   {
-    totalPrice: "100",
-    status: "Checkout",
-    userId: "4"
+    totalPrice: '100',
+    status: 'Shipped',
+    userId: '4'
   }
 ];
 
 const lineItem = [
   {
-    price: "10",
-    quantity: "1",
-    currentProductId: "1",
-    orderId: "2"
+    price: '10',
+    quantity: '',
+    // currentProductId: '',
+    orderId: '2'
   },
   {
-    price: "100",
-    quantity: "5",
-    currentProductId: "3",
-    orderId: "4"
+    price: '100',
+    quantity: '5',
+    // currentProductId: '3',
+    orderId: '4'
   }
 ];
 
@@ -127,9 +147,9 @@ const seed = () =>
     .then(() => Promise.all(lineItem.map(lineItem => LineItem.create(lineItem))));
 
 
-// JM - could seed using include: [otherModel]. Example is from tripplanner - 
+// JM - could seed using include: [otherModel]. Example is from tripplanner -
 // https://github.com/FullstackAcademy/1710-FSA-RM-Library/blob/master/01-junior-phase/19-tripplanner-routing/solution/server/seed-ny.js
-// 
+//
 // .create(item, {
 //   include: [otherModel]
 // });
