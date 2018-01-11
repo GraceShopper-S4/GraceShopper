@@ -9,16 +9,14 @@ const lineItem = db.define('lineItem', {
         allowNull: false,
         validate: {
             min: 0,
-            isEmpty: false,
-            notNull: true
+            notEmpty: true
         }
     },
     quantity: {
         type: Sequelize.INTEGER,
         allowNull: false,
         validate: {
-            isEmpty: false,
-            notNull: true,
+            notEmpty: true,
             min: 0
         }
     }

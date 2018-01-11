@@ -2,23 +2,21 @@ const crypto = require('crypto')
 const Sequelize = require('sequelize')
 const db = require('../db')
 
-const User = db.define('user', {
+const User = db.define("user", {
   email: {
     type: Sequelize.STRING,
     unique: true,
     allowNull: false,
     validate: {
       isEmail: true,
-      isEmpty: false,
-      notNull: true
+      notEmpty: true
     }
   },
   password: {
     type: Sequelize.STRING,
     allowNull: false,
     validate: {
-      isEmpty: false,
-      notNull: true
+      notEmpty: true
     }
   },
   salt: {
@@ -29,51 +27,51 @@ const User = db.define('user', {
   },
   shippingCity: {
     type: Sequelize.STRING,
+    allowNull: false,
     validate: {
-      notEmpty: true,
-      notNull: true
+      notEmpty: true
     }
   },
   shippingState: {
     type: Sequelize.STRING,
+    allowNull: false,
     validate: {
       len: [2],
-      notEmpty: true,
-      notNull: true
+      notEmpty: true
     }
   },
   shippingZipCode: {
     type: Sequelize.INTEGER,
+    allowNull: false,
     validate: {
       len: [5],
-      notEmpty: true,
-      notNull: true
+      notEmpty: true
     }
   },
   billingCity: {
     type: Sequelize.STRING,
+    allowNull: false,
     validate: {
-      notEmpty: true,
-      notNull: true
+      notEmpty: true
     }
   },
   billingState: {
     type: Sequelize.STRING,
+    allowNull: false,
     validate: {
       len: [2],
-      notEmpty: true,
-      notNull: true
+      notEmpty: true
     }
   },
   billingZipCode: {
     type: Sequelize.INTEGER,
+    allowNull: false,
     validate: {
       len: [5],
-      notEmpty: true,
-      notNull: true
+      notEmpty: true
     }
   }
-})
+});
 
 module.exports = User
 

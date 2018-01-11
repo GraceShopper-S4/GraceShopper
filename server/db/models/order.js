@@ -9,8 +9,7 @@ const order = db.define('order', {
         type: Sequelize.INTEGER,
         allowNull: false,
         validate: {
-            isEmpty: false,
-            notNull: true,
+            notEmpty: true,
             min: 0
         }
     },
@@ -19,8 +18,7 @@ const order = db.define('order', {
         defaultValue: 'Pending',
         allowNull: false,
         validate: {
-            isEmpty: false,
-            notNull: true
+            notEmpty: true
         }
     }
 });
