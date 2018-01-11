@@ -11,9 +11,23 @@ export const DefaultHome = (props) => {
             props.products.map(product => {
                 return (
                     <div className="productCell" key={product.id}>
+                        <div>
+                            <h3>
+                                {product.title}
+                            </h3>
+                        </div>
+                        <div>
                         <img src={product.photo} className="responsiveImage"/>
+                        </div>
+                        <div>
+                            <p>
+                                ${product.price}
+                            </p>
+                            <p>
+                            Stock: {product.inventory}
+                            </p>
+                        </div>
                     </div>
-                    
                 )
             })
           }
