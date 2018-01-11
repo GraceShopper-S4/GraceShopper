@@ -4,7 +4,6 @@ const db = require('../db');
 // this is once the order is placed.
 
 const lineItem = db.define('lineItem', {
-    // JM - integer better
     price: {
         type: Sequelize.INTEGER,
         allowNull: false,
