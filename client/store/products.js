@@ -55,8 +55,11 @@ import history from '../history';
         switch(action.type) {
             case GET_ALL_PRODUCTS: 
             return [...action.products]
+
             case GET_PRODUCT: 
             return action.product
-            default: return products
+
+            default: 
+            return products
         } 
     }

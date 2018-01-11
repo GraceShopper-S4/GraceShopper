@@ -127,7 +127,7 @@ const order = [
 const lineItem = [
   {
     price: '10',
-    quantity: '',
+    quantity: '10',
     // currentProductId: '',
     orderId: '2'
   },

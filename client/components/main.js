@@ -1,11 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
-import {withRouter, Link} from 'react-router-dom'
+import { BrowserRouter as Router, withRouter, Link, Switch, Route } from "react-router-dom";
 import {logout} from '../store'
 import {Reviews} from './Reviews'
 import {retrieveProducts} from '../store/products'
 import {DefaultHome} from './DefaultHome'
+import { SingleProduct } from './SingleProduct'
+
+ 
 /**
  * COMPONENT
  *  The Main component is our 'picture frame' - it displays the navbar and anything
@@ -20,8 +23,9 @@ class Main extends React.Component {
       this.props.getProducts()
     }
   render() {
+
     const {children, handleClick, isLoggedIn} = this.props
-    console.log(this.props.products)
+    console.log('props',this.props)
     return (
       <div>
         <h1>BOILERMAKER</h1>
@@ -42,10 +46,12 @@ class Main extends React.Component {
           }
         </nav>
         <hr />
-        {
-          <DefaultHome products={this.props.products}/>
-         
-        }
+        <Router>
+          <Switch>
+            <Route exact path='/products'  render={()=><DefaultHome products={this.props.products} /> } />
+            <Route exact path = '/product' component={SingleProduct} />
+          </Switch> 
+        </Router>
       </div>
     )
   }
@@ -65,11 +71,15 @@ const mapState = (state) => {
 const mapDispatch = (dispatch) => {
   return {
     handleClick () {
-      dispatch(logout())
+      dispatch(logout());
     },
     getProducts() {
-      dispatch(retrieveProducts())
+      dispatch(retrieveProducts());
+    },
+    getSingleProduct(){
+      dispatch(getSingleProduct());
     }
+
   }
 }
 
