@@ -11,6 +11,8 @@ app.get('/', (req, res, next) => {
 app.get('/:id', (req, res, next) => {
     Product.findById(req.params.id)
     .then(product => res.send(product))
+    // JM - do you also want to send back all reviews for this product?
+    //  include: [Review]
     .catch(next)
 })
 

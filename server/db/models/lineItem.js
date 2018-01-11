@@ -4,17 +4,24 @@ const db = require('../db');
 // this is once the order is placed.
 
 const lineItem = db.define('lineItem', {
+    // JM - integer better
     price: {
-        type: Sequelize.FLOAT,
-        allowNull: false
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        validate: {
+            min: 0,
+            isEmpty: false,
+            notNull: true
+        }
     },
     quantity: {
         type: Sequelize.INTEGER,
-        allowNull: false
-    },
-    currentProductId: {
-        type: Sequelize.INTEGER,
-        allowNull: false
+        allowNull: false,
+        validate: {
+            isEmpty: false,
+            notNull: true,
+            min: 0
+        }
     }
 });
 

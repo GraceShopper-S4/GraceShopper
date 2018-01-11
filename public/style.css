@@ -19,3 +19,53 @@ form div {
   margin: 1em;
   display: inline-block;
 }
+
+.borderBox {
+  border: 1px solid black;
+}
+
+.bigBox {
+  width: 100vw;
+  height: 40vh;
+}
+.productCell img {
+  display: block;
+}
+.responsiveImage {
+  max-width: 89%;
+}
+.productsContainer {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 1rem;
+}
+@media screen and (min-width: 600px) {
+  .productGrid {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  .productCell {
+    width: 50%;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .productCell {
+    width: calc(100% / 3);
+  }
+}
+.productCell {
+  margin: 1rem;
+  border: 1px solid black;
+}
+@media screen and (min-width: 600px) {
+  .productCell {
+    width: calc(50% - 2rem);
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .productCell {
+    width: calc(33.3333% - 2rem);
+  }
+}
