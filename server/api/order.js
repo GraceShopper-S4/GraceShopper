@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const {Order, User} = require('../db/models')
+const { Order, User, LineItem } = require('../db/models')
 
 // Get orders by userId
 router.get('/', (req, res, next) => {
@@ -16,7 +16,15 @@ router.get('/', (req, res, next) => {
 // Get a single order by order Id
 router.get('/:id', (req, res, next) => {
     if (req.user.id) {
-    Order.findOne({where: { id: req.params.id}})
+    Order.findOne({
+        include:[{
+            model:LineItem, // Works when we remove the condition of the user !
+            where:{
+                orderId:req.params.id
+            }
+        }],
+        where: { id: req.params.id}
+        })
         .then(order => res.json(order))
         // JM - you will want to bring back the lineitems of this order as well
         .catch(next);
