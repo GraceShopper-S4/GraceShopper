@@ -3,7 +3,6 @@ const Sequelize = require('sequelize')
 const db = require('../db')
 
 const User = db.define('user', {
-  // JM - love to see some better validation here (e.g. regex?)
   email: {
     type: Sequelize.STRING,
     unique: true,
@@ -28,13 +27,51 @@ const User = db.define('user', {
   googleId: {
     type: Sequelize.STRING
   },
-  // JM - maybe split this up into city/state/zip, do some validation on it
-  // OR make it text (string is limited in the number of characters)
-  shippingAddress: {
-    type: Sequelize.STRING
+  shippingCity: {
+    type: Sequelize.STRING,
+    validate: {
+      notEmpty: true,
+      notNull: true
+    }
   },
-  billingAddress: {
-    type: Sequelize.STRING
+  shippingState: {
+    type: Sequelize.STRING,
+    validate: {
+      len: [2],
+      notEmpty: true,
+      notNull: true
+    }
+  },
+  shippingZipCode: {
+    type: Sequelize.INTEGER,
+    validate: {
+      len: [5],
+      notEmpty: true,
+      notNull: true
+    }
+  },
+  billingCity: {
+    type: Sequelize.STRING,
+    validate: {
+      notEmpty: true,
+      notNull: true
+    }
+  },
+  billingState: {
+    type: Sequelize.STRING,
+    validate: {
+      len: [2],
+      notEmpty: true,
+      notNull: true
+    }
+  },
+  billingZipCode: {
+    type: Sequelize.INTEGER,
+    validate: {
+      len: [5],
+      notEmpty: true,
+      notNull: true
+    }
   }
 })
 
