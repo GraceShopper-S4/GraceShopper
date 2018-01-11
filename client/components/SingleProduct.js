@@ -1,25 +1,39 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { connect } from 'react-redux'
 import { getSingleProduct } from "../store";
 
-export const SingleProduct =(props)=>{
-    console.log('props',props)
-    return(
-        <h1>Hello</h1>
 
-    )
+export class SingleProduct extends Component {
+    //console.log('props in SingleProduct',props.passedProps.match.params.productId)
+    //console.log('product 1')
+    constructor(props) {
+        super(props)
+    }
+    componentDidMount(){
+        const productId = this.props.match.params.productId;
+        props.getProduct(productId);
+    }
+
+    render () {
+        console.log(this.props);
+       // console.log('product id is', productId)
+      //  console.log("props in singleProduct is", props)
+        return (
+            <h1>Hello</h1>
+        )
+    }
 }
 
-const mapStateToProps=(state)=>{
+const mapStateToProps=(state,ownProps)=>{
     return{
         products: state.products
     }
 }
 
-const mapDispatchToProps= (dispatch)=>{
+const mapDispatchToProps= (dispatch,ownProps)=>{
     return{
-        getProduct(){
-            dispatch(getSingleProduct());
+        getProduct(id){
+            dispatch(getSingleProduct(id));
         }
     }
 }

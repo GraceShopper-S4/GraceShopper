@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 import { BrowserRouter as Router, withRouter, Link, Switch, Route } from "react-router-dom";
 import {logout} from '../store'
 import {Reviews} from './Reviews'
-import {retrieveProducts} from '../store/products'
+import {retrieveProducts, getSingleProduct} from '../store/products'
 import {DefaultHome} from './DefaultHome'
 import { SingleProduct } from './SingleProduct'
 
@@ -49,7 +49,7 @@ class Main extends React.Component {
         <Router>
           <Switch>
             <Route exact path='/products'  render={()=><DefaultHome products={this.props.products} /> } />
-            <Route exact path = '/product' component={SingleProduct} />
+            <Route exact path = '/product/:productId' component= {SingleProduct} />
           </Switch> 
         </Router>
       </div>
@@ -64,7 +64,7 @@ class Main extends React.Component {
 const mapState = (state) => {
   return {
     isLoggedIn: !!state.user.id,
-    products: state.products
+    products: state.products,
   }
 }
 
