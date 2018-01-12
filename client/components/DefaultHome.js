@@ -5,7 +5,7 @@ import { browserRouter, Link} from 'react-router-dom';
 import { getSingleProduct } from '../store';
 
 export const DefaultHome = (props) => {
-    // console.log(props.products)
+    // console.log("default home", props.products)
     return (
         <div className="productsContainer">
         <div className="productGrid">
@@ -13,7 +13,7 @@ export const DefaultHome = (props) => {
             props.products.map(product => {
                 return (
                     <div className="productCell" key={product.id} >
-                        <Link to={`/product/${product.id}`}>
+                        <Link to={`/products/${product.id}`}>
                     
                         <div>
                             <h3>

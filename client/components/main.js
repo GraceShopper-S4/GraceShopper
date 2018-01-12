@@ -4,9 +4,9 @@ import {connect} from 'react-redux'
 import { BrowserRouter as Router, withRouter, Link, Switch, Route } from "react-router-dom";
 import {logout} from '../store'
 import {Reviews} from './Reviews'
-import {retrieveProducts, getSingleProduct} from '../store/products'
+import {retrieveProducts, getSingleProduct} from '../store'
 import {DefaultHome} from './DefaultHome'
-import { SingleProduct } from './SingleProduct'
+import  SingleProduct  from './SingleProduct'
 
  
 /**
@@ -21,6 +21,7 @@ class Main extends React.Component {
     }
     componentDidMount() {
       this.props.getProducts()
+     // this.props.getProduct(1);
     }
   render() {
 
@@ -48,8 +49,8 @@ class Main extends React.Component {
         <hr />
         <Router>
           <Switch>
-            <Route exact path='/products'  render={()=><DefaultHome products={this.props.products} /> } />
-            <Route exact path = '/product/:productId' component= {SingleProduct} />
+             <Route exact path='/products/:productId' component={SingleProduct} />
+            <Route path='/products'  render={()=><DefaultHome products={this.props.products} /> } />
           </Switch> 
         </Router>
       </div>
@@ -64,7 +65,8 @@ class Main extends React.Component {
 const mapState = (state) => {
   return {
     isLoggedIn: !!state.user.id,
-    products: state.products,
+    products: state.products.products
+   // product: state.products.product
   }
 }
 
@@ -75,10 +77,10 @@ const mapDispatch = (dispatch) => {
     },
     getProducts() {
       dispatch(retrieveProducts());
-    },
-    getSingleProduct(){
-      dispatch(getSingleProduct());
     }
+    //  getProduct(id){
+    //    dispatch(getSingleProduct(id));
+    //  }
 
   }
 }
