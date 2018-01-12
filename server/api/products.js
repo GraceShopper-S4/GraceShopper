@@ -10,12 +10,13 @@ app.get('/', (req, res, next) => {
 
 app.get("/:id", (req, res, next) => {
   Product.findById(req.params.id, {
+
     include: [
       {
-        model: Review,
-        where: {
-          productId: req.params.id
-        }
+        model: Review
+        // where: {
+        //   productId: req.params.id 
+        // }
       }
     ]
   })
