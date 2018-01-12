@@ -1,11 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
-import {withRouter, Link} from 'react-router-dom'
+import { BrowserRouter as Router, withRouter, Link, Switch, Route } from "react-router-dom";
 import {logout} from '../store'
 import {Reviews} from './Reviews'
-import {retrieveProducts} from '../store/products'
+import {retrieveProducts, getSingleProduct} from '../store'
 import {DefaultHome} from './DefaultHome'
+import  SingleProduct  from './SingleProduct'
+
+ 
 /**
  * COMPONENT
  *  The Main component is our 'picture frame' - it displays the navbar and anything
@@ -18,10 +21,12 @@ class Main extends React.Component {
     }
     componentDidMount() {
       this.props.getProducts()
+     // this.props.getProduct(1);
     }
   render() {
+
     const {children, handleClick, isLoggedIn} = this.props
-    console.log(this.props.products)
+    console.log('props',this.props)
     return (
       <div>
         <h1>BOILERMAKER</h1>
@@ -42,10 +47,12 @@ class Main extends React.Component {
           }
         </nav>
         <hr />
-        {
-          <DefaultHome products={this.props.products}/>
-         
-        }
+        <Router>
+          <Switch>
+             <Route exact path='/products/:productId' component={SingleProduct} />
+            <Route path='/products'  render={()=><DefaultHome products={this.props.products} /> } />
+          </Switch> 
+        </Router>
       </div>
     )
   }
@@ -58,18 +65,23 @@ class Main extends React.Component {
 const mapState = (state) => {
   return {
     isLoggedIn: !!state.user.id,
-    products: state.products
+    products: state.products.products
+   // product: state.products.product
   }
 }
 
 const mapDispatch = (dispatch) => {
   return {
     handleClick () {
-      dispatch(logout())
+      dispatch(logout());
     },
     getProducts() {
-      dispatch(retrieveProducts())
+      dispatch(retrieveProducts());
     }
+    //  getProduct(id){
+    //    dispatch(getSingleProduct(id));
+    //  }
+
   }
 }
 

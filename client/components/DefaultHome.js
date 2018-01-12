@@ -1,16 +1,20 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
+import { browserRouter, Link} from 'react-router-dom';
+import { getSingleProduct } from '../store';
 
 export const DefaultHome = (props) => {
-    console.log(props.products)
+    // console.log("default home", props.products)
     return (
         <div className="productsContainer">
         <div className="productGrid">
           {
             props.products.map(product => {
                 return (
-                    <div className="productCell" key={product.id}>
+                    <div className="productCell" key={product.id} >
+                        <Link to={`/products/${product.id}`}>
+                    
                         <div>
                             <h3>
                                 {product.title}
@@ -27,6 +31,7 @@ export const DefaultHome = (props) => {
                             Stock: {product.inventory}
                             </p>
                         </div>
+                        </Link>
                     </div>
                 )
             })
@@ -37,4 +42,11 @@ export const DefaultHome = (props) => {
     )
 }
 const mapState = (state) => ({state})
+// const mapDispatch =( dispatch ) => {
+//     return (
+//         getSingleProduct(){
+//             dipatch
+//         }
+//     )
+// }
 export default connect(mapState, null)(DefaultHome)

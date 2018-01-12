@@ -1,6 +1,8 @@
 import axios from 'axios'
 import history from '../history';
 
+const initialState = {products:[], product: {}}
+
 //Actions
     const GET_ALL_PRODUCTS = 'GET_ALL_PRODUCTS';
     const GET_PRODUCT = 'GET_PRODUCT';
@@ -13,7 +15,7 @@ import history from '../history';
     })
     const getProduct = (singleProduct) => ({
         type: GET_PRODUCT,
-        singleProduct
+        product: singleProduct
     })
     const addProduct = (product) => ({
         type: ADD_PRODUCT,
@@ -31,11 +33,11 @@ import history from '../history';
             dispatch(getAllProducts(products))
         }) 
     }
-    const getSingleProduct = id => dispatch => {
+    export const getSingleProduct = id => dispatch => {
         axios.get(`/api/products/${id}`)
         .then(res => res.data)
         .then((product) => {
-            dispatch(getSingleProduct(product))
+            dispatch(getProduct(product))
         }) 
     }
     const adminAddProduct = () => dispatch => {
@@ -51,12 +53,16 @@ import history from '../history';
         })
     }
 //Reducer 
-    export const ProductsReducer = (products = [], action) => {
+    export const ProductsReducer = (state = initialState, action) => {
         switch(action.type) {
             case GET_ALL_PRODUCTS: 
-            return [...action.products]
-            case GET_PRODUCT: 
-            return action.product
-            default: return products
+            return Object.assign({}, state, {products: action.products});
+       
+            case GET_PRODUCT: {
+                console.log('action.product is' ,action.product)
+            return Object.assign({}, state, {product: action.product});}
+
+            default: 
+            return state
         } 
     }
