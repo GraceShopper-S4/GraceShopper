@@ -15,6 +15,8 @@ Order.belongsTo(User);
 Order.hasMany(LineItem);
 
 LineItem.belongsTo(Order);
+LineItem.belongsTo(Product); //Each LineItem has a productId to avoid duplicate data storage;
+
 
 Genre.belongsToMany(Product, {through: 'ProductGenres'});
 

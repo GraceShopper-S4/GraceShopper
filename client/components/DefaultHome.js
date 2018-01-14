@@ -30,8 +30,11 @@ export const DefaultHome = (props) => {
                             <p>
                             Stock: {product.inventory}
                             </p>
-                        </div>
-                        </Link>
+                            </div>
+                            </Link>
+                            <button>
+                            Add To Cart
+                            </button>
                     </div>
                 )
             })
