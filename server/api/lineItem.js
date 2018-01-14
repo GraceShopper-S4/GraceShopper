@@ -2,8 +2,20 @@ const router = require('express').Router();
 const { Order, User, LineItem } = require('../db/models');
 
 router.post('/', (req, res, next) => {
-    LineItem.create(req.body)
-    .then(item => res.json(item))
+    LineItem.findOrCreate({
+        where: {
+            'userId': req.user.id,
+            'orderId': req.body.orderId,
+            'productId': req.body.productId
+        }
+    })
+    .then(({instance, wasCreated}) => {
+        if(!wasCreated) {
+            console.log('exists', instance)
+        } else {
+            console.log('created', instance)
+        }
+    })
     .catch(next)
 })
 
