@@ -4,6 +4,7 @@ const Review = require('./review');
 const Order = require('./order');
 const LineItem = require('./lineItem');
 const Genre = require('./genre');
+const PreviousOrder = require('./previousOrder')
 /**
  * If we had any associations to make, this would be a great place to put them!
  * ex. if we had another model called BlogPost, we might say:
@@ -12,11 +13,15 @@ const Genre = require('./genre');
  */
 
 Order.belongsTo(User);
-Order.hasMany(LineItem);
+Order.hasMany(PreviousOrder);
 
 LineItem.belongsTo(Order);
 LineItem.belongsTo(Product); //Each LineItem has a productId to avoid duplicate data storage;
 LineItem.belongsTo(User);
+
+PreviousOrder.belongsTo(Order);
+PreviousOrder.belongsTo(Product); //Each PreviousOrder has a productId to avoid duplicate data storage;
+PreviousOrder.belongsTo(User);
 
 Genre.belongsToMany(Product, {through: 'ProductGenres'});
 
@@ -42,5 +47,6 @@ module.exports = {
   Review,
   Order,
   LineItem,
-  Genre
+  Genre,
+  PreviousOrder
 }
