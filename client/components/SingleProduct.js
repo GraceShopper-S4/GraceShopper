@@ -108,6 +108,7 @@ const mapDispatchToProps = dispatch => {
       console.log("onSubmit before dispatch", review);
       dispatch(writeReview(review));
       dispatch(updateReview({}));
+      dispatch(getSingleProduct(productId))
     }
   };
 };

@@ -34,7 +34,7 @@ export const writeReview = (review) =>
         .then(() => {
             console.log('this is in dispatch',review)
             dispatch(postReview(review))})
-        .catch(err)
+        .catch(err => console.error('Error', err))
     }
 
 /**
