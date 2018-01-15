@@ -29,14 +29,18 @@ const initialState = {
 //Thunk Creators/Thunks
 export const addNewItem = (id) => (dispatch) => {
     axios.post('/api/lineItem', id)
+    .then(() => {
+        dispatch(addItem)
+    })
 }
+
 //Reducers
 export const LineItemReducer = (state = initialState, action) => {
     switch(action.type) {
         case GET_ALL_ITEMS: 
         return [...action.items]
         case ADD_SINGLE_ITEM: 
-        return [...state.lineItems, ...action.item]
+        return Object.assign({}, state, {lineItems: state.lineItems.concat(action.item)})
         case REMOVE_SINGLE_ITEM:
         return state.lineItems.filter(item => item.id !== action.itemId)
         default: return state

@@ -8,42 +8,42 @@ const user = [
   {
     email: "sc@gmail.com",
     password: "abcd",
-    shippingCity: "New York",
-    shippingState: "NY",
-    shippingZipCode: "11201",
-    billingCity: "New York",
-    billingState: "NY",
-    billingZipCode: "11201"
+    currentOrderHash: "New York"
+    // shippingState: "NY",
+    // shippingZipCode: "11201",
+    // billingCity: "New York",
+    // billingState: "NY",
+    // billingZipCode: "11201"
   },
   {
     email: "ab@gmail.com",
     password: "asdf",
-    shippingCity: "New Jersey",
-    shippingState: "NJ",
-    shippingZipCode: "07080",
-    billingCity: "New Jersey",
-    billingState: "NJ",
-    billingZipCode: "07080"
+    currentOrderHash: "New Jersey"
+    // shippingState: "NJ",
+    // shippingZipCode: "07080",
+    // billingCity: "New Jersey",
+    // billingState: "NJ",
+    // billingZipCode: "07080"
   },
   {
     email: "cd@gmail.com",
     password: "qwer",
-    shippingCity: "San Jose",
-    shippingState: "CA",
-    shippingZipCode: "95138",
-    billingCity: "San Fransisco",
-    billingState: "CA",
-    billingZipCode: "95301"
+    currentOrderHash: "San Jose"
+    // shippingState: "CA",
+    // shippingZipCode: "95138",
+    // billingCity: "San Fransisco",
+    // billingState: "CA",
+    // billingZipCode: "95301"
   },
   {
     email: "ef@gmail.com",
     password: "zxcv",
-    shippingCity: "Boston",
-    shippingState: "MA",
-    shippingZipCode: "20115",
-    billingCity: "Boston",
-    billingState: "MA",
-    billingZipCode: "20115"
+    currentOrderHash: "Boston"
+    // shippingState: "MA",
+    // shippingZipCode: "20115",
+    // billingCity: "Boston",
+    // billingState: "MA",
+    // billingZipCode: "20115"
   }
 ];
 
@@ -128,13 +128,13 @@ const lineItem = [
   {
     price: '10',
     quantity: '10',
-    // currentProductId: '',
+    // orderKeyHash: "New Jersey",
     orderId: '2'
   },
   {
     price: '100',
     quantity: '5',
-    // currentProductId: '3',
+    // orderKeyHash: "Boston",
     orderId: '4'
   }
 ];

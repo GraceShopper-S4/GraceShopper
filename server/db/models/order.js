@@ -14,8 +14,8 @@ const order = db.define('order', {
         }
     },
     status: {
-        type: Sequelize.ENUM('Pending', 'Shipped', 'Delivered', 'Cancelled'),
-        defaultValue: 'Pending',
+        type: Sequelize.ENUM('Cart','Pending', 'Shipped', 'Delivered', 'Cancelled'),
+        defaultValue: "Cart",
         allowNull: false,
         validate: {
             notEmpty: true
