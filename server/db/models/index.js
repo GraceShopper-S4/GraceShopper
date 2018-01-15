@@ -1,7 +1,7 @@
 const User = require('./user');
 const Product = require('./product');
 const Review = require('./review');
-//const Order = require('./order');
+const Order = require('./order');
 const LineItem = require('./lineItem');
 const Genre = require('./genre');
 const OrderKey = require('./orderkey');
@@ -19,7 +19,8 @@ const Address = require('./address');
 
 
 LineItem.belongsTo(Product); //Each LineItem has a productId to avoid duplicate data storage;
-LineItem.belongsTo(User);
+// LineItem.belongsTo(User);
+LineItem.belongsTo(Order);
 
 Genre.belongsToMany(Product, {through: 'ProductGenres'});
 
@@ -30,11 +31,12 @@ Review.belongsTo(Product);
 Review.belongsTo(User);
 
 User.hasMany(Review);
-//User.hasMany(Order);
-User.hasMany(OrderKey);
+User.hasMany(Order);
+// User.hasMany(OrderKey);
 
 Address.hasOne(User);
 
+Order.belongsTo(User)
 
 /**
  * We'll export all of our models here, so that any time a module needs a model,
@@ -46,10 +48,10 @@ module.exports = {
   User,
   Product,
   Review,
-  //Order,
+  Order,
   LineItem,
   Genre,
-  OrderKey,
+  // OrderKey,
   Address
 }
 
