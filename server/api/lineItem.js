@@ -4,18 +4,21 @@ const { Order, User, LineItem } = require('../db/models');
 router.post('/', (req, res, next) => {
     LineItem.findOrCreate({
         where: {
-            'userId': req.user.id,
-            'orderId': req.body.orderId,
-            'productId': req.body.productId
+            // 'userId': req.user.id,
+            'orderKeyHash': req.body.orderKeyHash, // should be names orderKeyHash and should come from user which will be avalible globally!! 
+            'productId': req.body.productId,
+            'price':req.body.price,
+            'quantity':req.body.quantity
         }
     })
-    .then(({instance, wasCreated}) => {
+    .then((instance, wasCreated) => {
         if(!wasCreated) {
             console.log('exists', instance)
         } else {
             console.log('created', instance)
-        }
+        }res.json(instance)
     })
+    // .then(data => res.json(data))
     .catch(next)
 })
 

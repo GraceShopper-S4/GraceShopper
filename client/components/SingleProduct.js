@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getSingleProduct, writeReview, updateReview } from "../store";
+import { getSingleProduct, writeReview, updateReview, addNewItem } from "../store";
 
 export class SingleProduct extends Component {
   //console.log('props in SingleProduct',props.passedProps.match.params.productId)
@@ -27,6 +27,9 @@ export class SingleProduct extends Component {
         </div>
         <div>
           <p>${this.props.product.price}</p>
+          <button onClick={() => this.props.addToCart(product.id)}>
+                            Add To Cart
+                            </button>
           <p>Stock: {this.props.product.inventory}</p>
         </div>
         <div>
@@ -109,7 +112,10 @@ const mapDispatchToProps = dispatch => {
       dispatch(writeReview(review));
       dispatch(updateReview({}));
       dispatch(getSingleProduct(productId))
-    }
+    },
+    addToCart(id) {
+        dispatch(addNewItem(id));
+      }
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(SingleProduct);
