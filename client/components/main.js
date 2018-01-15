@@ -8,6 +8,7 @@ import {retrieveProducts, getSingleProduct} from '../store'
 import {DefaultHome} from './DefaultHome'
 import  SingleProduct  from './SingleProduct'
 import Cart from './Cart'
+import SingleGenre from './singleGenre'
  
 /**
  * COMPONENT
@@ -52,6 +53,7 @@ class Main extends React.Component {
              <Route exact path='/products/:productId' component={SingleProduct} />
             <Route exact path='/products'  render={()=><DefaultHome products={this.props.products} /> } />
             <Route exact path='/cart' component={Cart} />
+            <Route  path='/genres/*' component={SingleGenre} />
           </Switch> 
         </Router>
       </div>

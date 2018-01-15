@@ -30,8 +30,23 @@ export const DefaultHome = (props) => {
                             <p>
                             Stock: {product.inventory}
                             </p>
+                            
                             </div>
                             </Link>
+                            <div>
+                            <p>
+                            Genres:
+                            </p>
+                            {product.genres.map(genre => {
+                                return (
+                                    <p key={genre.id}>
+                                        <Link to={`/genres/${genre.body}`}>
+                                        {genre.body}
+                                        </Link>
+                                    </p>
+                                )
+                            })}
+                        </div>
                             <button onClick={() => addToCart(product.id)}>
                             Add To Cart
                             </button>
