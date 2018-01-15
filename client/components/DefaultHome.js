@@ -41,9 +41,28 @@ export class DefaultHome extends Component {
                             <p>
                             Stock: {product.inventory}
                             </p>
+                            
                             </div>
                             </Link>
+<<<<<<< HEAD
                             <button onClick={() => this.props.addToCart(product.id)}>
+=======
+                            <div>
+                            <p>
+                            Genres:
+                            </p>
+                            {product.genres.map(genre => {
+                                return (
+                                    <p key={genre.id}>
+                                        <Link to={`/genres/${genre.body}`}>
+                                        {genre.body}
+                                        </Link>
+                                    </p>
+                                )
+                            })}
+                        </div>
+                            <button onClick={() => addToCart(product.id)}>
+>>>>>>> master
                             Add To Cart
                             </button>
                     </div>

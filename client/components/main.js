@@ -5,9 +5,16 @@ import { BrowserRouter as Router, withRouter, Link, Switch, Route } from "react-
 import {logout} from '../store'
 import {Reviews} from './Reviews'
 import {retrieveProducts, getSingleProduct} from '../store'
+<<<<<<< HEAD
 import DefaultHome from './DefaultHome'
 import SingleProduct from './SingleProduct'
 
+=======
+import {DefaultHome} from './DefaultHome'
+import  SingleProduct  from './SingleProduct'
+import Cart from './Cart'
+import SingleGenre from './singleGenre'
+>>>>>>> master
  
 /**
  * COMPONENT
@@ -50,7 +57,13 @@ class Main extends React.Component {
         <Router>
           <Switch>
              <Route exact path='/products/:productId' component={SingleProduct} />
+<<<<<<< HEAD
             <Route path='/products'  component={DefaultHome}  />
+=======
+            <Route exact path='/products'  render={()=><DefaultHome products={this.props.products} /> } />
+            <Route exact path='/cart' component={Cart} />
+            <Route  path='/genres/*' component={SingleGenre} />
+>>>>>>> master
           </Switch> 
         </Router>
       </div>
