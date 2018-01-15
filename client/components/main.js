@@ -7,7 +7,7 @@ import {Reviews} from './Reviews'
 import {retrieveProducts, getSingleProduct} from '../store'
 import {DefaultHome} from './DefaultHome'
 import  SingleProduct  from './SingleProduct'
-
+import Cart from './Cart'
  
 /**
  * COMPONENT
@@ -50,7 +50,8 @@ class Main extends React.Component {
         <Router>
           <Switch>
              <Route exact path='/products/:productId' component={SingleProduct} />
-            <Route path='/products'  render={()=><DefaultHome products={this.props.products} /> } />
+            <Route exact path='/products'  render={()=><DefaultHome products={this.props.products} /> } />
+            <Route exact path='/cart' component={Cart} />
           </Switch> 
         </Router>
       </div>

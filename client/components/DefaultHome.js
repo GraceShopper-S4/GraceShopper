@@ -30,8 +30,11 @@ export const DefaultHome = (props) => {
                             <p>
                             Stock: {product.inventory}
                             </p>
-                        </div>
-                        </Link>
+                            </div>
+                            </Link>
+                            <button onClick={() => addToCart(product.id)}>
+                            Add To Cart
+                            </button>
                     </div>
                 )
             })
@@ -49,4 +52,9 @@ const mapState = (state) => ({state})
 //         }
 //     )
 // }
+const mapDispatch = (dispatch) => ({
+    addToCart() {
+        dispatch()
+    }
+})
 export default connect(mapState, null)(DefaultHome)

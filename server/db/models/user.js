@@ -70,6 +70,10 @@ const User = db.define("user", {
       len: [5],
       notEmpty: true
     }
+  },
+  currentOrderHash: {
+    type: Sequelize.STRING,
+    allowNull: false
   }
 });
 
