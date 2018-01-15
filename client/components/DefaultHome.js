@@ -44,9 +44,6 @@ export class DefaultHome extends Component {
                             
                             </div>
                             </Link>
-<<<<<<< HEAD
-                            <button onClick={() => this.props.addToCart(product.id)}>
-=======
                             <div>
                             <p>
                             Genres:
@@ -62,7 +59,6 @@ export class DefaultHome extends Component {
                             })}
                         </div>
                             <button onClick={() => addToCart(product.id)}>
->>>>>>> master
                             Add To Cart
                             </button>
                     </div>
