@@ -5,9 +5,9 @@ import { BrowserRouter as Router, withRouter, Link, Switch, Route } from "react-
 import {logout} from '../store'
 import {Reviews} from './Reviews'
 import {retrieveProducts, getSingleProduct} from '../store'
-import {DefaultHome} from './DefaultHome'
-import  SingleProduct  from './SingleProduct'
-import Cart from './Cart'
+import DefaultHome from './DefaultHome'
+import SingleProduct from './SingleProduct'
+
  
 /**
  * COMPONENT
@@ -21,7 +21,7 @@ class Main extends React.Component {
     }
     componentDidMount() {
       this.props.getProducts()
-     // this.props.getProduct(1);
+
     }
   render() {
 
@@ -50,8 +50,7 @@ class Main extends React.Component {
         <Router>
           <Switch>
              <Route exact path='/products/:productId' component={SingleProduct} />
-            <Route exact path='/products'  render={()=><DefaultHome products={this.props.products} /> } />
-            <Route exact path='/cart' component={Cart} />
+            <Route path='/products'  component={DefaultHome}  />
           </Switch> 
         </Router>
       </div>

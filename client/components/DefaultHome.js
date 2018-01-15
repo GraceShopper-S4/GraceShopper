@@ -1,16 +1,27 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import {connect} from 'react-redux'
-import { browserRouter, Link} from 'react-router-dom';
-import { getSingleProduct } from '../store';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { getSingleProduct,retrieveProducts, addNewItem} from "../store";
+import {Link} from "react-router-dom";
 
-export const DefaultHome = (props) => {
-    // console.log("default home", props.products)
+export class DefaultHome extends Component {
+  //console.log('props in SingleProduct',props.passedProps.match.params.productId)
+  //console.log('product 1')
+  constructor(props) {
+    super(props);
+  }
+
+  componentDidMount() {
+    //this.props.getProducts()
+  }
+
+  render() {
+    console.log("single props is", this.props);
     return (
         <div className="productsContainer">
         <div className="productGrid">
           {
-            props.products.map(product => {
+            this.props.products ?
+            this.props.products.map(product => {
                 return (
                     <div className="productCell" key={product.id} >
                         <Link to={`/products/${product.id}`}>
@@ -32,29 +43,42 @@ export const DefaultHome = (props) => {
                             </p>
                             </div>
                             </Link>
-                            <button onClick={() => addToCart(product.id)}>
+                            <button onClick={() => this.props.addToCart(product.id)}>
                             Add To Cart
                             </button>
                     </div>
                 )
-            })
+            }) : null
           }
           </div>
           
         </div>
     )
 }
-const mapState = (state) => ({state})
-// const mapDispatch =( dispatch ) => {
-//     return (
-//         getSingleProduct(){
-//             dipatch
-//         }
-//     )
-// }
-const mapDispatch = (dispatch) => ({
-    addToCart() {
-        dispatch()
-    }
-})
-export default connect(mapState, null)(DefaultHome)
+}
+
+
+
+
+const mapStateToProps = state => {
+    return {
+      product: state.products.product,
+      products: state.products.products
+    };
+  };
+  
+  const mapDispatchToProps = dispatch => {
+    return {
+      getProduct(id) {
+        dispatch(getSingleProduct(id));
+      },
+      getProducts() {
+        dispatch(retrieveProducts());
+      },
+      addToCart(id) {
+        dispatch(addNewItem(id));
+      }
+    };
+  };
+  export default connect(mapStateToProps, mapDispatchToProps)(DefaultHome);
+  
