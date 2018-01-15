@@ -22,7 +22,7 @@ class Main extends React.Component {
     }
     componentDidMount() {
       this.props.getProducts()
-     // this.props.getProduct(1);
+
     }
   render() {
 

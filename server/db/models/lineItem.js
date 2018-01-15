@@ -19,10 +19,6 @@ const lineItem = db.define('lineItem', {
             notEmpty: true,
             min: 0
         }
-    },
-    orderKeyHash: {
-        type: Sequelize.STRING,
-        allowNull: false
     }
 });
 
