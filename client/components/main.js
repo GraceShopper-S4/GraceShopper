@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 import { BrowserRouter as Router, withRouter, Link, Switch, Route } from "react-router-dom";
 import {logout} from '../store'
 import {Reviews} from './Reviews'
-import {retrieveProducts, newOrder,getOrdersByUser} from '../store'
+import {retrieveProducts, newOrder, getOrdersByUser} from '../store'
 import DefaultHome from './DefaultHome'
 import SingleProduct  from './SingleProduct'
 import Cart from './Cart'
@@ -54,14 +54,11 @@ class Main extends React.Component {
         <hr />
         <Router>
           <Switch>
-             <Route exact path='/products/:productId' component={SingleProduct} />
+            <Route exact path='/products/:productId' component={SingleProduct} />
             <Route exact path='/products'  render={()=><DefaultHome products={this.props.products} /> } />
             <Route exact path='/cart' component={Cart} />
             <Route  path='/genres/*' component={SingleGenre} />
-            {
-              this.props.isLoggedIn && this.props.user.isAdmin ? <Route path='/admin' component={AdminHome} />
-              : null
-            }
+            
              
           </Switch> 
         </Router>

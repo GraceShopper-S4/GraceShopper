@@ -11,3 +11,4 @@ export { default as SingleProduct } from "./SingleProduct";
 export { default as Cart } from "./Cart";
 export { default as DefaultHome } from "./DefaultHome";
 export { default as SingleGenre } from "./SingleGenre";
+export { default as Admin } from './admin'

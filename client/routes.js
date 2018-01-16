@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 import history from './history'
 import {Main, Login, Signup, UserHome, Cart, SingleProduct, SingleGenre, DefaultHome} from './components'
 import {me} from './store'
-import {AllUsers} from './components/admin/allUsers'
+import AllUsers from './components/admin/allUsers'
 import Admin from './components/admin'
 
 /**
@@ -14,6 +14,7 @@ import Admin from './components/admin'
 class Routes extends Component {
   componentDidMount () {
     this.props.loadInitialData()
+    // this.props.fetchUsers()
   }
 
   render () {
@@ -38,7 +39,7 @@ class Routes extends Component {
                   {/* Routes placed here are only available after logging in */}
                  <Route path="/home" component={UserHome} />
                  <Route exact path="/admin/users" component={AllUsers} />
-                
+                 <Route exact path='/admin' component={Admin} />
                   <Route path="/home" component={UserHome} />
                   <Route exact path='/products/:productId' component={SingleProduct} />
                   <Route exact path='/cart' component={Cart} />

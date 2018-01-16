@@ -17,8 +17,9 @@ class AdminIndex extends React.Component {
         return (
 
             <div>
-                <h1>ALl users here</h1>
+                <h1>All users here</h1>
                   <Link to="/admin/users">All Users</Link>
+            
             </div>
         )
     }
@@ -32,5 +33,5 @@ const mapState = state => ({
         dispatch(retrieveUsers())
     }
  })
-export default connect(mapState, mapDispatch)(AdminIndex)
+export default withRouter(connect( mapState, mapDispatch)(AdminIndex));
 

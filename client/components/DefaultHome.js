@@ -27,63 +27,6 @@ export class DefaultHome extends Component {
     console.log("single props is", this.props);
    // console.log("state is,", this.state);
     return (
-      // <div className="productsContainer">
-      // <div className="productGrid">
-      //   {
-      //     this.props.products ?
-      //     this.props.products.map(product => {
-      //         return (
-      //             <div className="productCell" key={product.id} >
-      //                 <Link to={`/products/${product.id}`}>
-
-      //                 <div>
-      //                     <h3>
-      //                         {product.title}
-      //                     </h3>
-      //                 </div>
-      //                 <div>
-      //                 <img src={product.photo} className="responsiveImage"/>
-      //                 </div>
-      //                 <div>
-      //                     <p>
-      //                         ${product.price}
-      //                     </p>
-      //                     <p>
-      //                     Stock: {product.inventory}
-      //                     </p>
-
-      //                     </div>
-      //                     </Link>
-      //                     <div>
-      //                     <p>
-      //                     Genres:
-      //                     </p>
-      //                     {product.genres.map(genre => {
-      //                         return (
-      //                             <p key={genre.id}>
-      //                                 <Link to={`/genres/${genre.body}`}>
-      //                                 {genre.body}
-      //                                 </Link>
-      //                             </p>
-      //                         )
-      //                     })}
-
-      //                 </div>
-
-      //                       <button onClick={() => {
-                            //   let productPrice;
-                            //   this.props.products.forEach((eachProduct) => { if (product.id === eachProduct.id) productPrice = eachProduct.price})
-                            //   this.props.addToCart(product.id, productPrice, this.props.orders[0].id, this.state.quantity) }}
-                            //   >
-                            // Add To Cart
-      //                        </button>
-      //             </div>
-      //         )
-      //     }) : null
-      //   }
-      //   </div>
-
-      // </div>
       <div className="defaultHome">
         <h1>Books</h1>
         <Link to={{}}>

@@ -60,9 +60,10 @@ export const updateExistingUser = (id) => dispatch => {
 //Reducer
 
 export const AdminUserReducer = (state = initialState, action) => {
+    console.log("its here");
     switch(action.type) {
         case GET_ALL_USERS:
-        return action.users
+        return { users: [...action.users] }
         case GET_SINGLE_USER:
         return {
             users: [...state.users],

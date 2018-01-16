@@ -3,6 +3,7 @@ const {User, Order, LineItem} = require('../db/models')
 module.exports = router
 
 router.get('/', (req, res, next) => {
+  console.log('req.user',req.user)
   if(req.user && req.user.isAdmin) {
     User.findAll({
       // explicitly select only the id and email fields - even though
