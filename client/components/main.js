@@ -5,7 +5,7 @@ import { BrowserRouter as Router, withRouter, Link, Switch, Route } from "react-
 import {logout} from '../store'
 import {Reviews} from './Reviews'
 import {retrieveProducts, getSingleProduct} from '../store'
-import {DefaultHome} from './DefaultHome'
+import DefaultHome from './DefaultHome'
 import  SingleProduct  from './SingleProduct'
 import Cart from './Cart'
 import SingleGenre from './singleGenre'

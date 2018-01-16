@@ -1,9 +1,11 @@
 import React from 'react';
+import axios from 'axios'
 
 //Action Types 
 const GET_ALL_ITEMS = 'GET_ALL_ITEMS';
 const ADD_SINGLE_ITEM = 'ADD_SINGLE_ITEM';
 const REMOVE_SINGLE_ITEM = 'REMOVE_SINGLE_ITEM';
+const UPDATE_ITEM = 'UPDATE_ITEM'
 
 //Action Creators
 export const getItems = (items) => ({
@@ -27,8 +29,9 @@ const initialState = {
     singleItem: {}
 }
 //Thunk Creators/Thunks
-export const addNewItem = (id) => (dispatch) => {
-    axios.post('/api/lineItem', id)
+export const addNewItem = (item) => (dispatch) => {
+    axios.post('/api/lineItem', item)
+    .then(res=> res.data)
     .then(() => {
         dispatch(addItem)
     })

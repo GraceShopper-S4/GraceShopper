@@ -5,7 +5,7 @@ router.post('/', (req, res, next) => {
     LineItem.findOrCreate({
         where: {
             // 'userId': req.user.id,
-            'orderKeyHash': req.body.orderKeyHash, // should be names orderKeyHash and should come from user which will be avalible globally!! 
+           // 'orderKeyHash': req.body.orderKeyHash, // should be names orderKeyHash and should come from user which will be avalible globally!! 
             'productId': req.body.productId,
             'price':req.body.price,
             'quantity':req.body.quantity
