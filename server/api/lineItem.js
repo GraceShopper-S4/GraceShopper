@@ -7,6 +7,7 @@ router.post('/', (req, res, next) => {
             // 'userId': req.user.id,
            // 'orderKeyHash': req.body.orderKeyHash, // should be names orderKeyHash and should come from user which will be avalible globally!! 
             'productId': req.body.productId,
+            'orderId': req.body.orderId,
             'price':req.body.price,
             'quantity':req.body.quantity
         }

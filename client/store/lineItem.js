@@ -30,9 +30,10 @@ const initialState = {
 }
 //Thunk Creators/Thunks
 export const addNewItem = (item) => (dispatch) => {
-    axios.post('/api/lineItem', item)
-    .then(res=> res.data)
+    axios.post('/api/lineItems', item)
+    .then(res=> res.data[0])
     .then(() => {
+        console.log('item is ', item)
         dispatch(addItem)
     })
 }

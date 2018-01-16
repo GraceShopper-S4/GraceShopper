@@ -9542,7 +9542,7 @@ exports.default = (0, _reactRedux.connect)(null, null)(Cart);
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 exports.DefaultHome = undefined;
 
@@ -9567,161 +9567,161 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var DefaultHome = exports.DefaultHome = function (_Component) {
-    _inherits(DefaultHome, _Component);
+  _inherits(DefaultHome, _Component);
 
-    //console.log('props in SingleProduct',props.passedProps.match.params.productId)
-    //console.log('product 1')
-    function DefaultHome(props) {
-        _classCallCheck(this, DefaultHome);
+  //console.log('props in SingleProduct',props.passedProps.match.params.productId)
+  //console.log('product 1')
+  function DefaultHome(props) {
+    _classCallCheck(this, DefaultHome);
 
-        var _this = _possibleConstructorReturn(this, (DefaultHome.__proto__ || Object.getPrototypeOf(DefaultHome)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (DefaultHome.__proto__ || Object.getPrototypeOf(DefaultHome)).call(this, props));
 
-        _this.state = {};
-        return _this;
+    _this.state = {};
+    _this.onChange = _this.onChange.bind(_this);
+    return _this;
+  }
+
+  _createClass(DefaultHome, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      //this.props.getProducts()
+      this.props.initializeCart();
     }
+  }, {
+    key: "onChange",
+    value: function onChange(e) {
 
-    _createClass(DefaultHome, [{
-        key: "componentDidMount",
-        value: function componentDidMount() {
-            //this.props.getProducts()
-        }
-    }, {
-        key: "render",
-        value: function render() {
-            var _this2 = this;
+      this.setState({ quantity: e.target.value });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this2 = this;
 
-            console.log("single props is", this.props);
-            console.log("state is,", this.state);
+      console.log("single props is", this.props);
+      // console.log("state is,", this.state);
+      return _react2.default.createElement(
+        "div",
+        { className: "productsContainer" },
+        _react2.default.createElement(
+          "div",
+          { className: "productGrid" },
+          this.props.products ? this.props.products.map(function (product) {
             return _react2.default.createElement(
-                "div",
-                { className: "productsContainer" },
+              "div",
+              { className: "productCell", key: product.id },
+              _react2.default.createElement(
+                _reactRouterDom.Link,
+                { to: "/products/" + product.id },
                 _react2.default.createElement(
-                    "div",
-                    { className: "productGrid" },
-                    this.props.products ? this.props.products.map(function (product) {
-                        return _react2.default.createElement(
-                            "div",
-                            { className: "productCell", key: product.id },
-                            _react2.default.createElement(
-                                _reactRouterDom.Link,
-                                { to: "/products/" + product.id },
-                                _react2.default.createElement(
-                                    "div",
-                                    null,
-                                    _react2.default.createElement(
-                                        "h3",
-                                        null,
-                                        product.title
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    "div",
-                                    null,
-                                    _react2.default.createElement("img", { src: product.photo, className: "responsiveImage" })
-                                ),
-                                _react2.default.createElement(
-                                    "div",
-                                    null,
-                                    _react2.default.createElement(
-                                        "p",
-                                        null,
-                                        "$",
-                                        product.price
-                                    ),
-                                    _react2.default.createElement(
-                                        "p",
-                                        null,
-                                        "Stock: ",
-                                        product.inventory
-                                    )
-                                )
-                            ),
-                            _react2.default.createElement(
-                                "div",
-                                null,
-                                _react2.default.createElement(
-                                    "p",
-                                    null,
-                                    "Genres:"
-                                ),
-                                product.genres.map(function (genre) {
-                                    return _react2.default.createElement(
-                                        "p",
-                                        { key: genre.id },
-                                        _react2.default.createElement(
-                                            _reactRouterDom.Link,
-                                            { to: "/genres/" + genre.body },
-                                            genre.body
-                                        )
-                                    );
-                                }),
-                                _react2.default.createElement("input", {
-                                    type: "text",
-                                    placeholder: "Enter quantity",
-                                    name: "quantity",
-                                    onChange: _this2.props.onChange,
-                                    value: _this2.state.quantityValue
-                                })
-                            ),
-                            _react2.default.createElement(
-                                "button",
-                                { onClick: function onClick() {
-                                        _this2.props.getProduct(product.id);
-                                        _this2.props.addToCart(product.id, _this2.props.product.price);
-                                    } },
-                                "Add To Cart"
-                            )
-                        );
-                    }) : null
+                  "div",
+                  null,
+                  _react2.default.createElement(
+                    "h3",
+                    null,
+                    product.title
+                  )
+                ),
+                _react2.default.createElement(
+                  "div",
+                  null,
+                  _react2.default.createElement("img", { src: product.photo, className: "responsiveImage" })
+                ),
+                _react2.default.createElement(
+                  "div",
+                  null,
+                  _react2.default.createElement(
+                    "p",
+                    null,
+                    "$",
+                    product.price
+                  ),
+                  _react2.default.createElement(
+                    "p",
+                    null,
+                    "Stock: ",
+                    product.inventory
+                  )
                 )
+              ),
+              _react2.default.createElement(
+                "div",
+                null,
+                _react2.default.createElement(
+                  "p",
+                  null,
+                  "Genres:"
+                ),
+                product.genres.map(function (genre) {
+                  return _react2.default.createElement(
+                    "p",
+                    { key: genre.id },
+                    _react2.default.createElement(
+                      _reactRouterDom.Link,
+                      { to: "/genres/" + genre.body },
+                      genre.body
+                    )
+                  );
+                }),
+                _react2.default.createElement("input", {
+                  type: "text",
+                  placeholder: "Enter quantity",
+                  name: "quantity",
+                  onChange: _this2.onChange,
+                  value: _this2.state.quantityValue
+                })
+              ),
+              _react2.default.createElement(
+                "button",
+                { onClick: function onClick() {
+                    var productPrice = void 0;
+                    _this2.props.products.forEach(function (eachProduct) {
+                      if (product.id === eachProduct.id) productPrice = eachProduct.price;
+                    });
+                    _this2.props.addToCart(product.id, productPrice, _this2.props.orders[0].id, _this2.state.quantity);
+                  }
+                },
+                "Add To Cart"
+              )
             );
-        }
-    }]);
+          }) : null
+        )
+      );
+    }
+  }]);
 
-    return DefaultHome;
+  return DefaultHome;
 }(_react.Component);
 
 var mapStateToProps = function mapStateToProps(state) {
-    return {
-        product: state.products.product,
-        products: state.products.products,
-        item: state.lineItems.singleItem
-    };
+  return {
+    product: state.products.product,
+    products: state.products.products,
+    item: state.lineItems.singleItem,
+    orders: state.orders.orders
+  };
 };
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
-    return {
-        getProduct: function getProduct(id) {
-            dispatch((0, _store.getSingleProduct)(id));
-        },
-        getProducts: function getProducts() {
-            dispatch((0, _store.retrieveProducts)());
-        },
-        addToCart: function addToCart(productId, price, e) {
-            //price, quantity, orderId, productId
-            //Orders we need totalPrice, status, userId
-            // const quantity = {}
-            //quantity[e.target.name] = e.target.value;
-            // console.log('addToCart ', quantity)
-            var totalPrice = 0;
-            var order = { totalPrice: totalPrice };
-            dispatch((0, _store.newOrder)(order));
-            // dispatch again to receive all orders 
-            console.log("order is: ", order);
-            //dispatch(getOrdersByUser());
-            // let item = {price, productId, }
-            // dispatch(addNewItem(item))
-        },
-        onChange: function onChange(item, e) {
-            // const updatedItem = item;
-            // updatedItem.quantity = e.target.value;
-
-
-            //console.log("event onChange body", updatedReview.body);
-            //console.log("event onChange rating", updatedReview.rating);
-            // dispatch(updateItem(updatedItem));
-        }
-    };
+  return {
+    getProduct: function getProduct(id) {
+      dispatch((0, _store.getSingleProduct)(id));
+    },
+    getProducts: function getProducts() {
+      dispatch((0, _store.retrieveProducts)());
+    },
+    addToCart: function addToCart(productId, price, orderId, quantity) {
+      var newItem = { price: price, quantity: quantity, productId: productId, orderId: orderId };
+      console.log('newItem is', newItem);
+      dispatch((0, _store.addNewItem)(newItem));
+    },
+    initializeCart: function initializeCart() {
+      var totalPrice = 0;
+      var order = { totalPrice: totalPrice };
+      dispatch((0, _store.newOrder)(order));
+      dispatch((0, _store.getOrdersByUser)());
+    }
+  };
 };
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(DefaultHome);
 
@@ -10043,6 +10043,7 @@ var Main = function (_React$Component) {
   _createClass(Main, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
+      //this.props.initializeCart()
       this.props.getProducts();
     }
   }, {
@@ -10104,8 +10105,8 @@ var Main = function (_React$Component) {
             _reactRouterDom.Switch,
             null,
             _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/products/:productId', component: _SingleProduct2.default }),
-            _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/products', render: function render() {
-                return _react2.default.createElement(_DefaultHome2.default, { products: _this2.props.products });
+            _react2.default.createElement(_reactRouterDom.Route, { path: '/products', render: function render() {
+                return _react2.default.createElement(_DefaultHome2.default, { products: _this2.props.products, orders: _this2.props.orders });
               } }),
             _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/cart', component: _Cart2.default }),
             _react2.default.createElement(_reactRouterDom.Route, { path: '/genres/*', component: _singleGenre2.default })
@@ -10126,12 +10127,13 @@ var Main = function (_React$Component) {
 var mapState = function mapState(state) {
   return {
     isLoggedIn: !!state.user.id,
+    orders: state.orders.orders,
     products: state.products.products
     // product: state.products.product
   };
 };
 
-var mapDispatch = function mapDispatch(dispatch) {
+var mapDispatch = function mapDispatch(dispatch, ownProps) {
   return {
     handleClick: function handleClick() {
       dispatch((0, _store.logout)());
@@ -10446,9 +10448,10 @@ var initialState = {
     //Thunk Creators/Thunks
 };var addNewItem = exports.addNewItem = function addNewItem(item) {
     return function (dispatch) {
-        _axios2.default.post('/api/lineItem', item).then(function (res) {
-            return res.data;
+        _axios2.default.post('/api/lineItems', item).then(function (res) {
+            return res.data[0];
         }).then(function () {
+            console.log('item is ', item);
             dispatch(addItem);
         });
     };
@@ -10547,10 +10550,9 @@ var OrderReducer = exports.OrderReducer = function OrderReducer() {
 
     switch (action.type) {
         case ADD_ORDER:
-            console.log(state);
-            return action.order;
+            return Object.assign({}, state, { order: action.order });
         case GET_ORDERS:
-            return state.orders;
+            return Object.assign({}, state, { orders: action.orders });
         default:
             return state;
     }

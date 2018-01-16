@@ -48,10 +48,9 @@ dispatch => {
 export const OrderReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_ORDER: 
-        console.log(state)
-        return action.order
+        return Object.assign({}, state, {order: action.order});
         case GET_ORDERS:
-        return state.orders
+        return Object.assign({}, state, {orders: action.orders});
         default: 
         return state
     }
