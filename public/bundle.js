@@ -2526,6 +2526,18 @@ Object.keys(_genres).forEach(function (key) {
   });
 });
 
+var _adminUser = __webpack_require__(910);
+
+Object.keys(_adminUser).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _adminUser[key];
+    }
+  });
+});
+
 var _redux = __webpack_require__(196);
 
 var _reduxLogger = __webpack_require__(798);
@@ -2546,7 +2558,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 //const reducer = combineReducers({user, review})
 
-var reducer = (0, _redux.combineReducers)({ user: _user2.default, products: _products.ProductsReducer, reviews: _review.ReviewReducer, lineItems: _lineItem.LineItemReducer, genres: _genres2.default });
+var reducer = (0, _redux.combineReducers)({ user: _user2.default, products: _products.ProductsReducer, reviews: _review.ReviewReducer, lineItems: _lineItem.LineItemReducer, genres: _genres2.default, adminUser: _adminUser.AdminUserReducer });
 var middleware = (0, _reduxDevtoolsExtension.composeWithDevTools)((0, _redux.applyMiddleware)(_reduxThunk2.default, (0, _reduxLogger2.default)({ collapsed: true })));
 var store = (0, _redux.createStore)(reducer, middleware);
 
@@ -29079,6 +29091,8 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRedux = __webpack_require__(22);
 
+var _semanticUiReact = __webpack_require__(845);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -29145,6 +29159,8 @@ var _allUsers = __webpack_require__(472);
 
 var _allUsers2 = _interopRequireDefault(_allUsers);
 
+var _store = __webpack_require__(48);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -29164,7 +29180,9 @@ var AdminIndex = function (_React$Component) {
 
     _createClass(AdminIndex, [{
         key: 'componentDidMount',
-        value: function componentDidMount() {}
+        value: function componentDidMount() {
+            this.props.fetchUsers();
+        }
     }, {
         key: 'render',
         value: function render() {
@@ -29186,7 +29204,14 @@ var mapState = function mapState(state) {
         products: state.products.products
     };
 };
-exports.default = (0, _reactRedux.connect)(mapState, null)(AdminIndex);
+var mapDispatch = function mapDispatch(dispatch) {
+    return {
+        fetchUsers: function fetchUsers() {
+            dispatch((0, _store.retrieveUsers)());
+        }
+    };
+};
+exports.default = (0, _reactRedux.connect)(mapState, mapDispatch)(AdminIndex);
 
 /***/ }),
 /* 474 */
@@ -76147,6 +76172,134 @@ function toArray(list, index) {
 /***/ (function(module, exports) {
 
 /* (ignored) */
+
+/***/ }),
+/* 910 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.AdminUserReducer = exports.updateExistingUser = exports.deleteUser = exports.retrieveSingleUser = exports.retrieveUsers = undefined;
+
+var _axios = __webpack_require__(87);
+
+var _axios2 = _interopRequireDefault(_axios);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+//initial State
+var initialState = {
+    users: [],
+    singleUser: {}
+
+    //Action Types
+};var GET_ALL_USERS = 'GET_ALL_USERS';
+var GET_SINGLE_USER = 'GET_SINGLE_USER';
+var REMOVE_USER = 'REMOVE_USER';
+var ALLOW_RESET = 'ALLOW_RESET';
+var UPDATE_USER = 'UPDATE_USER';
+
+//Action Creators
+var getUsers = function getUsers(users) {
+    return {
+        type: GET_ALL_USERS,
+        users: users
+    };
+};
+var getSingleUser = function getSingleUser(singleUser) {
+    return {
+        type: GET_SINGLE_USER,
+        singleUser: singleUser
+    };
+};
+var removeUser = function removeUser(userId) {
+    return {
+        type: REMOVE_USER,
+        userId: userId
+    };
+};
+var updateUser = function updateUser(userId) {
+    return {
+        type: UPDATE_USER,
+        userId: userId
+    };
+};
+
+//Thunks/Thunk Creators
+
+var retrieveUsers = exports.retrieveUsers = function retrieveUsers() {
+    return function (dispatch) {
+        _axios2.default.get('/api/users').then(function (res) {
+            return res.data;
+        }).then(function (users) {
+            return dispatch(getUsers(users));
+        });
+    };
+};
+var retrieveSingleUser = exports.retrieveSingleUser = function retrieveSingleUser(id) {
+    return function (dispatch) {
+        _axios2.default.get('/api/users/' + id).then(function (res) {
+            return res.data;
+        }).then(function (user) {
+            return dispatch(getSingleUser(user));
+        });
+    };
+};
+var deleteUser = exports.deleteUser = function deleteUser(id) {
+    return function (dispatch) {
+        _axios2.default.delete('/api/users/' + id).then(function (res) {
+            return res.data;
+        }).then(function (user) {
+            return dispatch(removeUser(user));
+        });
+    };
+};
+var updateExistingUser = exports.updateExistingUser = function updateExistingUser(id) {
+    return function (dispatch) {
+        _axios2.default.put('/api/users/' + id).then(function (res) {
+            return res.data;
+        }).then(function (user) {
+            return dispatch(updateUser(user));
+        });
+    };
+};
+
+//Reducer
+
+var AdminUserReducer = exports.AdminUserReducer = function AdminUserReducer() {
+    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
+    var action = arguments[1];
+
+    switch (action.type) {
+        case GET_ALL_USERS:
+            return action.users;
+        case GET_SINGLE_USER:
+            return {
+                users: [].concat(_toConsumableArray(state.users)),
+                singleUser: action.user
+            };
+        case REMOVE_USER:
+            return {
+                users: state.users.filter(function (user) {
+                    return user.id !== action.user.id;
+                }),
+                singleUser: {}
+            };
+        case UPDATE_USER:
+            return {
+                users: state.users,
+                singleUser: action.user
+            };
+        default:
+            return state;
+    }
+};
 
 /***/ })
 /******/ ]);

@@ -2,14 +2,15 @@ import React from 'react'
 import {connect} from 'react-redux'
 import { BrowserRouter as Router, withRouter, Link, Switch, Route } from "react-router-dom";
 import SingleUser from './singleUser'
-import AllUser from './allUsers'
+import AllUsers from './allUsers'
+import {retrieveUsers} from '../../store';
 
 class AdminIndex extends React.Component {
     constructor(props) {
         super(props)
     }
     componentDidMount() {
-
+        this.props.fetchUsers()
     }
     render() {
         console.log(this.props)
@@ -22,5 +23,10 @@ const mapState = state => ({
     users: state.users,
     products: state.products.products
 })
-export default connect(mapState,null)(AdminIndex)
+ const mapDispatch = dispatch => ({
+     fetchUsers() {
+        dispatch(retrieveUsers())
+    }
+ })
+export default connect(mapState,mapDispatch)(AdminIndex)
 
