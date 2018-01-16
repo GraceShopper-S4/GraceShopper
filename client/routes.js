@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import {Route, Switch, Router} from 'react-router-dom'
 import PropTypes from 'prop-types'
 import history from './history'
-import {Main, Login, Signup, UserHome, Cart} from './components'
+import {Main, Login, Signup, UserHome, Cart, SingleProduct, SingleGenre, DefaultHome} from './components'
 import {me} from './store'
 import {AllUsers} from './components/admin/allUsers'
 import Admin from './components/admin'
@@ -27,6 +27,10 @@ class Routes extends Component {
             <Route path="/login" component={Login} />
             <Route path="/signup" component={Signup} />
             
+            <Route exact path='/products/:productId' component={SingleProduct} />
+            <Route exact path='/cart' component={Cart} />
+            <Route exact path='/products'  render={()=><DefaultHome products={this.props.products} orders={this.props.orders} /> } />
+            <Route  path='/genres/*' component={SingleGenre} />
           
             {
               isLoggedIn &&
@@ -35,10 +39,16 @@ class Routes extends Component {
                  <Route path="/home" component={UserHome} />
                  <Route exact path="/admin/users" component={AllUsers} />
                 
+                  <Route path="/home" component={UserHome} />
+                  <Route exact path='/products/:productId' component={SingleProduct} />
+                  <Route exact path='/cart' component={Cart} />
+                  <Route exact path='/products'  render={()=><DefaultHome products={this.props.products} orders={this.props.orders} /> } />
+                  <Route  path='/genres/*' component={SingleGenre} />
                 </Switch>
             }
             {/* Displays our Login component as a fallback */}
             <Route component={Login} />
+            
           </Switch>
         </Main>
       </Router>

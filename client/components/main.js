@@ -4,9 +4,9 @@ import {connect} from 'react-redux'
 import { BrowserRouter as Router, withRouter, Link, Switch, Route } from "react-router-dom";
 import {logout} from '../store'
 import {Reviews} from './Reviews'
-import {retrieveProducts, getSingleProduct} from '../store'
-import {DefaultHome} from './DefaultHome'
-import  SingleProduct  from './SingleProduct'
+import {retrieveProducts, newOrder,getOrdersByUser} from '../store'
+import DefaultHome from './DefaultHome'
+import SingleProduct  from './SingleProduct'
 import Cart from './Cart'
 import SingleGenre from './singleGenre'
 import AdminHome from './admin'
@@ -22,8 +22,8 @@ class Main extends React.Component {
       super(props)
     }
     componentDidMount() {
+      //this.props.initializeCart()
       this.props.getProducts()
-
     }
   render() {
 
@@ -39,14 +39,17 @@ class Main extends React.Component {
                 {/* The navbar will show these links after you log in */}
                 <Link to="/home">Home</Link>
                 <a href="#" onClick={handleClick}>Logout</a>
+                <Link to="/cart"> Cart </Link>
               </div>
               : <div>
                 {/* The navbar will show these links before you log in */}
                 <Link to="/login">Login</Link>
                 <Link to="/signup">Sign Up</Link>
-                {children}
+                <Link to="/cart"> Cart </Link>
+                
               </div>
           }
+          {children}
         </nav>
         <hr />
         <Router>
@@ -75,12 +78,14 @@ const mapState = (state) => {
   return {
     isLoggedIn: !!state.user.id,
     products: state.products.products,
-    user: state.user
+    user: state.user,
+    orders: state.orders.orders,
+    // products: state.products.products
    // product: state.products.product
   }
 }
 
-const mapDispatch = (dispatch) => {
+const mapDispatch = (dispatch,ownProps) => {
   return {
     handleClick () {
       dispatch(logout());

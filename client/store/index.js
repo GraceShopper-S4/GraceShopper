@@ -10,7 +10,11 @@ import Genres from './genres'
 import {AdminUserReducer} from './adminUser'
 //const reducer = combineReducers({user, review})
 
-const reducer = combineReducers({user, products: ProductsReducer , reviews: ReviewReducer, lineItems: LineItemReducer, genres: Genres, adminUser: AdminUserReducer })
+// const reducer = combineReducers({user, products: ProductsReducer , reviews: ReviewReducer, lineItems: LineItemReducer, genres: Genres, adminUser: AdminUserReducer })
+import {OrderReducer} from './orders'
+//const reducer = combineReducers({user, review})
+
+const reducer = combineReducers({user, products: ProductsReducer , reviews: ReviewReducer, lineItems: LineItemReducer, orders: OrderReducer , genres: Genres})
 const middleware = composeWithDevTools(applyMiddleware(
   thunkMiddleware,
   createLogger({collapsed: true})
@@ -24,3 +28,4 @@ export * from './review'
 export * from './lineItem'
 export * from './genres'
 export * from './adminUser'
+export * from './orders'

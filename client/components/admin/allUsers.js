@@ -8,7 +8,7 @@ class AllUsers extends React.Component {
     render() {
         console.log(this.props)
         return (
-            <div>ALL USERS UP IN HERE YO</div>
+            
         )
     }
 }
