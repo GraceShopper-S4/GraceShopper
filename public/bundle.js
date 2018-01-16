@@ -9552,6 +9552,7 @@ module.exports = function spread(callback) {
 
 /***/ }),
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 /* 107 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9622,6 +9623,8 @@ var mapDispatch = function mapDispatch(dispatch) {
 exports.default = (0, _reactRedux.connect)(null, null)(Cart);
 
 /***/ }),
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 /* 108 */
@@ -10036,7 +10039,10 @@ Object.defineProperty(exports, 'Main', {
 });
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 var _Cart = __webpack_require__(44);
 
 Object.defineProperty(exports, 'Cart', {
