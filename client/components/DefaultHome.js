@@ -1,13 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-<<<<<<< HEAD
-import { getSingleProduct,retrieveProducts, addNewItem,newOrder, getOrdersByUser} from "../store";
-import {Link} from "react-router-dom";
-=======
 import { getSingleProduct, retrieveProducts, addNewItem } from "../store";
 import { Link } from "react-router-dom";
-import { Card, Icon, Image, Button, Grid, Segment } from "semantic-ui-react";
->>>>>>> master
 
 export class DefaultHome extends Component {
   //console.log('props in SingleProduct',props.passedProps.match.params.productId)
@@ -32,74 +26,6 @@ export class DefaultHome extends Component {
     console.log("single props is", this.props);
    // console.log("state is,", this.state);
     return (
-<<<<<<< HEAD
-        <div className="productsContainer">
-        <div className="productGrid">
-          {
-            this.props.products ?
-            this.props.products.map(product => {
-                return (
-                    <div className="productCell" key={product.id} >
-                        <Link to={`/products/${product.id}`}>
-                    
-                        <div>
-                            <h3>
-                                {product.title}
-                            </h3>
-                        </div>
-                        <div>
-                        <img src={product.photo} className="responsiveImage"/>
-                        </div>
-                        <div>
-                            <p>
-                                ${product.price}
-                            </p>
-                            <p>
-                            Stock: {product.inventory}
-                            </p>
-                            
-                            </div>
-                            </Link>
-                            <div>
-                            <p>
-                            Genres:
-                            </p>
-                            {product.genres.map(genre => {
-                                return (
-                                    <p key={genre.id}>
-                                        <Link to={`/genres/${genre.body}`}>
-                                        {genre.body}
-                                        </Link>
-                                    </p>
-                                )
-                            })}
-                           <input
-                              type="text"
-                              placeholder="Enter quantity"
-                              name="quantity"
-                              onChange={this.onChange}
-                              value={this.state.quantityValue}
-                            />
-                            
-                        </div>
-                            <button onClick={() => {
-                              let productPrice;
-                              this.props.products.forEach((eachProduct) => { if (product.id === eachProduct.id) productPrice = eachProduct.price})
-                              this.props.addToCart(product.id, productPrice, this.props.orders[0].id, this.state.quantity) }}
-                              >
-                            Add To Cart
-                            </button>
-                    </div>
-                )
-            }) : null
-          }
-          </div>
-          
-        </div>
-    )
-}
-}
-=======
       // <div className="productsContainer">
       // <div className="productGrid">
       //   {
@@ -108,7 +34,6 @@ export class DefaultHome extends Component {
       //         return (
       //             <div className="productCell" key={product.id} >
       //                 <Link to={`/products/${product.id}`}>
->>>>>>> master
 
       //                 <div>
       //                     <h3>
@@ -200,36 +125,6 @@ export class DefaultHome extends Component {
 }
 
 const mapStateToProps = state => {
-<<<<<<< HEAD
-    return {
-      product: state.products.product,
-      products: state.products.products,
-      item: state.lineItems.singleItem,
-      orders: state.orders.orders
-    };
-  };
-  
-  const mapDispatchToProps = (dispatch, ownProps) => {
-    return {
-      getProduct(id) {
-        dispatch(getSingleProduct(id));
-      },
-      getProducts() {
-        dispatch(retrieveProducts());
-      },
-      addToCart(productId, price, orderId, quantity) {
-        let newItem = {price, quantity, productId, orderId}
-        console.log('newItem is', newItem)
-        dispatch(addNewItem(newItem));
-      }
-      ,initializeCart() {
-        let totalPrice = 0;
-        let order = {totalPrice}
-        dispatch(newOrder(order));
-        dispatch(getOrdersByUser());
-      }
-    };
-=======
   return {
     product: state.products.product,
     products: state.products.products
@@ -247,7 +142,6 @@ const mapDispatchToProps = dispatch => {
     addToCart(id) {
       dispatch(addNewItem(id));
     }
->>>>>>> master
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(DefaultHome);
