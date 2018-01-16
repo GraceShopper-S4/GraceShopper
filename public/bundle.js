@@ -9519,13 +9519,54 @@ var Cart = function (_Component) {
     }
 
     _createClass(Cart, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            this.props.getAllYourItems(5); // needs to be this.props.orders.id
+        }
+    }, {
         key: 'render',
         value: function render() {
             console.log('cart props', this.props);
             return _react2.default.createElement(
-                'h1',
+                'div',
                 null,
-                'YO ITS THE CART '
+                _react2.default.createElement(
+                    'div',
+                    { className: 'productsContainer' },
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'productGrid' },
+                        this.props.lineItems && this.props.lineItems.map(function (lineItem) {
+                            // this.props.getProduct(lineItem.productId)
+                            return _react2.default.createElement(
+                                'div',
+                                { className: 'productCell', key: lineItem.id },
+                                _react2.default.createElement(
+                                    'h3',
+                                    null,
+                                    ' Book Title: ',
+                                    lineItem.product.title,
+                                    ' '
+                                ),
+                                _react2.default.createElement(
+                                    'h4',
+                                    null,
+                                    ' Quantity: ',
+                                    lineItem.quantity,
+                                    ' '
+                                ),
+                                _react2.default.createElement(
+                                    'h4',
+                                    null,
+                                    ' Price: ',
+                                    lineItem.price,
+                                    ' '
+                                )
+                            );
+                        })
+                    )
+                ),
+                _react2.default.createElement('div', null)
             );
         }
     }]);
@@ -9537,18 +9578,26 @@ var mapState = function mapState(state) {
     return {
         isLoggedIn: !!state.user.id,
         orders: state.orders.orders,
-        products: state.products.products
-        // product: state.products.product
+        products: state.products.products,
+        product: state.products.product,
+        lineItems: state.lineItems.lineItems
     };
 };
 
 var mapDispatch = function mapDispatch(dispatch) {
-    return {};
+    return {
+        getAllYourItems: function getAllYourItems(orderId) {
+            dispatch((0, _store.getItemsByUserId)(orderId));
+        },
+        getProduct: function getProduct(id) {
+            dispatch((0, _store.getSingleProduct)(id));
+        }
+    };
 };
 
 // The `withRouter` wrapper makes sure that updates are not blocked
 // when the url changes
-exports.default = (0, _reactRedux.connect)(null, null)(Cart);
+exports.default = (0, _reactRedux.connect)(mapState, mapDispatch)(Cart);
 
 /***/ }),
 /* 108 */
@@ -9612,141 +9661,95 @@ var DefaultHome = exports.DefaultHome = function (_Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       console.log("single props is", this.props);
       // console.log("state is,", this.state);
-      return (
-        // <div className="productsContainer">
-        // <div className="productGrid">
-        //   {
-        //     this.props.products ?
-        //     this.props.products.map(product => {
-        //         return (
-        //             <div className="productCell" key={product.id} >
-        //                 <Link to={`/products/${product.id}`}>
-
-        //                 <div>
-        //                     <h3>
-        //                         {product.title}
-        //                     </h3>
-        //                 </div>
-        //                 <div>
-        //                 <img src={product.photo} className="responsiveImage"/>
-        //                 </div>
-        //                 <div>
-        //                     <p>
-        //                         ${product.price}
-        //                     </p>
-        //                     <p>
-        //                     Stock: {product.inventory}
-        //                     </p>
-
-        //                     </div>
-        //                     </Link>
-        //                     <div>
-        //                     <p>
-        //                     Genres:
-        //                     </p>
-        //                     {product.genres.map(genre => {
-        //                         return (
-        //                             <p key={genre.id}>
-        //                                 <Link to={`/genres/${genre.body}`}>
-        //                                 {genre.body}
-        //                                 </Link>
-        //                             </p>
-        //                         )
-        //                     })}
-        //                 </div>
-        //                     <button onClick={() => addToCart(product.id)}>
-        //                     Add To Cart
-        //                     </button>
-        //             </div>
-        //         )
-        //     }) : null
-        //   }
-        //   </div>
-
-        // </div>
+      return _react2.default.createElement(
+        "div",
+        { className: "productsContainer" },
         _react2.default.createElement(
           "div",
-          { className: "defaultHome" },
-          _react2.default.createElement(
-            "h1",
-            null,
-            "Books"
-          ),
-          _react2.default.createElement(
-            _reactRouterDom.Link,
-            { to: {} },
-            _react2.default.createElement(
-              Button,
-              { className: "cart", floated: "right" },
-              "CART"
-            )
-          ),
-          _react2.default.createElement(
-            Grid,
-            { padded: true },
-            _react2.default.createElement(
-              Grid.Row,
-              { padded: true },
-              this.props.products && this.props.products.map(function (product) {
-                return _react2.default.createElement(
+          { className: "productGrid" },
+          this.props.products ? this.props.products.map(function (product) {
+            return _react2.default.createElement(
+              "div",
+              { className: "productCell", key: product.id },
+              _react2.default.createElement(
+                _reactRouterDom.Link,
+                { to: "/products/" + product.id },
+                _react2.default.createElement(
                   "div",
-                  { key: product.id, className: "defaultHome" },
-                  console.log("Hi", product),
+                  null,
                   _react2.default.createElement(
-                    Segment,
+                    "h3",
                     null,
-                    _react2.default.createElement(
-                      Card.Group,
-                      null,
-                      _react2.default.createElement(
-                        Card,
-                        { className: "defaultHome" },
-                        _react2.default.createElement(
-                          _reactRouterDom.Link,
-                          { to: "/products/" + product.id },
-                          _react2.default.createElement(Image, { src: product.photo })
-                        ),
-                        _react2.default.createElement(
-                          Card.Content,
-                          null,
-                          _react2.default.createElement(
-                            Card.Header,
-                            null,
-                            product.title
-                          ),
-                          _react2.default.createElement(
-                            Card.Description,
-                            null,
-                            product.description
-                          )
-                        ),
-                        _react2.default.createElement(
-                          Card.Content,
-                          { extra: true },
-                          _react2.default.createElement(
-                            Button,
-                            { animated: "vertical" },
-                            _react2.default.createElement(
-                              Button.Content,
-                              { hidden: true },
-                              "ADD"
-                            ),
-                            _react2.default.createElement(
-                              Button.Content,
-                              { visible: true },
-                              _react2.default.createElement(Icon, { name: "shop" })
-                            )
-                          )
-                        )
-                      )
-                    )
+                    product.title
                   )
-                );
-              })
-            )
-          )
+                ),
+                _react2.default.createElement(
+                  "div",
+                  null,
+                  _react2.default.createElement("img", { src: product.photo, className: "responsiveImage" })
+                ),
+                _react2.default.createElement(
+                  "div",
+                  null,
+                  _react2.default.createElement(
+                    "p",
+                    null,
+                    "$",
+                    product.price
+                  ),
+                  _react2.default.createElement(
+                    "p",
+                    null,
+                    "Stock: ",
+                    product.inventory
+                  )
+                )
+              ),
+              _react2.default.createElement(
+                "div",
+                null,
+                _react2.default.createElement(
+                  "p",
+                  null,
+                  "Genres:"
+                ),
+                product.genres.map(function (genre) {
+                  return _react2.default.createElement(
+                    "p",
+                    { key: genre.id },
+                    _react2.default.createElement(
+                      _reactRouterDom.Link,
+                      { to: "/genres/" + genre.body },
+                      genre.body
+                    )
+                  );
+                }),
+                _react2.default.createElement("input", {
+                  type: "text",
+                  placeholder: "Enter quantity",
+                  name: "quantity",
+                  onChange: _this2.onChange,
+                  value: _this2.state.quantityValue
+                })
+              ),
+              _react2.default.createElement(
+                "button",
+                { onClick: function onClick() {
+                    var productPrice = void 0;
+                    _this2.props.products.forEach(function (eachProduct) {
+                      if (product.id === eachProduct.id) productPrice = eachProduct.price;
+                    });
+                    _this2.props.addToCart(product.id, productPrice, _this2.props.orders[0].id, _this2.state.quantity);
+                  }
+                },
+                "Add To Cart"
+              )
+            );
+          }) : null
         )
       );
     }
@@ -9758,11 +9761,13 @@ var DefaultHome = exports.DefaultHome = function (_Component) {
 var mapStateToProps = function mapStateToProps(state) {
   return {
     product: state.products.product,
-    products: state.products.products
+    products: state.products.products,
+    item: state.lineItems.singleItem,
+    orders: state.orders.orders
   };
 };
 
-var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
   return {
     getProduct: function getProduct(id) {
       dispatch((0, _store.getSingleProduct)(id));
@@ -9770,8 +9775,16 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     getProducts: function getProducts() {
       dispatch((0, _store.retrieveProducts)());
     },
-    addToCart: function addToCart(id) {
-      dispatch((0, _store.addNewItem)(id));
+    addToCart: function addToCart(productId, price, orderId, quantity) {
+      var newItem = { price: price, quantity: quantity, productId: productId, orderId: orderId };
+      console.log('newItem is', newItem);
+      dispatch((0, _store.addNewItem)(newItem));
+    },
+    initializeCart: function initializeCart() {
+      var totalPrice = 0;
+      var order = { totalPrice: totalPrice };
+      dispatch((0, _store.newOrder)(order));
+      dispatch((0, _store.getOrdersByUser)());
     }
   };
 };
@@ -10461,7 +10474,7 @@ _reactDom2.default.render(_react2.default.createElement(
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.LineItemReducer = exports.addNewItem = exports.removeItem = exports.addItem = exports.getItems = undefined;
+exports.LineItemReducer = exports.getItemsByUserId = exports.addNewItem = exports.removeItem = exports.addItem = exports.getItems = undefined;
 
 var _react = __webpack_require__(0);
 
@@ -10472,8 +10485,6 @@ var _axios = __webpack_require__(11);
 var _axios2 = _interopRequireDefault(_axios);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 //Action Types 
 var GET_ALL_ITEMS = 'GET_ALL_ITEMS';
@@ -10519,6 +10530,17 @@ var initialState = {
     };
 };
 
+var getItemsByUserId = exports.getItemsByUserId = function getItemsByUserId(orderId) {
+    return function (dispatch) {
+        _axios2.default.get('/api/lineItems/' + orderId).then(function (res) {
+            return res.data;
+        }).then(function (items) {
+            console.log('dispatching getItems on items:', items);
+            dispatch(getItems(items));
+        });
+    };
+};
+
 //Reducers
 var LineItemReducer = exports.LineItemReducer = function LineItemReducer() {
     var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
@@ -10526,7 +10548,7 @@ var LineItemReducer = exports.LineItemReducer = function LineItemReducer() {
 
     switch (action.type) {
         case GET_ALL_ITEMS:
-            return [].concat(_toConsumableArray(action.items));
+            return Object.assign({}, state, { lineItems: action.items });
         case ADD_SINGLE_ITEM:
             return Object.assign({}, state, { lineItems: state.lineItems.concat(action.item) });
         case REMOVE_SINGLE_ITEM:

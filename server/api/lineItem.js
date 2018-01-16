@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Order, User, LineItem } = require('../db/models');
+const { Order, User, LineItem , Product} = require('../db/models');
 
 router.post('/', (req, res, next) => {
     LineItem.findOrCreate({
@@ -25,6 +25,9 @@ router.post('/', (req, res, next) => {
 
 router.get('/:orderId', (req, res, next) => {
     LineItem.findAll({
+        include: [{
+            model: Product
+        }],
         where: {
             orderId: req.params.orderId
         }
