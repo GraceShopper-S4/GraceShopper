@@ -1131,6 +1131,7 @@ Object.keys(_lineItem).forEach(function (key) {
   });
 });
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 var _genres = __webpack_require__(46);
 =======
@@ -1140,6 +1141,9 @@ var _genres = __webpack_require__(204);
 var _genres = __webpack_require__(46);
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+var _genres = __webpack_require__(46);
+>>>>>>> Stashed changes
 
 Object.keys(_genres).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
@@ -1205,11 +1209,14 @@ exports.default = store;
 /* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
 =======
 >>>>>>> master
+=======
+>>>>>>> Stashed changes
 module.exports = __webpack_require__(91);
 
 /***/ }),
@@ -2233,6 +2240,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -2252,6 +2260,13 @@ var _createMemoryHistory = __webpack_require__(59);
 =======
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+var _createBrowserHistory = __webpack_require__(58);
+
+var _createBrowserHistory2 = _interopRequireDefault(_createBrowserHistory);
+
+var _createMemoryHistory = __webpack_require__(59);
+>>>>>>> Stashed changes
 
 var _createMemoryHistory2 = _interopRequireDefault(_createMemoryHistory);
 
@@ -2374,7 +2389,10 @@ module.exports = warning;
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return createLocation; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return locationsAreEqual; });
+<<<<<<< Updated upstream
 <<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_resolve_pathname__ = __webpack_require__(78);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_value_equal__ = __webpack_require__(83);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__PathUtils__ = __webpack_require__(16);
@@ -2571,6 +2589,7 @@ module.exports = __webpack_require__(88);
 /* WEBPACK VAR INJECTION */(function(process) {
 
 var utils = __webpack_require__(5);
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 var normalizeHeaderName = __webpack_require__(105);
 =======
@@ -2580,6 +2599,9 @@ var normalizeHeaderName = __webpack_require__(102);
 var normalizeHeaderName = __webpack_require__(105);
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+var normalizeHeaderName = __webpack_require__(105);
+>>>>>>> Stashed changes
 
 var PROTECTION_PREFIX = /^\)\]\}',?\n/;
 var DEFAULT_CONTENT_TYPE = {
@@ -2895,6 +2917,7 @@ exports.locationsAreEqual = exports.createLocation = undefined;
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 var _resolvePathname = __webpack_require__(78);
 
@@ -2909,13 +2932,18 @@ var _resolvePathname2 = _interopRequireDefault(_resolvePathname);
 
 var _valueEqual = __webpack_require__(80);
 =======
+=======
+>>>>>>> Stashed changes
 var _resolvePathname = __webpack_require__(78);
 
 var _resolvePathname2 = _interopRequireDefault(_resolvePathname);
 
 var _valueEqual = __webpack_require__(83);
+<<<<<<< Updated upstream
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+>>>>>>> Stashed changes
 
 var _valueEqual2 = _interopRequireDefault(_valueEqual);
 
@@ -3633,6 +3661,7 @@ var matchPath = function matchPath(pathname) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -3644,16 +3673,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__utils_warning__ = __webpack_require__(74);
 =======
 >>>>>>> master
+=======
+>>>>>>> Stashed changes
 /* WEBPACK VAR INJECTION */(function(process) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__createStore__ = __webpack_require__(76);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__combineReducers__ = __webpack_require__(197);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__bindActionCreators__ = __webpack_require__(196);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__applyMiddleware__ = __webpack_require__(195);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__compose__ = __webpack_require__(75);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__utils_warning__ = __webpack_require__(77);
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+>>>>>>> Stashed changes
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "createStore", function() { return __WEBPACK_IMPORTED_MODULE_0__createStore__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "combineReducers", function() { return __WEBPACK_IMPORTED_MODULE_1__combineReducers__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "bindActionCreators", function() { return __WEBPACK_IMPORTED_MODULE_2__bindActionCreators__["a"]; });
@@ -3702,10 +3736,13 @@ var Emitter = __webpack_require__(12);
 var hasBin = __webpack_require__(56);
 var binary = __webpack_require__(200);
 var isBuf = __webpack_require__(82);
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+>>>>>>> Stashed changes
 
 /**
  * Protocol version.
@@ -4106,13 +4143,17 @@ function error() {
 /* WEBPACK VAR INJECTION */(function(process) {
 
 var utils = __webpack_require__(5);
+<<<<<<< Updated upstream
 <<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
 var settle = __webpack_require__(97);
 var buildURL = __webpack_require__(100);
 var parseHeaders = __webpack_require__(106);
 var isURLSameOrigin = __webpack_require__(104);
 var createError = __webpack_require__(42);
 var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(99);
+<<<<<<< Updated upstream
 =======
 <<<<<<< Updated upstream
 var settle = __webpack_require__(94);
@@ -4130,6 +4171,8 @@ var createError = __webpack_require__(42);
 var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(99);
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+>>>>>>> Stashed changes
 
 module.exports = function xhrAdapter(config) {
   return new Promise(function dispatchXhrRequest(resolve, reject) {
@@ -4225,6 +4268,7 @@ module.exports = function xhrAdapter(config) {
     // This is only done if running in a standard browser environment.
     // Specifically not if we're in a web worker, or react-native.
     if (utils.isStandardBrowserEnv()) {
+<<<<<<< Updated upstream
 <<<<<<< HEAD
       var cookies = __webpack_require__(102);
 =======
@@ -4234,6 +4278,9 @@ module.exports = function xhrAdapter(config) {
       var cookies = __webpack_require__(102);
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+      var cookies = __webpack_require__(102);
+>>>>>>> Stashed changes
 
       // Add xsrf header
       var xsrfValue = (config.withCredentials || isURLSameOrigin(config.url)) && config.xsrfCookieName ?
@@ -4354,6 +4401,7 @@ module.exports = function isCancel(value) {
 "use strict";
 
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 var enhanceError = __webpack_require__(96);
 =======
@@ -4363,6 +4411,9 @@ var enhanceError = __webpack_require__(93);
 var enhanceError = __webpack_require__(96);
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+var enhanceError = __webpack_require__(96);
+>>>>>>> Stashed changes
 
 /**
  * Create an Error with the specified message, config, error code, and response.
@@ -4401,6 +4452,76 @@ module.exports = function bind(fn, thisArg) {
 /* 44 */
 <<<<<<< Updated upstream
 =======
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRedux = __webpack_require__(7);
+
+var _store = __webpack_require__(10);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Cart = function (_Component) {
+    _inherits(Cart, _Component);
+
+    function Cart(props) {
+        _classCallCheck(this, Cart);
+
+        return _possibleConstructorReturn(this, (Cart.__proto__ || Object.getPrototypeOf(Cart)).call(this, props));
+    }
+
+    _createClass(Cart, [{
+        key: 'render',
+        value: function render() {
+            console.log('cart props', this.props);
+            return _react2.default.createElement(
+                'h1',
+                null,
+                'YO ITS THE CART '
+            );
+        }
+    }]);
+
+    return Cart;
+}(_react.Component);
+
+var mapState = function mapState(state) {
+    return {
+        isLoggedIn: !!state.user.id,
+        orders: state.orders.orders,
+        products: state.products.products
+        // product: state.products.product
+    };
+};
+
+var mapDispatch = function mapDispatch(dispatch) {
+    return {};
+};
+
+// The `withRouter` wrapper makes sure that updates are not blocked
+// when the url changes
+exports.default = (0, _reactRedux.connect)(mapState, mapDispatch)(Cart);
+
+/***/ }),
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4826,10 +4947,13 @@ var retrieveByGenre = exports.retrieveByGenre = function retrieveByGenre(name) {
 
 /***/ }),
 /* 47 */
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+>>>>>>> Stashed changes
 /***/ (function(module, exports) {
 
 /**
@@ -4858,6 +4982,7 @@ module.exports = function(obj, fn){
 
 
 /***/ }),
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* 48 */
 =======
@@ -4867,6 +4992,9 @@ module.exports = function(obj, fn){
 /* 48 */
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* 48 */
+>>>>>>> Stashed changes
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {/**
@@ -4933,6 +5061,7 @@ function polling (opts) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ }),
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* 49 */
 =======
@@ -4942,6 +5071,9 @@ function polling (opts) {
 /* 49 */
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* 49 */
+>>>>>>> Stashed changes
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -4960,10 +5092,13 @@ var parseqs = __webpack_require__(22);
 var parser = __webpack_require__(13);
 var inherit = __webpack_require__(18);
 var yeast = __webpack_require__(85);
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+>>>>>>> Stashed changes
 var debug = __webpack_require__(8)('engine.io-client:polling');
 
 /**
@@ -5203,6 +5338,7 @@ Polling.prototype.uri = function () {
 
 
 /***/ }),
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* 50 */
 =======
@@ -5212,6 +5348,9 @@ Polling.prototype.uri = function () {
 /* 50 */
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* 50 */
+>>>>>>> Stashed changes
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5292,6 +5431,7 @@ module.exports = EventListener;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* 51 */
 =======
@@ -5301,6 +5441,9 @@ module.exports = EventListener;
 /* 51 */
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* 51 */
+>>>>>>> Stashed changes
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5339,6 +5482,7 @@ var ExecutionEnvironment = {
 module.exports = ExecutionEnvironment;
 
 /***/ }),
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* 52 */
 =======
@@ -5348,6 +5492,9 @@ module.exports = ExecutionEnvironment;
 /* 52 */
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* 52 */
+>>>>>>> Stashed changes
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5394,6 +5541,7 @@ function containsNode(outerNode, innerNode) {
 module.exports = containsNode;
 
 /***/ }),
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* 53 */
 =======
@@ -5403,6 +5551,9 @@ module.exports = containsNode;
 /* 53 */
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* 53 */
+>>>>>>> Stashed changes
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5432,6 +5583,7 @@ function focusNode(node) {
 module.exports = focusNode;
 
 /***/ }),
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* 54 */
 =======
@@ -5441,6 +5593,9 @@ module.exports = focusNode;
 /* 54 */
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* 54 */
+>>>>>>> Stashed changes
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5482,6 +5637,7 @@ function getActiveElement(doc) /*?DOMElement*/{
 module.exports = getActiveElement;
 
 /***/ }),
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* 55 */
 =======
@@ -5491,6 +5647,9 @@ module.exports = getActiveElement;
 /* 55 */
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* 55 */
+>>>>>>> Stashed changes
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5561,6 +5720,7 @@ function shallowEqual(objA, objB) {
 module.exports = shallowEqual;
 
 /***/ }),
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* 56 */
 =======
@@ -5570,6 +5730,9 @@ module.exports = shallowEqual;
 /* 56 */
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* 56 */
+>>>>>>> Stashed changes
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {/* global Blob File */
@@ -5642,6 +5805,7 @@ function hasBinary (obj) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ }),
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* 57 */
 =======
@@ -5651,6 +5815,9 @@ function hasBinary (obj) {
 /* 57 */
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* 57 */
+>>>>>>> Stashed changes
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5711,6 +5878,7 @@ var isExtraneousPopstateEvent = exports.isExtraneousPopstateEvent = function isE
 };
 
 /***/ }),
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* 58 */
 =======
@@ -5720,6 +5888,9 @@ var isExtraneousPopstateEvent = exports.isExtraneousPopstateEvent = function isE
 /* 58 */
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* 58 */
+>>>>>>> Stashed changes
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5747,6 +5918,7 @@ var _createTransitionManager = __webpack_require__(27);
 
 var _createTransitionManager2 = _interopRequireDefault(_createTransitionManager);
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 var _DOMUtils = __webpack_require__(57);
 =======
@@ -5756,6 +5928,9 @@ var _DOMUtils = __webpack_require__(54);
 var _DOMUtils = __webpack_require__(57);
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+var _DOMUtils = __webpack_require__(57);
+>>>>>>> Stashed changes
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -6040,6 +6215,7 @@ var createBrowserHistory = function createBrowserHistory() {
 exports.default = createBrowserHistory;
 
 /***/ }),
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* 59 */
 =======
@@ -6049,6 +6225,9 @@ exports.default = createBrowserHistory;
 /* 59 */
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* 59 */
+>>>>>>> Stashed changes
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6224,6 +6403,7 @@ var createMemoryHistory = function createMemoryHistory() {
 exports.default = createMemoryHistory;
 
 /***/ }),
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* 60 */
 =======
@@ -6233,6 +6413,9 @@ exports.default = createMemoryHistory;
 /* 60 */
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* 60 */
+>>>>>>> Stashed changes
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6298,6 +6481,7 @@ var isExtraneousPopstateEvent = function isExtraneousPopstateEvent(event) {
 };
 
 /***/ }),
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* 61 */
 =======
@@ -6307,6 +6491,9 @@ var isExtraneousPopstateEvent = function isExtraneousPopstateEvent(event) {
 /* 61 */
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* 61 */
+>>>>>>> Stashed changes
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6378,6 +6565,7 @@ module.exports = function hoistNonReactStatics(targetComponent, sourceComponent,
 
 
 /***/ }),
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* 62 */
 =======
@@ -6387,6 +6575,9 @@ module.exports = function hoistNonReactStatics(targetComponent, sourceComponent,
 /* 62 */
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* 62 */
+>>>>>>> Stashed changes
 /***/ (function(module, exports) {
 
 
@@ -6401,7 +6592,10 @@ module.exports = function(arr, obj){
 };
 
 /***/ }),
+<<<<<<< Updated upstream
 <<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
 /* 63 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -6427,6 +6621,7 @@ var Symbol = __WEBPACK_IMPORTED_MODULE_0__root_js__["a" /* default */].Symbol;
 
 
 /***/ }),
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* 64 */
 =======
@@ -6436,6 +6631,9 @@ var Symbol = __WEBPACK_IMPORTED_MODULE_0__root_js__["a" /* default */].Symbol;
 /* 64 */
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* 64 */
+>>>>>>> Stashed changes
 /***/ (function(module, exports) {
 
 /**
@@ -6480,6 +6678,7 @@ module.exports = function parseuri(str) {
 
 
 /***/ }),
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* 65 */
 =======
@@ -6489,6 +6688,9 @@ module.exports = function parseuri(str) {
 /* 65 */
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* 65 */
+>>>>>>> Stashed changes
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6585,6 +6787,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 
 
 /***/ }),
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* 66 */
 =======
@@ -6594,10 +6797,14 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 /* 66 */
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* 66 */
+>>>>>>> Stashed changes
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {/* harmony export (immutable) */ __webpack_exports__["a"] = connectAdvanced;
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_hoist_non_react_statics__ = __webpack_require__(61);
 =======
@@ -6607,6 +6814,9 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_hoist_non_react_statics__ = __webpack_require__(61);
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_hoist_non_react_statics__ = __webpack_require__(61);
+>>>>>>> Stashed changes
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_hoist_non_react_statics___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_hoist_non_react_statics__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_invariant__);
@@ -6622,8 +6832,11 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 =======
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_Subscription__ = __webpack_require__(168);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils_PropTypes__ = __webpack_require__(68);
+<<<<<<< Updated upstream
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+>>>>>>> Stashed changes
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -6916,6 +7129,7 @@ selectorFactory) {
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(1)))
 
 /***/ }),
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* 67 */
 =======
@@ -6925,12 +7139,16 @@ selectorFactory) {
 /* 67 */
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* 67 */
+>>>>>>> Stashed changes
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {/* harmony export (immutable) */ __webpack_exports__["b"] = wrapMapToPropsConstant;
 /* unused harmony export getDependsOnOwnProps */
 /* harmony export (immutable) */ __webpack_exports__["a"] = wrapMapToPropsFunc;
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_verifyPlainObject__ = __webpack_require__(69);
 =======
@@ -6940,6 +7158,9 @@ selectorFactory) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_verifyPlainObject__ = __webpack_require__(69);
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_verifyPlainObject__ = __webpack_require__(69);
+>>>>>>> Stashed changes
 
 
 function wrapMapToPropsConstant(getConstant) {
@@ -7010,6 +7231,7 @@ function wrapMapToPropsFunc(mapToProps, methodName) {
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(1)))
 
 /***/ }),
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* 68 */
 =======
@@ -7019,6 +7241,9 @@ function wrapMapToPropsFunc(mapToProps, methodName) {
 /* 68 */
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* 68 */
+>>>>>>> Stashed changes
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -7042,6 +7267,7 @@ var storeShape = __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.shape({
 });
 
 /***/ }),
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* 69 */
 =======
@@ -7051,6 +7277,9 @@ var storeShape = __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.shape({
 /* 69 */
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* 69 */
+>>>>>>> Stashed changes
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -7067,6 +7296,7 @@ function verifyPlainObject(value, displayName, methodName) {
 }
 
 /***/ }),
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* 70 */
 =======
@@ -7076,6 +7306,9 @@ function verifyPlainObject(value, displayName, methodName) {
 /* 70 */
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* 70 */
+>>>>>>> Stashed changes
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -7185,6 +7418,7 @@ Link.contextTypes = {
 /* harmony default export */ __webpack_exports__["a"] = (Link);
 
 /***/ }),
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -7195,21 +7429,27 @@ Link.contextTypes = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_Route__ = __webpack_require__(69);
 =======
 >>>>>>> master
+=======
+>>>>>>> Stashed changes
 /* 71 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_Route__ = __webpack_require__(72);
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+>>>>>>> Stashed changes
 // Written in this round about way for babel-transform-imports
 
 
 /* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0_react_router_es_Route__["a" /* default */]);
 
 /***/ }),
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* 72 */
 =======
@@ -7219,6 +7459,9 @@ Link.contextTypes = {
 /* 72 */
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* 72 */
+>>>>>>> Stashed changes
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -7367,6 +7610,7 @@ Route.childContextTypes = {
 /* harmony default export */ __webpack_exports__["a"] = (Route);
 
 /***/ }),
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* 73 */
 =======
@@ -7376,6 +7620,9 @@ Route.childContextTypes = {
 /* 73 */
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* 73 */
+>>>>>>> Stashed changes
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7472,6 +7719,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 
 
 /***/ }),
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* 74 */
 =======
@@ -7481,6 +7729,9 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 /* 74 */
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* 74 */
+>>>>>>> Stashed changes
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7505,6 +7756,7 @@ var formatTime = exports.formatTime = function formatTime(time) {
 var timer = exports.timer = typeof performance !== "undefined" && performance !== null && typeof performance.now === "function" ? performance : Date;
 
 /***/ }),
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* 75 */
 =======
@@ -7514,6 +7766,9 @@ var timer = exports.timer = typeof performance !== "undefined" && performance !=
 /* 75 */
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* 75 */
+>>>>>>> Stashed changes
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -7552,6 +7807,7 @@ function compose() {
 }
 
 /***/ }),
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* 76 */
 =======
@@ -7561,6 +7817,9 @@ function compose() {
 /* 76 */
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* 76 */
+>>>>>>> Stashed changes
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -7824,6 +8083,7 @@ var ActionTypes = {
 }
 
 /***/ }),
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* 77 */
 =======
@@ -7833,6 +8093,9 @@ var ActionTypes = {
 /* 77 */
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* 77 */
+>>>>>>> Stashed changes
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -7860,6 +8123,7 @@ function warning(message) {
 }
 
 /***/ }),
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* 78 */
 =======
@@ -7869,6 +8133,9 @@ function warning(message) {
 /* 78 */
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* 78 */
+>>>>>>> Stashed changes
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -7945,6 +8212,7 @@ function resolvePathname(to) {
 /* harmony default export */ __webpack_exports__["default"] = (resolvePathname);
 
 /***/ }),
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* 79 */
 =======
@@ -7954,6 +8222,9 @@ function resolvePathname(to) {
 /* 79 */
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* 79 */
+>>>>>>> Stashed changes
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -7966,6 +8237,7 @@ var eio = __webpack_require__(126);
 var Socket = __webpack_require__(81);
 var Emitter = __webpack_require__(12);
 var parser = __webpack_require__(38);
+<<<<<<< Updated upstream
 =======
 <<<<<<< Updated upstream
 var eio = __webpack_require__(123);
@@ -7986,6 +8258,11 @@ var parser = __webpack_require__(38);
 var on = __webpack_require__(80);
 var bind = __webpack_require__(47);
 var debug = __webpack_require__(8)('socket.io-client:manager');
+=======
+var on = __webpack_require__(80);
+var bind = __webpack_require__(47);
+var debug = __webpack_require__(8)('socket.io-client:manager');
+>>>>>>> Stashed changes
 var indexOf = __webpack_require__(62);
 var Backoff = __webpack_require__(121);
 <<<<<<< HEAD
@@ -8554,6 +8831,7 @@ Manager.prototype.onreconnect = function () {
 
 
 /***/ }),
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* 80 */
 =======
@@ -8563,6 +8841,9 @@ Manager.prototype.onreconnect = function () {
 /* 80 */
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* 80 */
+>>>>>>> Stashed changes
 /***/ (function(module, exports) {
 
 
@@ -8592,6 +8873,7 @@ function on (obj, ev, fn) {
 
 
 /***/ }),
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* 81 */
 =======
@@ -8601,6 +8883,9 @@ function on (obj, ev, fn) {
 /* 81 */
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* 81 */
+>>>>>>> Stashed changes
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -8622,10 +8907,13 @@ var Emitter = __webpack_require__(12);
 var toArray = __webpack_require__(205);
 var on = __webpack_require__(80);
 var bind = __webpack_require__(47);
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+>>>>>>> Stashed changes
 var debug = __webpack_require__(8)('socket.io-client:socket');
 var parseqs = __webpack_require__(21);
 
@@ -9037,6 +9325,7 @@ Socket.prototype.compress = function (compress) {
 
 
 /***/ }),
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* 82 */
 =======
@@ -9046,6 +9335,9 @@ Socket.prototype.compress = function (compress) {
 /* 82 */
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* 82 */
+>>>>>>> Stashed changes
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {
@@ -9065,6 +9357,7 @@ function isBuf(obj) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ }),
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* 83 */
 =======
@@ -9074,6 +9367,9 @@ function isBuf(obj) {
 /* 83 */
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* 83 */
+>>>>>>> Stashed changes
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -9118,6 +9414,7 @@ function valueEqual(a, b) {
 /* harmony default export */ __webpack_exports__["default"] = (valueEqual);
 
 /***/ }),
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* 84 */
 =======
@@ -9127,6 +9424,9 @@ function valueEqual(a, b) {
 /* 84 */
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* 84 */
+>>>>>>> Stashed changes
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -9154,6 +9454,7 @@ module.exports = function(module) {
 
 
 /***/ }),
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* 85 */
 =======
@@ -9163,6 +9464,9 @@ module.exports = function(module) {
 /* 85 */
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* 85 */
+>>>>>>> Stashed changes
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9237,6 +9541,7 @@ module.exports = yeast;
 
 
 /***/ }),
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* 86 */
 =======
@@ -9246,6 +9551,9 @@ module.exports = yeast;
 /* 86 */
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* 86 */
+>>>>>>> Stashed changes
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9368,6 +9676,7 @@ Routes.propTypes = {
 };
 
 /***/ }),
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* 87 */
 =======
@@ -9377,6 +9686,9 @@ Routes.propTypes = {
 /* 87 */
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* 87 */
+>>>>>>> Stashed changes
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9405,6 +9717,7 @@ socket.on('connect', function () {
 exports.default = socket;
 
 /***/ }),
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* 88 */
 =======
@@ -9414,6 +9727,9 @@ exports.default = socket;
 /* 88 */
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* 88 */
+>>>>>>> Stashed changes
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9465,6 +9781,7 @@ if (process.env.NODE_ENV === 'production') {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* 89 */
 =======
@@ -9474,6 +9791,9 @@ if (process.env.NODE_ENV === 'production') {
 /* 89 */
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* 89 */
+>>>>>>> Stashed changes
 /***/ (function(module, exports) {
 
 module.exports = after
@@ -9507,6 +9827,7 @@ function noop() {}
 
 
 /***/ }),
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* 90 */
 =======
@@ -9516,6 +9837,9 @@ function noop() {}
 /* 90 */
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* 90 */
+>>>>>>> Stashed changes
 /***/ (function(module, exports) {
 
 /**
@@ -9550,6 +9874,7 @@ module.exports = function(arraybuffer, start, end) {
 
 
 /***/ }),
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* 91 */
 =======
@@ -9559,6 +9884,9 @@ module.exports = function(arraybuffer, start, end) {
 /* 91 */
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* 91 */
+>>>>>>> Stashed changes
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9566,6 +9894,7 @@ module.exports = function(arraybuffer, start, end) {
 
 var utils = __webpack_require__(5);
 var bind = __webpack_require__(43);
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -9573,6 +9902,8 @@ var Axios = __webpack_require__(90);
 var defaults = __webpack_require__(23);
 =======
 >>>>>>> master
+=======
+>>>>>>> Stashed changes
 var Axios = __webpack_require__(93);
 var defaults = __webpack_require__(24);
 >>>>>>> Stashed changes
@@ -9609,6 +9940,7 @@ axios.create = function create(instanceConfig) {
 
 // Expose Cancel & CancelToken
 axios.Cancel = __webpack_require__(40);
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 axios.CancelToken = __webpack_require__(92);
 =======
@@ -9618,12 +9950,16 @@ axios.CancelToken = __webpack_require__(89);
 axios.CancelToken = __webpack_require__(92);
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+axios.CancelToken = __webpack_require__(92);
+>>>>>>> Stashed changes
 axios.isCancel = __webpack_require__(41);
 
 // Expose all/spread
 axios.all = function all(promises) {
   return Promise.all(promises);
 };
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 axios.spread = __webpack_require__(107);
 =======
@@ -9633,6 +9969,9 @@ axios.spread = __webpack_require__(104);
 axios.spread = __webpack_require__(107);
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+axios.spread = __webpack_require__(107);
+>>>>>>> Stashed changes
 
 module.exports = axios;
 
@@ -9641,6 +9980,7 @@ module.exports.default = axios;
 
 
 /***/ }),
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* 92 */
 =======
@@ -9650,6 +9990,9 @@ module.exports.default = axios;
 /* 92 */
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* 92 */
+>>>>>>> Stashed changes
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9713,6 +10056,7 @@ module.exports = CancelToken;
 
 
 /***/ }),
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* 93 */
 =======
@@ -9722,6 +10066,9 @@ module.exports = CancelToken;
 /* 93 */
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* 93 */
+>>>>>>> Stashed changes
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9729,6 +10076,7 @@ module.exports = CancelToken;
 
 var defaults = __webpack_require__(23);
 var utils = __webpack_require__(5);
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -9738,14 +10086,19 @@ var isAbsoluteURL = __webpack_require__(100);
 var combineURLs = __webpack_require__(98);
 =======
 >>>>>>> master
+=======
+>>>>>>> Stashed changes
 var InterceptorManager = __webpack_require__(94);
 var dispatchRequest = __webpack_require__(95);
 var isAbsoluteURL = __webpack_require__(103);
 var combineURLs = __webpack_require__(101);
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+>>>>>>> Stashed changes
 
 /**
  * Create a new instance of Axios
@@ -9826,6 +10179,7 @@ module.exports = Axios;
 
 
 /***/ }),
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* 94 */
 =======
@@ -9835,6 +10189,9 @@ module.exports = Axios;
 /* 94 */
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* 94 */
+>>>>>>> Stashed changes
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9893,6 +10250,7 @@ module.exports = InterceptorManager;
 
 
 /***/ }),
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* 95 */
 =======
@@ -9902,12 +10260,16 @@ module.exports = InterceptorManager;
 /* 95 */
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* 95 */
+>>>>>>> Stashed changes
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var utils = __webpack_require__(5);
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 var transformData = __webpack_require__(98);
 =======
@@ -9917,6 +10279,9 @@ var transformData = __webpack_require__(95);
 var transformData = __webpack_require__(98);
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+var transformData = __webpack_require__(98);
+>>>>>>> Stashed changes
 var isCancel = __webpack_require__(41);
 var defaults = __webpack_require__(23);
 
@@ -9995,6 +10360,7 @@ module.exports = function dispatchRequest(config) {
 
 
 /***/ }),
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* 96 */
 =======
@@ -10004,6 +10370,9 @@ module.exports = function dispatchRequest(config) {
 /* 96 */
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* 96 */
+>>>>>>> Stashed changes
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10029,6 +10398,7 @@ module.exports = function enhanceError(error, config, code, response) {
 
 
 /***/ }),
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* 97 */
 =======
@@ -10038,6 +10408,9 @@ module.exports = function enhanceError(error, config, code, response) {
 /* 97 */
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* 97 */
+>>>>>>> Stashed changes
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10069,6 +10442,7 @@ module.exports = function settle(resolve, reject, response) {
 
 
 /***/ }),
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* 98 */
 =======
@@ -10078,6 +10452,9 @@ module.exports = function settle(resolve, reject, response) {
 /* 98 */
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* 98 */
+>>>>>>> Stashed changes
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10104,6 +10481,7 @@ module.exports = function transformData(data, headers, fns) {
 
 
 /***/ }),
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* 99 */
 =======
@@ -10113,6 +10491,9 @@ module.exports = function transformData(data, headers, fns) {
 /* 99 */
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* 99 */
+>>>>>>> Stashed changes
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10155,6 +10536,7 @@ module.exports = btoa;
 
 
 /***/ }),
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* 100 */
 =======
@@ -10164,6 +10546,9 @@ module.exports = btoa;
 /* 100 */
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* 100 */
+>>>>>>> Stashed changes
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10238,6 +10623,7 @@ module.exports = function buildURL(url, params, paramsSerializer) {
 
 
 /***/ }),
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* 101 */
 =======
@@ -10247,6 +10633,9 @@ module.exports = function buildURL(url, params, paramsSerializer) {
 /* 101 */
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* 101 */
+>>>>>>> Stashed changes
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10265,6 +10654,7 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 
 
 /***/ }),
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* 102 */
 =======
@@ -10274,6 +10664,9 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 /* 102 */
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* 102 */
+>>>>>>> Stashed changes
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10333,6 +10726,7 @@ module.exports = (
 
 
 /***/ }),
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* 103 */
 =======
@@ -10342,6 +10736,9 @@ module.exports = (
 /* 103 */
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* 103 */
+>>>>>>> Stashed changes
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10362,6 +10759,7 @@ module.exports = function isAbsoluteURL(url) {
 
 
 /***/ }),
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* 104 */
 =======
@@ -10371,6 +10769,9 @@ module.exports = function isAbsoluteURL(url) {
 /* 104 */
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* 104 */
+>>>>>>> Stashed changes
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10445,6 +10846,7 @@ module.exports = (
 
 
 /***/ }),
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* 105 */
 =======
@@ -10454,6 +10856,9 @@ module.exports = (
 /* 105 */
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* 105 */
+>>>>>>> Stashed changes
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10472,6 +10877,7 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 
 
 /***/ }),
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* 106 */
 =======
@@ -10481,6 +10887,9 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 /* 106 */
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* 106 */
+>>>>>>> Stashed changes
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10524,6 +10933,7 @@ module.exports = function parseHeaders(headers) {
 
 
 /***/ }),
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* 107 */
 =======
@@ -10533,6 +10943,9 @@ module.exports = function parseHeaders(headers) {
 /* 107 */
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* 107 */
+>>>>>>> Stashed changes
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10566,6 +10979,7 @@ module.exports = function spread(callback) {
 
 
 /***/ }),
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< Updated upstream
@@ -10654,6 +11068,8 @@ exports.default = (0, _reactRedux.connect)(null, null)(Cart);
 /* 106 */
 =======
 >>>>>>> master
+=======
+>>>>>>> Stashed changes
 /* 108 */
 >>>>>>> Stashed changes
 /***/ (function(module, exports, __webpack_require__) {
@@ -11300,6 +11716,7 @@ Object.defineProperty(exports, 'Main', {
 });
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -11312,6 +11729,8 @@ Object.defineProperty(exports, 'Main', {
 var _userHome = __webpack_require__(112);
 =======
 >>>>>>> master
+=======
+>>>>>>> Stashed changes
 var _Cart = __webpack_require__(44);
 
 Object.defineProperty(exports, 'Cart', {
@@ -11387,6 +11806,7 @@ var _DefaultHome = __webpack_require__(106);
 var _DefaultHome2 = _interopRequireDefault(_DefaultHome);
 
 var _SingleProduct = __webpack_require__(45);
+<<<<<<< Updated upstream
 
 var _SingleProduct2 = _interopRequireDefault(_SingleProduct);
 
@@ -11408,6 +11828,12 @@ var _SingleProduct2 = _interopRequireDefault(_SingleProduct);
 var _Cart = __webpack_require__(44);
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+
+var _SingleProduct2 = _interopRequireDefault(_SingleProduct);
+
+var _Cart = __webpack_require__(44);
+>>>>>>> Stashed changes
 
 var _Cart2 = _interopRequireDefault(_Cart);
 
@@ -11775,6 +12201,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 var _reactDom = __webpack_require__(88);
 =======
@@ -11784,6 +12211,9 @@ var _reactDom = __webpack_require__(85);
 var _reactDom = __webpack_require__(88);
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+var _reactDom = __webpack_require__(88);
+>>>>>>> Stashed changes
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
@@ -11793,6 +12223,7 @@ var _store = __webpack_require__(10);
 
 var _store2 = _interopRequireDefault(_store);
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 var _routes = __webpack_require__(86);
 
@@ -11807,13 +12238,18 @@ var _routes2 = _interopRequireDefault(_routes);
 
 __webpack_require__(84);
 =======
+=======
+>>>>>>> Stashed changes
 var _routes = __webpack_require__(86);
 
 var _routes2 = _interopRequireDefault(_routes);
 
 __webpack_require__(87);
+<<<<<<< Updated upstream
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+>>>>>>> Stashed changes
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -13268,6 +13704,7 @@ module.exports.parser = __webpack_require__(13);
  * Module dependencies.
  */
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 var transports = __webpack_require__(48);
 var Emitter = __webpack_require__(12);
@@ -13286,6 +13723,11 @@ var transports = __webpack_require__(48);
 var Emitter = __webpack_require__(12);
 var debug = __webpack_require__(8)('engine.io-client:socket');
 >>>>>>> master
+=======
+var transports = __webpack_require__(48);
+var Emitter = __webpack_require__(12);
+var debug = __webpack_require__(8)('engine.io-client:socket');
+>>>>>>> Stashed changes
 var index = __webpack_require__(62);
 var parser = __webpack_require__(13);
 var parseuri = __webpack_require__(64);
@@ -14051,6 +14493,7 @@ Socket.prototype.filterUpgrades = function (upgrades) {
  * Module requirements.
  */
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -14058,6 +14501,8 @@ var Polling = __webpack_require__(46);
 var inherit = __webpack_require__(17);
 =======
 >>>>>>> master
+=======
+>>>>>>> Stashed changes
 var Polling = __webpack_require__(49);
 var inherit = __webpack_require__(18);
 >>>>>>> Stashed changes
@@ -14749,10 +15194,13 @@ var parser = __webpack_require__(13);
 var parseqs = __webpack_require__(22);
 var inherit = __webpack_require__(18);
 var yeast = __webpack_require__(85);
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+>>>>>>> Stashed changes
 var debug = __webpack_require__(8)('engine.io-client:websocket');
 var BrowserWebSocket = global.WebSocket || global.MozWebSocket;
 var NodeWebSocket;
@@ -15329,7 +15777,10 @@ module.exports = Object.keys || function keys (obj){
 
 }(this));
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(84)(module), __webpack_require__(4)))
 
 /***/ }),
@@ -15659,6 +16110,7 @@ var _createTransitionManager = __webpack_require__(27);
 
 var _createTransitionManager2 = _interopRequireDefault(_createTransitionManager);
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 var _DOMUtils = __webpack_require__(57);
 =======
@@ -15668,6 +16120,9 @@ var _DOMUtils = __webpack_require__(54);
 var _DOMUtils = __webpack_require__(57);
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+var _DOMUtils = __webpack_require__(57);
+>>>>>>> Stashed changes
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -15996,10 +16451,13 @@ exports.default = createHashHistory;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__PathUtils__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__createTransitionManager__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__DOMUtils__ = __webpack_require__(60);
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+>>>>>>> Stashed changes
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -16317,10 +16775,13 @@ var createBrowserHistory = function createBrowserHistory() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__PathUtils__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__createTransitionManager__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__DOMUtils__ = __webpack_require__(60);
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+>>>>>>> Stashed changes
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 
@@ -16866,6 +17327,7 @@ module.exports = Array.isArray || function (arr) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Symbol_js__ = __webpack_require__(63);
+<<<<<<< Updated upstream
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__getRawTag_js__ = __webpack_require__(150);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__objectToString_js__ = __webpack_require__(151);
 =======
@@ -16879,6 +17341,8 @@ module.exports = Array.isArray || function (arr) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__objectToString_js__ = __webpack_require__(148);
 =======
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Symbol_js__ = __webpack_require__(63);
+=======
+>>>>>>> Stashed changes
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__getRawTag_js__ = __webpack_require__(150);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__objectToString_js__ = __webpack_require__(151);
 >>>>>>> Stashed changes
@@ -16958,6 +17422,7 @@ var getPrototype = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__overArg_js
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Symbol_js__ = __webpack_require__(63);
+<<<<<<< Updated upstream
 =======
 /* 147 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -16969,6 +17434,8 @@ var getPrototype = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__overArg_js
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Symbol_js__ = __webpack_require__(63);
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+>>>>>>> Stashed changes
 
 
 /** Used for built-in method references. */
@@ -33488,6 +33955,7 @@ module.exports = reactDom;
 /*
  Modernizr 3.0.0pre (Custom Build) | MIT
 */
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 var aa=__webpack_require__(0),l=__webpack_require__(51),B=__webpack_require__(65),C=__webpack_require__(9),ba=__webpack_require__(50),da=__webpack_require__(54),ea=__webpack_require__(55),fa=__webpack_require__(52),ia=__webpack_require__(53),D=__webpack_require__(19);
 =======
@@ -33497,6 +33965,9 @@ var aa=__webpack_require__(0),l=__webpack_require__(48),B=__webpack_require__(62
 var aa=__webpack_require__(0),l=__webpack_require__(51),B=__webpack_require__(65),C=__webpack_require__(9),ba=__webpack_require__(50),da=__webpack_require__(54),ea=__webpack_require__(55),fa=__webpack_require__(52),ia=__webpack_require__(53),D=__webpack_require__(19);
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+var aa=__webpack_require__(0),l=__webpack_require__(51),B=__webpack_require__(65),C=__webpack_require__(9),ba=__webpack_require__(50),da=__webpack_require__(54),ea=__webpack_require__(55),fa=__webpack_require__(52),ia=__webpack_require__(53),D=__webpack_require__(19);
+>>>>>>> Stashed changes
 function E(a){for(var b=arguments.length-1,c="Minified React error #"+a+"; visit http://facebook.github.io/react/docs/error-decoder.html?invariant\x3d"+a,d=0;d<b;d++)c+="\x26args[]\x3d"+encodeURIComponent(arguments[d+1]);b=Error(c+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings.");b.name="Invariant Violation";b.framesToPop=1;throw b;}aa?void 0:E("227");
 var oa={children:!0,dangerouslySetInnerHTML:!0,defaultValue:!0,defaultChecked:!0,innerHTML:!0,suppressContentEditableWarning:!0,suppressHydrationWarning:!0,style:!0};function pa(a,b){return(a&b)===b}
 var ta={MUST_USE_PROPERTY:1,HAS_BOOLEAN_VALUE:4,HAS_NUMERIC_VALUE:8,HAS_POSITIVE_NUMERIC_VALUE:24,HAS_OVERLOADED_BOOLEAN_VALUE:32,HAS_STRING_BOOLEAN_VALUE:64,injectDOMPropertyConfig:function(a){var b=ta,c=a.Properties||{},d=a.DOMAttributeNamespaces||{},e=a.DOMAttributeNames||{};a=a.DOMMutationMethods||{};for(var f in c){ua.hasOwnProperty(f)?E("48",f):void 0;var g=f.toLowerCase(),h=c[f];g={attributeName:g,attributeNamespace:null,propertyName:f,mutationMethod:null,mustUseProperty:pa(h,b.MUST_USE_PROPERTY),
@@ -33729,6 +34200,7 @@ Z.injectIntoDevTools({findFiberByHostInstance:pb,bundleType:0,version:"16.2.0",r
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -33736,6 +34208,8 @@ Z.injectIntoDevTools({findFiberByHostInstance:pb,bundleType:0,version:"16.2.0",r
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_warning__ = __webpack_require__(32);
 =======
 >>>>>>> master
+=======
+>>>>>>> Stashed changes
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_PropTypes__ = __webpack_require__(68);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_warning__ = __webpack_require__(33);
 >>>>>>> Stashed changes
@@ -33823,6 +34297,7 @@ function createProvider() {
 
 "use strict";
 /* unused harmony export createConnect */
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -33834,6 +34309,8 @@ function createProvider() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__selectorFactory__ = __webpack_require__(163);
 =======
 >>>>>>> master
+=======
+>>>>>>> Stashed changes
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_connectAdvanced__ = __webpack_require__(66);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_shallowEqual__ = __webpack_require__(169);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mapDispatchToProps__ = __webpack_require__(163);
@@ -33961,6 +34438,7 @@ function createConnect() {
 /* unused harmony export whenMapDispatchToPropsIsMissing */
 /* unused harmony export whenMapDispatchToPropsIsObject */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_redux__ = __webpack_require__(37);
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__wrapMapToProps__ = __webpack_require__(67);
 =======
@@ -33970,6 +34448,9 @@ function createConnect() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__wrapMapToProps__ = __webpack_require__(67);
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__wrapMapToProps__ = __webpack_require__(67);
+>>>>>>> Stashed changes
 
 
 
@@ -34002,6 +34483,7 @@ function whenMapDispatchToPropsIsObject(mapDispatchToProps) {
 "use strict";
 /* unused harmony export whenMapStateToPropsIsFunction */
 /* unused harmony export whenMapStateToPropsIsMissing */
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__wrapMapToProps__ = __webpack_require__(67);
 =======
@@ -34011,6 +34493,9 @@ function whenMapDispatchToPropsIsObject(mapDispatchToProps) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__wrapMapToProps__ = __webpack_require__(67);
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__wrapMapToProps__ = __webpack_require__(67);
+>>>>>>> Stashed changes
 
 
 function whenMapStateToPropsIsFunction(mapStateToProps) {
@@ -34038,6 +34523,7 @@ function whenMapStateToPropsIsMissing(mapStateToProps) {
 /* unused harmony export wrapMergePropsFunc */
 /* unused harmony export whenMergePropsIsFunction */
 /* unused harmony export whenMergePropsIsOmitted */
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_verifyPlainObject__ = __webpack_require__(69);
 =======
@@ -34047,6 +34533,9 @@ function whenMapStateToPropsIsMissing(mapStateToProps) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_verifyPlainObject__ = __webpack_require__(69);
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_verifyPlainObject__ = __webpack_require__(69);
+>>>>>>> Stashed changes
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 
@@ -34403,6 +34892,7 @@ function shallowEqual(objA, objB) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_prop_types__);
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createBrowserHistory__ = __webpack_require__(58);
 =======
@@ -34412,6 +34902,9 @@ function shallowEqual(objA, objB) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createBrowserHistory__ = __webpack_require__(58);
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createBrowserHistory__ = __webpack_require__(58);
+>>>>>>> Stashed changes
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createBrowserHistory___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_history_createBrowserHistory__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Router__ = __webpack_require__(33);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -34573,6 +35066,7 @@ HashRouter.propTypes = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Route__ = __webpack_require__(71);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Link__ = __webpack_require__(70);
@@ -34585,6 +35079,10 @@ HashRouter.propTypes = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Link__ = __webpack_require__(70);
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Route__ = __webpack_require__(71);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Link__ = __webpack_require__(70);
+>>>>>>> Stashed changes
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
@@ -34780,6 +35278,7 @@ NavLink.defaultProps = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_prop_types__);
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createMemoryHistory__ = __webpack_require__(59);
 =======
@@ -34789,6 +35288,9 @@ NavLink.defaultProps = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createMemoryHistory__ = __webpack_require__(59);
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createMemoryHistory__ = __webpack_require__(59);
+>>>>>>> Stashed changes
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createMemoryHistory___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_history_createMemoryHistory__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Router__ = __webpack_require__(35);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -35353,6 +35855,7 @@ Switch.propTypes = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_hoist_non_react_statics__ = __webpack_require__(61);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_hoist_non_react_statics___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_hoist_non_react_statics__);
@@ -35368,6 +35871,11 @@ Switch.propTypes = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Route__ = __webpack_require__(72);
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_hoist_non_react_statics__ = __webpack_require__(61);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_hoist_non_react_statics___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_hoist_non_react_statics__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Route__ = __webpack_require__(72);
+>>>>>>> Stashed changes
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
@@ -35866,6 +36374,7 @@ if (process.env.NODE_ENV !== "production") {
   (function() {
 'use strict';
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -35875,6 +36384,8 @@ var invariant = __webpack_require__(13);
 var warning = __webpack_require__(19);
 =======
 >>>>>>> master
+=======
+>>>>>>> Stashed changes
 var _assign = __webpack_require__(73);
 var emptyObject = __webpack_require__(19);
 var invariant = __webpack_require__(14);
@@ -37237,6 +37748,7 @@ module.exports = react;
  * LICENSE file in the root directory of this source tree.
  */
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 var m=__webpack_require__(73),n=__webpack_require__(19),p=__webpack_require__(9),q="function"===typeof Symbol&&Symbol["for"],r=q?Symbol["for"]("react.element"):60103,t=q?Symbol["for"]("react.call"):60104,u=q?Symbol["for"]("react.return"):60105,v=q?Symbol["for"]("react.portal"):60106,w=q?Symbol["for"]("react.fragment"):60107,x="function"===typeof Symbol&&Symbol.iterator;
 =======
@@ -37246,6 +37758,9 @@ var m=__webpack_require__(70),n=__webpack_require__(18),p=__webpack_require__(9)
 var m=__webpack_require__(73),n=__webpack_require__(19),p=__webpack_require__(9),q="function"===typeof Symbol&&Symbol["for"],r=q?Symbol["for"]("react.element"):60103,t=q?Symbol["for"]("react.call"):60104,u=q?Symbol["for"]("react.return"):60105,v=q?Symbol["for"]("react.portal"):60106,w=q?Symbol["for"]("react.fragment"):60107,x="function"===typeof Symbol&&Symbol.iterator;
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+var m=__webpack_require__(73),n=__webpack_require__(19),p=__webpack_require__(9),q="function"===typeof Symbol&&Symbol["for"],r=q?Symbol["for"]("react.element"):60103,t=q?Symbol["for"]("react.call"):60104,u=q?Symbol["for"]("react.return"):60105,v=q?Symbol["for"]("react.portal"):60106,w=q?Symbol["for"]("react.fragment"):60107,x="function"===typeof Symbol&&Symbol.iterator;
+>>>>>>> Stashed changes
 function y(a){for(var b=arguments.length-1,e="Minified React error #"+a+"; visit http://facebook.github.io/react/docs/error-decoder.html?invariant\x3d"+a,c=0;c<b;c++)e+="\x26args[]\x3d"+encodeURIComponent(arguments[c+1]);b=Error(e+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings.");b.name="Invariant Violation";b.framesToPop=1;throw b;}
 var z={isMounted:function(){return!1},enqueueForceUpdate:function(){},enqueueReplaceState:function(){},enqueueSetState:function(){}};function A(a,b,e){this.props=a;this.context=b;this.refs=n;this.updater=e||z}A.prototype.isReactComponent={};A.prototype.setState=function(a,b){"object"!==typeof a&&"function"!==typeof a&&null!=a?y("85"):void 0;this.updater.enqueueSetState(this,a,b,"setState")};A.prototype.forceUpdate=function(a){this.updater.enqueueForceUpdate(this,a,"forceUpdate")};
 function B(a,b,e){this.props=a;this.context=b;this.refs=n;this.updater=e||z}function C(){}C.prototype=A.prototype;var D=B.prototype=new C;D.constructor=B;m(D,A.prototype);D.isPureReactComponent=!0;function E(a,b,e){this.props=a;this.context=b;this.refs=n;this.updater=e||z}var F=E.prototype=new C;F.constructor=E;m(F,A.prototype);F.unstable_isAsyncReactComponent=!0;F.render=function(){return this.props.children};var G={current:null},H=Object.prototype.hasOwnProperty,I={key:!0,ref:!0,__self:!0,__source:!0};
@@ -37309,7 +37824,10 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 exports.printBuffer = printBuffer;
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
 var _helpers = __webpack_require__(74);
 
 var _diff = __webpack_require__(192);
@@ -37813,6 +38331,7 @@ exports['default'] = thunk;
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = applyMiddleware;
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__compose__ = __webpack_require__(75);
 =======
@@ -37822,6 +38341,9 @@ exports['default'] = thunk;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__compose__ = __webpack_require__(75);
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__compose__ = __webpack_require__(75);
+>>>>>>> Stashed changes
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 
@@ -37939,6 +38461,7 @@ function bindActionCreators(actionCreators, dispatch) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {/* harmony export (immutable) */ __webpack_exports__["a"] = combineReducers;
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__createStore__ = __webpack_require__(76);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash_es_isPlainObject__ = __webpack_require__(30);
@@ -37954,6 +38477,11 @@ function bindActionCreators(actionCreators, dispatch) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_warning__ = __webpack_require__(77);
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__createStore__ = __webpack_require__(76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash_es_isPlainObject__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_warning__ = __webpack_require__(77);
+>>>>>>> Stashed changes
 
 
 
@@ -38103,6 +38631,7 @@ function combineReducers(reducers) {
 var url = __webpack_require__(199);
 var parser = __webpack_require__(38);
 var Manager = __webpack_require__(79);
+<<<<<<< Updated upstream
 =======
 var url = __webpack_require__(196);
 var parser = __webpack_require__(38);
@@ -38112,6 +38641,8 @@ var Manager = __webpack_require__(76);
 var Manager = __webpack_require__(79);
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+>>>>>>> Stashed changes
 var debug = __webpack_require__(8)('socket.io-client');
 
 /**
@@ -38196,7 +38727,10 @@ exports.connect = lookup;
  * @api public
  */
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
 exports.Manager = __webpack_require__(79);
 exports.Socket = __webpack_require__(81);
 
@@ -38223,6 +38757,7 @@ exports.Socket = __webpack_require__(81);
  * Module dependencies.
  */
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 var parseuri = __webpack_require__(64);
 =======
@@ -38232,6 +38767,9 @@ var parseuri = __webpack_require__(61);
 var parseuri = __webpack_require__(64);
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+var parseuri = __webpack_require__(64);
+>>>>>>> Stashed changes
 var debug = __webpack_require__(8)('socket.io-client:url');
 
 /**
@@ -38321,6 +38859,7 @@ function url (uri, loc) {
 <<<<<<< HEAD
 var isArray = __webpack_require__(201);
 var isBuf = __webpack_require__(82);
+<<<<<<< Updated upstream
 =======
 <<<<<<< Updated upstream
 var isArray = __webpack_require__(198);
@@ -38330,6 +38869,8 @@ var isArray = __webpack_require__(201);
 var isBuf = __webpack_require__(82);
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+>>>>>>> Stashed changes
 var toString = Object.prototype.toString;
 var withNativeBlob = typeof global.Blob === 'function' || toString.call(global.Blob) === '[object BlobConstructor]';
 var withNativeFile = typeof global.File === 'function' || toString.call(global.File) === '[object FileConstructor]';
@@ -38537,7 +39078,10 @@ if (typeof self !== 'undefined') {
 
 var result = (0, _ponyfill2['default'])(root);
 exports['default'] = result;
+<<<<<<< Updated upstream
 <<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4), __webpack_require__(84)(module)))
 
 /***/ }),
