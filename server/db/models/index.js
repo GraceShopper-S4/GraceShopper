@@ -4,7 +4,6 @@ const Review = require('./review');
 const Order = require('./order');
 const LineItem = require('./lineItem');
 const Genre = require('./genre');
-const OrderKey = require('./orderkey');
 const Address = require('./address');
 
 /**
@@ -32,7 +31,6 @@ Review.belongsTo(User);
 
 User.hasMany(Review);
 User.hasMany(Order);
-// User.hasMany(OrderKey);
 
 Address.hasOne(User);
 
@@ -51,7 +49,6 @@ module.exports = {
   Order,
   LineItem,
   Genre,
-  // OrderKey,
   Address
 }
 

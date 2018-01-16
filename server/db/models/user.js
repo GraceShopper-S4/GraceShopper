@@ -13,11 +13,7 @@ const User = db.define("user", {
     }
   },
   password: {
-    type: Sequelize.STRING,
-    allowNull: false,
-    validate: {
-      notEmpty: true
-    }
+    type: Sequelize.STRING
   },
   salt: {
     type: Sequelize.STRING
@@ -25,9 +21,9 @@ const User = db.define("user", {
   googleId: {
     type: Sequelize.STRING
   },
-  currentOrderHash: {
-    type: Sequelize.STRING,
-    allowNull: false
+  isAdmin: {
+    type: Sequelize.BOOLEAN,
+    defaultValue: false
   }
 });
 

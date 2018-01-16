@@ -1,6 +1,5 @@
 const router = require('express').Router()
 const User = require('../db/models/user')
-const hashOrderKey = require('./hashOrderKey');
 module.exports = router
 
 router.post('/login', (req, res, next) => {
@@ -18,8 +17,6 @@ router.post('/login', (req, res, next) => {
 })
 
 router.post('/signup', (req, res, next) => {
-  let curHash = hashOrderKey(req.body.password);
-  req.body.currentOrderHash = curHash
   User.create(req.body)
     .then(user => {
       req.login(user, err => {
