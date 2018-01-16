@@ -8443,6 +8443,8 @@ var Routes = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
       var isLoggedIn = this.props.isLoggedIn;
 
 
@@ -8457,11 +8459,22 @@ var Routes = function (_Component) {
             null,
             _react2.default.createElement(_reactRouterDom.Route, { path: '/login', component: _components.Login }),
             _react2.default.createElement(_reactRouterDom.Route, { path: '/signup', component: _components.Signup }),
+            _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/products/:productId', component: _components.SingleProduct }),
+            _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/cart', component: _components.Cart }),
+            _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/products', render: function render() {
+                return _react2.default.createElement(_components.DefaultHome, { products: _this2.props.products, orders: _this2.props.orders });
+              } }),
+            _react2.default.createElement(_reactRouterDom.Route, { path: '/genres/*', component: _components.SingleGenre }),
             isLoggedIn && _react2.default.createElement(
               _reactRouterDom.Switch,
               null,
               _react2.default.createElement(_reactRouterDom.Route, { path: '/home', component: _components.UserHome }),
-              _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/cart', component: _components.Cart })
+              _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/products/:productId', component: _components.SingleProduct }),
+              _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/cart', component: _components.Cart }),
+              _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/products', render: function render() {
+                  return _react2.default.createElement(_components.DefaultHome, { products: _this2.props.products, orders: _this2.props.orders });
+                } }),
+              _react2.default.createElement(_reactRouterDom.Route, { path: '/genres/*', component: _components.SingleGenre })
             ),
             _react2.default.createElement(_reactRouterDom.Route, { component: _components.Login })
           )
@@ -10035,6 +10048,42 @@ Object.defineProperty(exports, 'Signup', {
   }
 });
 
+var _SingleProduct = __webpack_require__(44);
+
+Object.defineProperty(exports, 'SingleProduct', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_SingleProduct).default;
+  }
+});
+
+var _Cart = __webpack_require__(107);
+
+Object.defineProperty(exports, 'Cart', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_Cart).default;
+  }
+});
+
+var _DefaultHome = __webpack_require__(108);
+
+Object.defineProperty(exports, 'DefaultHome', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_DefaultHome).default;
+  }
+});
+
+var _SingleGenre = __webpack_require__(207);
+
+Object.defineProperty(exports, 'SingleGenre', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_SingleGenre).default;
+  }
+});
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ }),
@@ -10114,8 +10163,6 @@ var Main = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _this2 = this;
-
       var _props = this.props,
           children = _props.children,
           handleClick = _props.handleClick,
@@ -10168,25 +10215,11 @@ var Main = function (_React$Component) {
               _reactRouterDom.Link,
               { to: '/cart' },
               ' Cart '
-            ),
-            children
-          )
+            )
+          ),
+          children
         ),
-        _react2.default.createElement('hr', null),
-        _react2.default.createElement(
-          _reactRouterDom.BrowserRouter,
-          null,
-          _react2.default.createElement(
-            _reactRouterDom.Switch,
-            null,
-            _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/products/:productId', component: _SingleProduct2.default }),
-            _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/cart', component: _Cart2.default }),
-            _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/products', render: function render() {
-                return _react2.default.createElement(_DefaultHome2.default, { products: _this2.props.products, orders: _this2.props.orders });
-              } }),
-            _react2.default.createElement(_reactRouterDom.Route, { path: '/genres/*', component: _singleGenre2.default })
-          )
-        )
+        _react2.default.createElement('hr', null)
       );
     }
   }]);
@@ -36446,6 +36479,134 @@ function toArray(list, index) {
 /***/ (function(module, exports) {
 
 /* (ignored) */
+
+/***/ }),
+/* 207 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRedux = __webpack_require__(7);
+
+var _reactRouterDom = __webpack_require__(23);
+
+var _genres = __webpack_require__(45);
+
+var _SingleProduct = __webpack_require__(44);
+
+var _SingleProduct2 = _interopRequireDefault(_SingleProduct);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var SingleGenre = function (_Component) {
+    _inherits(SingleGenre, _Component);
+
+    function SingleGenre(props) {
+        _classCallCheck(this, SingleGenre);
+
+        return _possibleConstructorReturn(this, (SingleGenre.__proto__ || Object.getPrototypeOf(SingleGenre)).call(this, props));
+    }
+
+    _createClass(SingleGenre, [{
+        key: 'componentWillMount',
+        value: function componentWillMount() {
+            this.props.getGenreProducts();
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            console.log(this.props.genres);
+            return _react2.default.createElement(
+                'div',
+                null,
+                _react2.default.createElement(
+                    'h1',
+                    null,
+                    ' '
+                ),
+                this.props.genres.map(function (product) {
+                    return _react2.default.createElement(
+                        'div',
+                        { className: 'productCell', key: product.id },
+                        _react2.default.createElement(
+                            _reactRouterDom.Link,
+                            { to: '/products/' + product.id },
+                            _react2.default.createElement(
+                                'div',
+                                null,
+                                _react2.default.createElement(
+                                    'h3',
+                                    null,
+                                    product.title
+                                )
+                            ),
+                            _react2.default.createElement(
+                                'div',
+                                null,
+                                _react2.default.createElement('img', { src: product.photo, className: 'responsiveImage' })
+                            ),
+                            _react2.default.createElement(
+                                'div',
+                                null,
+                                _react2.default.createElement(
+                                    'p',
+                                    null,
+                                    '$',
+                                    product.price
+                                ),
+                                _react2.default.createElement(
+                                    'p',
+                                    null,
+                                    'Stock: ',
+                                    product.inventory
+                                )
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'button',
+                            { onClick: function onClick() {
+                                    return addToCart(product.id);
+                                } },
+                            'Add To Cart'
+                        )
+                    );
+                })
+            );
+        }
+    }]);
+
+    return SingleGenre;
+}(_react.Component);
+
+var mapState = function mapState(_ref) {
+    var genres = _ref.genres;
+    return { genres: genres };
+};
+var mapDispatch = function mapDispatch(dispatch, ownProps) {
+    return {
+        getGenreProducts: function getGenreProducts() {
+            dispatch((0, _genres.retrieveByGenre)(ownProps.match.params[0]));
+        }
+    };
+};
+exports.default = (0, _reactRedux.connect)(mapState, mapDispatch)(SingleGenre);
 
 /***/ })
 /******/ ]);

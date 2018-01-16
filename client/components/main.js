@@ -6,7 +6,7 @@ import {logout} from '../store'
 import {Reviews} from './Reviews'
 import {retrieveProducts, newOrder,getOrdersByUser} from '../store'
 import DefaultHome from './DefaultHome'
-import  SingleProduct  from './SingleProduct'
+import SingleProduct  from './SingleProduct'
 import Cart from './Cart'
 import SingleGenre from './singleGenre'
  
@@ -45,19 +45,12 @@ class Main extends React.Component {
                 <Link to="/login">Login</Link>
                 <Link to="/signup">Sign Up</Link>
                 <Link to="/cart"> Cart </Link>
-                {children}
+                
               </div>
           }
+          {children}
         </nav>
         <hr />
-        <Router>
-          <Switch>
-            <Route exact path='/products/:productId' component={SingleProduct} />
-            <Route exact path='/cart' component={Cart} />
-            <Route exact path='/products'  render={()=><DefaultHome products={this.props.products} orders={this.props.orders} /> } />
-            <Route  path='/genres/*' component={SingleGenre} />
-          </Switch> 
-        </Router>
       </div>
     )
   }
