@@ -15,7 +15,11 @@ class AdminIndex extends React.Component {
     render() {
         console.log(this.props)
         return(
-            <div>Admin is here</div>
+         
+            <div>
+                <h1>ALl users here</h1>
+                  <Link to='/admin/users'>All Users</Link>
+            </div>
         )
     }
 }
