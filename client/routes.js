@@ -4,7 +4,7 @@ import {Route, Switch, Router} from 'react-router-dom'
 import PropTypes from 'prop-types'
 import history from './history'
 import {Main, Login, Signup, UserHome, Cart, SingleProduct, SingleGenre, DefaultHome} from './components'
-import {me} from './store'
+import {me, getOrdersByUser, newOrder} from './store'
 
 /**
  * COMPONENT
@@ -12,6 +12,7 @@ import {me} from './store'
 class Routes extends Component {
   componentDidMount () {
     this.props.loadInitialData()
+    this.props.initializeCart()
   }
 
   render () {
@@ -25,7 +26,7 @@ class Routes extends Component {
             <Route path="/login" component={Login} />
             <Route path="/signup" component={Signup} />
             <Route exact path='/products/:productId' component={SingleProduct} />
-            <Route exact path='/cart' component={Cart} />
+            <Route exact path='/cart' render={()=><Cart orders={this.props.orders} /> } />
             <Route exact path='/products'  render={()=><DefaultHome products={this.props.products} orders={this.props.orders} /> } />
             <Route  path='/genres/*' component={SingleGenre} />
           
@@ -33,9 +34,9 @@ class Routes extends Component {
               isLoggedIn &&
                 <Switch>
                   {/* Routes placed here are only available after logging in */}
-                  <Route path="/home" component={UserHome} />
+                  <Route path="/home" render={()=><DefaultHome products={this.props.products} orders={this.props.orders} /> } />
                   <Route exact path='/products/:productId' component={SingleProduct} />
-                  <Route exact path='/cart' component={Cart} />
+                  <Route exact path='/cart' render={()=><Cart orders={this.props.orders} /> } />
                   <Route exact path='/products'  render={()=><DefaultHome products={this.props.products} orders={this.props.orders} /> } />
                   <Route  path='/genres/*' component={SingleGenre} />
                 </Switch>
@@ -57,7 +58,8 @@ const mapState = (state) => {
   return {
     // Being 'logged in' for our purposes will be defined has having a state.user that has a truthy id.
     // Otherwise, state.user will be an empty object, and state.user.id will be falsey
-    isLoggedIn: !!state.user.id
+    isLoggedIn: !!state.user.id,
+    orders: state.orders.orders
   }
 }
 
@@ -65,6 +67,12 @@ const mapDispatch = (dispatch) => {
   return {
     loadInitialData () {
       dispatch(me())
+    },
+    initializeCart() {
+      let totalPrice = 0;
+      let order = {totalPrice}
+      dispatch(newOrder(order));
+      dispatch(getOrdersByUser());
     }
   }
 }

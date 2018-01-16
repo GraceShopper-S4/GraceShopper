@@ -12335,7 +12335,8 @@ var Cart = function (_Component) {
     _createClass(Cart, [{
         key: 'componentDidMount',
         value: function componentDidMount() {
-            this.props.getAllYourItems(5); // needs to be this.props.orders.id
+            console.log(this.props, 'cart props again');
+            this.props.getAllYourItems(this.props.orders.id); // needs to be this.props.orders.id
         }
     }, {
         key: 'render',
@@ -28128,6 +28129,7 @@ var Routes = function (_Component) {
     key: 'componentDidMount',
     value: function componentDidMount() {
       this.props.loadInitialData();
+      this.props.initializeCart();
     }
   }, {
     key: 'render',
@@ -28149,7 +28151,9 @@ var Routes = function (_Component) {
             _react2.default.createElement(_reactRouterDom.Route, { path: '/login', component: _components.Login }),
             _react2.default.createElement(_reactRouterDom.Route, { path: '/signup', component: _components.Signup }),
             _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/products/:productId', component: _components.SingleProduct }),
-            _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/cart', component: _components.Cart }),
+            _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/cart', render: function render() {
+                return _react2.default.createElement(_components.Cart, { orders: _this2.props.orders });
+              } }),
             _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/products', render: function render() {
                 return _react2.default.createElement(_components.DefaultHome, { products: _this2.props.products, orders: _this2.props.orders });
               } }),
@@ -28157,9 +28161,13 @@ var Routes = function (_Component) {
             isLoggedIn && _react2.default.createElement(
               _reactRouterDom.Switch,
               null,
-              _react2.default.createElement(_reactRouterDom.Route, { path: '/home', component: _components.UserHome }),
+              _react2.default.createElement(_reactRouterDom.Route, { path: '/home', render: function render() {
+                  return _react2.default.createElement(_components.DefaultHome, { products: _this2.props.products, orders: _this2.props.orders });
+                } }),
               _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/products/:productId', component: _components.SingleProduct }),
-              _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/cart', component: _components.Cart }),
+              _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/cart', render: function render() {
+                  return _react2.default.createElement(_components.Cart, { orders: _this2.props.orders });
+                } }),
               _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/products', render: function render() {
                   return _react2.default.createElement(_components.DefaultHome, { products: _this2.props.products, orders: _this2.props.orders });
                 } }),
@@ -28184,7 +28192,8 @@ var mapState = function mapState(state) {
   return {
     // Being 'logged in' for our purposes will be defined has having a state.user that has a truthy id.
     // Otherwise, state.user will be an empty object, and state.user.id will be falsey
-    isLoggedIn: !!state.user.id
+    isLoggedIn: !!state.user.id,
+    orders: state.orders.orders
   };
 };
 
@@ -28192,6 +28201,12 @@ var mapDispatch = function mapDispatch(dispatch) {
   return {
     loadInitialData: function loadInitialData() {
       dispatch((0, _store.me)());
+    },
+    initializeCart: function initializeCart() {
+      var totalPrice = 0;
+      var order = { totalPrice: totalPrice };
+      dispatch((0, _store.newOrder)(order));
+      dispatch((0, _store.getOrdersByUser)());
     }
   };
 };

@@ -9,7 +9,8 @@ class Cart extends Component {
     }
 
     componentDidMount(){
-        this.props.getAllYourItems(5) // needs to be this.props.orders.id
+        console.log(this.props, 'cart props again')
+        this.props.getAllYourItems(this.props.orders.id) // needs to be this.props.orders.id
     }
 
     render() {
