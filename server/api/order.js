@@ -5,7 +5,9 @@ const { Order, User, LineItem } = require('../db/models')
 router.get('/', (req, res, next) => {
     if (req.user.id) {
         Order.findAll({where: {userId: req.user.id}})
-        .then(orders => res.json(orders))
+        .then(orders => {
+            //console.log('api routes orders', orders)
+            res.json(orders)})
         .catch(next);
     }
     else {
@@ -37,9 +39,17 @@ router.get('/:id', (req, res, next) => {
 // Make a post
 router.post('/', (req, res, next) => {
     //Update once front end cart population is done with line items
-    Order.create(req.body)
-        .then(order => res.json(order))
-        .catch(next);
+    //where = {}
+    Order.findOrCreate({where: {userId: req.user.id, status: 'Cart'}, defaults: {totalPrice: req.body.totalPrice}})
+    .then((instance, wasCreated) => {
+        console.log('instance is', instance)
+        /*if(!wasCreated) {
+            console.log('exists', instance)
+        } else {
+            console.log('created', instance)
+        }*/res.json(instance)
+    })
+    .catch(next)
 })
 
 
