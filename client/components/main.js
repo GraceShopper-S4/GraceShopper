@@ -9,6 +9,7 @@ import {DefaultHome} from './DefaultHome'
 import  SingleProduct  from './SingleProduct'
 import Cart from './Cart'
 import SingleGenre from './singleGenre'
+import AdminHome from './admin'
  
 /**
  * COMPONENT
@@ -54,6 +55,11 @@ class Main extends React.Component {
             <Route exact path='/products'  render={()=><DefaultHome products={this.props.products} /> } />
             <Route exact path='/cart' component={Cart} />
             <Route  path='/genres/*' component={SingleGenre} />
+            {
+              this.props.isLoggedIn && this.props.user.isAdmin ? <Route path='/admin' component={AdminHome} />
+              : null
+            }
+             
           </Switch> 
         </Router>
       </div>
@@ -68,7 +74,8 @@ class Main extends React.Component {
 const mapState = (state) => {
   return {
     isLoggedIn: !!state.user.id,
-    products: state.products.products
+    products: state.products.products,
+    user: state.user
    // product: state.products.product
   }
 }
