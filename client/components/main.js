@@ -38,11 +38,13 @@ class Main extends React.Component {
                 {/* The navbar will show these links after you log in */}
                 <Link to="/home">Home</Link>
                 <a href="#" onClick={handleClick}>Logout</a>
+                <Link to="/cart"> Cart </Link>
               </div>
               : <div>
                 {/* The navbar will show these links before you log in */}
                 <Link to="/login">Login</Link>
                 <Link to="/signup">Sign Up</Link>
+                <Link to="/cart"> Cart </Link>
                 {children}
               </div>
           }
@@ -50,9 +52,9 @@ class Main extends React.Component {
         <hr />
         <Router>
           <Switch>
-             <Route exact path='/products/:productId' component={SingleProduct} />
-            <Route path='/products'  render={()=><DefaultHome products={this.props.products} orders={this.props.orders} /> } />
+            <Route exact path='/products/:productId' component={SingleProduct} />
             <Route exact path='/cart' component={Cart} />
+            <Route exact path='/products'  render={()=><DefaultHome products={this.props.products} orders={this.props.orders} /> } />
             <Route  path='/genres/*' component={SingleGenre} />
           </Switch> 
         </Router>

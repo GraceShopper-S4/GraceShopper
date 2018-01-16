@@ -9520,7 +9520,7 @@ var Cart = function (_Component) {
     _createClass(Cart, [{
         key: 'render',
         value: function render() {
-            console.log('cart');
+            console.log('cart props', this.props);
             return _react2.default.createElement(
                 'h1',
                 null,
@@ -9532,6 +9532,21 @@ var Cart = function (_Component) {
     return Cart;
 }(_react.Component);
 
+var mapState = function mapState(state) {
+    return {
+        isLoggedIn: !!state.user.id,
+        orders: state.orders.orders,
+        products: state.products.products
+        // product: state.products.product
+    };
+};
+
+var mapDispatch = function mapDispatch(dispatch) {
+    return {};
+};
+
+// The `withRouter` wrapper makes sure that updates are not blocked
+// when the url changes
 exports.default = (0, _reactRedux.connect)(null, null)(Cart);
 
 /***/ }),
@@ -10080,6 +10095,11 @@ var Main = function (_React$Component) {
               'a',
               { href: '#', onClick: handleClick },
               'Logout'
+            ),
+            _react2.default.createElement(
+              _reactRouterDom.Link,
+              { to: '/cart' },
+              ' Cart '
             )
           ) : _react2.default.createElement(
             'div',
@@ -10094,6 +10114,11 @@ var Main = function (_React$Component) {
               { to: '/signup' },
               'Sign Up'
             ),
+            _react2.default.createElement(
+              _reactRouterDom.Link,
+              { to: '/cart' },
+              ' Cart '
+            ),
             children
           )
         ),
@@ -10105,10 +10130,10 @@ var Main = function (_React$Component) {
             _reactRouterDom.Switch,
             null,
             _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/products/:productId', component: _SingleProduct2.default }),
-            _react2.default.createElement(_reactRouterDom.Route, { path: '/products', render: function render() {
+            _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/cart', component: _Cart2.default }),
+            _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/products', render: function render() {
                 return _react2.default.createElement(_DefaultHome2.default, { products: _this2.props.products, orders: _this2.props.orders });
               } }),
-            _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/cart', component: _Cart2.default }),
             _react2.default.createElement(_reactRouterDom.Route, { path: '/genres/*', component: _singleGenre2.default })
           )
         )

@@ -7,11 +7,29 @@ class Cart extends Component {
         super(props)
     }
     render() {
-        console.log('cart')
+        console.log('cart props', this.props)
         return (
             <h1>YO ITS THE CART </h1>
         )
     }
 }
 
-export default connect(null, null)(Cart)
+
+const mapState = (state) => {
+    return {
+      isLoggedIn: !!state.user.id,
+      orders: state.orders.orders,
+      products: state.products.products
+     // product: state.products.product
+    }
+  }
+  
+  const mapDispatch = (dispatch) => {
+    return {
+      
+    }
+  }
+  
+  // The `withRouter` wrapper makes sure that updates are not blocked
+  // when the url changes
+  export default connect(null,null)(Cart)
