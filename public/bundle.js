@@ -1143,6 +1143,12 @@ exports.default = store;
 /* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
+module.exports = __webpack_require__(90);
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
 
 /**
  * Expose `Emitter`.
@@ -1309,7 +1315,7 @@ Emitter.prototype.hasListeners = function(event){
 
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {/**
@@ -1920,12 +1926,6 @@ exports.decodePayloadAsBinary = function (data, binaryType, callback) {
 };
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
-
-/***/ }),
-/* 13 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(90);
 
 /***/ }),
 /* 14 */
@@ -2543,8 +2543,8 @@ module.exports = defaults;
  * Module dependencies.
  */
 
-var parser = __webpack_require__(12);
-var Emitter = __webpack_require__(11);
+var parser = __webpack_require__(13);
+var Emitter = __webpack_require__(12);
 
 /**
  * Module exports.
@@ -3442,7 +3442,7 @@ if (process.env.NODE_ENV !== 'production' && typeof isCrushed.name === 'string' 
  */
 
 var debug = __webpack_require__(8)('socket.io-parser');
-var Emitter = __webpack_require__(11);
+var Emitter = __webpack_require__(12);
 var hasBin = __webpack_require__(55);
 var binary = __webpack_require__(200);
 var isBuf = __webpack_require__(81);
@@ -4360,7 +4360,7 @@ exports.default = function () {
     }
 };
 
-var _axios = __webpack_require__(13);
+var _axios = __webpack_require__(11);
 
 var _axios2 = _interopRequireDefault(_axios);
 
@@ -4487,7 +4487,7 @@ function polling (opts) {
 
 var Transport = __webpack_require__(25);
 var parseqs = __webpack_require__(22);
-var parser = __webpack_require__(12);
+var parser = __webpack_require__(13);
 var inherit = __webpack_require__(18);
 var yeast = __webpack_require__(84);
 var debug = __webpack_require__(8)('engine.io-client:polling');
@@ -7192,7 +7192,7 @@ function resolvePathname(to) {
 
 var eio = __webpack_require__(126);
 var Socket = __webpack_require__(80);
-var Emitter = __webpack_require__(11);
+var Emitter = __webpack_require__(12);
 var parser = __webpack_require__(38);
 var on = __webpack_require__(79);
 var bind = __webpack_require__(46);
@@ -7800,7 +7800,7 @@ function on (obj, ev, fn) {
  */
 
 var parser = __webpack_require__(38);
-var Emitter = __webpack_require__(11);
+var Emitter = __webpack_require__(12);
 var toArray = __webpack_require__(205);
 var on = __webpack_require__(79);
 var bind = __webpack_require__(46);
@@ -9685,8 +9685,7 @@ var mapStateToProps = function mapStateToProps(state) {
     return {
         product: state.products.product,
         products: state.products.products,
-        item: state.lineItems.singleItem,
-        orders: state.orders.orders
+        item: state.lineItems.singleItem
     };
 };
 
@@ -9709,7 +9708,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
             dispatch((0, _store.newOrder)(order));
             // dispatch again to receive all orders 
             console.log("order is: ", order);
-            dispatch((0, _store.getOrdersByUser)());
+            //dispatch(getOrdersByUser());
             // let item = {price, productId, }
             // dispatch(addNewItem(item))
         },
@@ -10404,7 +10403,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _axios = __webpack_require__(13);
+var _axios = __webpack_require__(11);
 
 var _axios2 = _interopRequireDefault(_axios);
 
@@ -10486,11 +10485,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.OrderReducer = exports.getOrdersByUser = exports.newOrder = exports.getOrders = exports.addOrder = undefined;
 
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _axios = __webpack_require__(13);
+var _axios = __webpack_require__(11);
 
 var _axios2 = _interopRequireDefault(_axios);
 
@@ -10552,7 +10547,8 @@ var OrderReducer = exports.OrderReducer = function OrderReducer() {
 
     switch (action.type) {
         case ADD_ORDER:
-            return Object.assign({}, state, { orders: state.orders.concat(action.order) });
+            console.log(state);
+            return action.order;
         case GET_ORDERS:
             return state.orders;
         default:
@@ -10572,7 +10568,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.ProductsReducer = exports.getSingleProduct = exports.retrieveProducts = undefined;
 
-var _axios = __webpack_require__(13);
+var _axios = __webpack_require__(11);
 
 var _axios2 = _interopRequireDefault(_axios);
 
@@ -10679,7 +10675,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.ReviewReducer = exports.writeReview = exports.updateReview = undefined;
 
-var _axios = __webpack_require__(13);
+var _axios = __webpack_require__(11);
 
 var _axios2 = _interopRequireDefault(_axios);
 
@@ -10776,7 +10772,7 @@ exports.default = function () {
   }
 };
 
-var _axios = __webpack_require__(13);
+var _axios = __webpack_require__(11);
 
 var _axios2 = _interopRequireDefault(_axios);
 
@@ -11767,7 +11763,7 @@ module.exports = __webpack_require__(127);
  * @api public
  *
  */
-module.exports.parser = __webpack_require__(12);
+module.exports.parser = __webpack_require__(13);
 
 
 /***/ }),
@@ -11779,10 +11775,10 @@ module.exports.parser = __webpack_require__(12);
  */
 
 var transports = __webpack_require__(47);
-var Emitter = __webpack_require__(11);
+var Emitter = __webpack_require__(12);
 var debug = __webpack_require__(8)('engine.io-client:socket');
 var index = __webpack_require__(61);
-var parser = __webpack_require__(12);
+var parser = __webpack_require__(13);
 var parseuri = __webpack_require__(63);
 var parseqs = __webpack_require__(22);
 
@@ -11919,7 +11915,7 @@ Socket.protocol = parser.protocol; // this is an int
 Socket.Socket = Socket;
 Socket.Transport = __webpack_require__(25);
 Socket.transports = __webpack_require__(47);
-Socket.parser = __webpack_require__(12);
+Socket.parser = __webpack_require__(13);
 
 /**
  * Creates transport of the given type.
@@ -12768,7 +12764,7 @@ JSONPPolling.prototype.doWrite = function (data, fn) {
 
 var XMLHttpRequest = __webpack_require__(26);
 var Polling = __webpack_require__(48);
-var Emitter = __webpack_require__(11);
+var Emitter = __webpack_require__(12);
 var inherit = __webpack_require__(18);
 var debug = __webpack_require__(8)('engine.io-client:polling-xhr');
 
@@ -13187,7 +13183,7 @@ function unloadHandler () {
  */
 
 var Transport = __webpack_require__(25);
-var parser = __webpack_require__(12);
+var parser = __webpack_require__(13);
 var parseqs = __webpack_require__(22);
 var inherit = __webpack_require__(18);
 var yeast = __webpack_require__(84);

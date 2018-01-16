@@ -91,7 +91,6 @@ const mapStateToProps = state => {
       product: state.products.product,
       products: state.products.products,
       item: state.lineItems.singleItem,
-      orders: state.orders.orders
     };
   };
   
@@ -114,7 +113,7 @@ const mapStateToProps = state => {
         dispatch(newOrder(order));
         // dispatch again to receive all orders 
         console.log("order is: ", order)
-        dispatch(getOrdersByUser());
+        //dispatch(getOrdersByUser());
        // let item = {price, productId, }
        // dispatch(addNewItem(item))
       },

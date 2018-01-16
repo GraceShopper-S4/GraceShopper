@@ -1,4 +1,4 @@
-import React from 'react';
+
 import axios from 'axios'
 
 //Action Types 
@@ -46,11 +46,13 @@ dispatch => {
 
 //Reducers
 export const OrderReducer = (state = initialState, action) => {
-    switch(action.type) {
+    switch (action.type) {
         case ADD_ORDER: 
-        return Object.assign({}, state, {orders: state.orders.concat(action.order)})
+        console.log(state)
+        return action.order
         case GET_ORDERS:
         return state.orders
-        default: return state
+        default: 
+        return state
     }
 }
