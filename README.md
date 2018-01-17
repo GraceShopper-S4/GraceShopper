@@ -28,26 +28,6 @@ Go to localhost:8080 to see the current app.
 
 Once on localhost:8080, you can create an account or log in via google. From this point you can view all products in the database, viewing single products, filtering products by their genre or add items to cart for purchasing.
 
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
 ## Deployment
 
 Ready to go world wide? Here's a guide to deployment!

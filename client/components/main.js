@@ -38,6 +38,7 @@ class Main extends React.Component {
                 Logout
               </a>
               <Link to="/cart"> Cart </Link>
+              <a href="https://github.com/GraceShopper-S4/GraceShopper">GitHub Page</a>
             </div>
           ) : (
             <div>
@@ -45,6 +46,7 @@ class Main extends React.Component {
               <Link to="/login">Login</Link>
               <Link to="/signup">Sign Up</Link>
               <Link to="/cart"> Cart </Link>
+              <a href="https://github.com/GraceShopper-S4/GraceShopper">GitHub Page</a>
             </div>
           )}
           {children}
