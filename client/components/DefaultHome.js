@@ -24,80 +24,14 @@ export class DefaultHome extends Component {
   }
 
   render() {
-    console.log("single props is", this.props);
-   // console.log("state is,", this.state);
     return (
-      // <div className="productsContainer">
-      // <div className="productGrid">
-      //   {
-      //     this.props.products ?
-      //     this.props.products.map(product => {
-      //         return (
-      //             <div className="productCell" key={product.id} >
-      //                 <Link to={`/products/${product.id}`}>
-
-      //                 <div>
-      //                     <h3>
-      //                         {product.title}
-      //                     </h3>
-      //                 </div>
-      //                 <div>
-      //                 <img src={product.photo} className="responsiveImage"/>
-      //                 </div>
-      //                 <div>
-      //                     <p>
-      //                         ${product.price}
-      //                     </p>
-      //                     <p>
-      //                     Stock: {product.inventory}
-      //                     </p>
-
-      //                     </div>
-      //                     </Link>
-      //                     <div>
-      //                     <p>
-      //                     Genres:
-      //                     </p>
-      //                     {product.genres.map(genre => {
-      //                         return (
-      //                             <p key={genre.id}>
-      //                                 <Link to={`/genres/${genre.body}`}>
-      //                                 {genre.body}
-      //                                 </Link>
-      //                             </p>
-      //                         )
-      //                     })}
-
-      //                 </div>
-
-      //                       <button onClick={() => {
-                            //   let productPrice;
-                            //   this.props.products.forEach((eachProduct) => { if (product.id === eachProduct.id) productPrice = eachProduct.price})
-                            //   this.props.addToCart(product.id, productPrice, this.props.orders[0].id, this.state.quantity) }}
-                            //   >
-                            // Add To Cart
-      //                        </button>
-      //             </div>
-      //         )
-      //     }) : null
-      //   }
-      //   </div>
-
-      // </div>
       <div className="defaultHome">
         <h1>Books</h1>
-        <Link to={{}}>
-          <Button className="cart" floated="right">
-            CART
-          </Button>
-        </Link>
-
         <Grid padded>
           <Grid.Row padded>
             {this.props.products &&
               this.props.products.map(product => (
                 <div key={product.id} className="defaultHome">
-                  {/*console.log("Hi", product)*/}
                   <Segment>
                     <Card.Group>
                       <Card className='defaultHome'>
@@ -123,7 +57,7 @@ export class DefaultHome extends Component {
                             <Button.Content hidden onClick={() => {
                                let productPrice;
                                this.props.products.forEach((eachProduct) => { if (product.id === eachProduct.id) productPrice = eachProduct.price})
-                               this.props.addToCart(product.id, productPrice, this.props.orders[0].id, this.state.quantity) }}
+                               this.props.addToCart(product.id, productPrice, this.props.order.id, this.state.quantity) }}
                                >ADD</Button.Content>
                             <Button.Content visible>
                               <Icon name="shop" />
@@ -147,7 +81,8 @@ const mapStateToProps = state => {
     product: state.products.product,
     products: state.products.products,
     item: state.lineItems.singleItem,
-    orders: state.orders.orders
+    orders: state.orders.orders,
+    order: state.orders.order
   };
 };
 
@@ -161,7 +96,6 @@ const mapDispatchToProps = dispatch => {
     },
     addToCart(productId, price, orderId, quantity) {
       let newItem = {price, quantity, productId, orderId}
-      console.log('newItem is', newItem)
       dispatch(addNewItem(newItem));
     }
     ,initializeCart() {

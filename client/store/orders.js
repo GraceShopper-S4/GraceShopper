@@ -1,57 +1,80 @@
+import axios from "axios";
 
-import axios from 'axios'
-
-//Action Types 
-const ADD_ORDER = 'ADD_ORDER'
-const GET_ORDERS = 'GET_ORDERS'
+//Action Types
+const ADD_ORDER = "ADD_ORDER";
+const GET_ORDERS = "GET_ORDERS";
+const PUT_STATUS = "PUT_STATUS";
 
 //Action Creators
-export const addOrder = (order) => ({
-    type: ADD_ORDER,
-    order
+export const addOrder = order => ({
+  type: ADD_ORDER,
+  order
 });
 
-export const getOrders = (orders) => ({
-    type: GET_ORDERS,
-    orders
+export const getOrders = orders => ({
+  type: GET_ORDERS,
+  orders
 });
 
-//InitialState 
+export const putStatus = order => ({
+  type: PUT_STATUS,
+  order
+});
+
+//InitialState
 const initialState = {
-    orders: []
-}
+  orders: [],
+  order: {}
+};
 //Thunk Creators/Thunks
-export const newOrder = (order) =>
-dispatch => {
-    axios.post('/api/orders', { totalPrice: order.totalPrice , status: order.status || 'Cart'})
-    .then((res) => res.data[0])
-    .then(order => {
-        console.log('posted order', order)
-        dispatch(addOrder(order))
+export const newOrder = order => dispatch => {
+  axios
+    .post("/api/orders", {
+      totalPrice: order.totalPrice,
+      status: order.status || "Cart"
     })
-    
-    .catch(err => console.error('Error', err))
-}
+    .then(res => res.data[0])
+    .then(order => {
+      dispatch(addOrder(order));
+    })
+    .catch(err => console.error("Error", err));
+};
 
-export const getOrdersByUser = () => 
-dispatch => {
-    axios.get('/api/orders')
+export const updateStatus = id => {
+  return dispatch => {
+    axios
+      .put("/api/orders", { id, status: "Shipped" })
+      .then(res => res.data)
+      .then(order => {
+        dispatch(putStatus(order));
+      });
+  };
+};
+
+export const getOrdersByUser = () => dispatch => {
+  axios
+    .get("/api/orders")
     .then(res => res.data)
     .then(orders => {
-        console.log('orders in thunk is ', orders)
-        dispatch(getOrders(orders))
-    })
-    .catch(err => console.log(err))
-}
+      dispatch(getOrders(orders));
+    });
+};
 
 //Reducers
 export const OrderReducer = (state = initialState, action) => {
-    switch (action.type) {
-        case ADD_ORDER: 
-        return Object.assign({}, state, {order: action.order});
-        case GET_ORDERS:
-        return Object.assign({}, state, {orders: action.orders});
-        default: 
-        return state
+  switch (action.type) {
+    case ADD_ORDER:
+      return Object.assign({}, state, { order: action.order });
+    case GET_ORDERS:
+      return Object.assign({}, state, { orders: action.orders });
+    case PUT_STATUS: {
+      const index = state.orders.findIndex(x => {
+        return x.id === action.order.id;
+      });
+      state.orders[index] = action.order;
+      return Object.assign({}, state, { order: state.orders[index] });
     }
-}
+    default:
+      return state;
+  }
+};
