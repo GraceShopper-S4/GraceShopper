@@ -1,8 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Button, Card, Image } from "semantic-ui-react";
-import { retrieveUsers } from "../../store";
 
+import { retrieveUsers } from "../../store";
+import SingleUser from './singleUser';
 
 class AllUsers extends React.Component {
   constructor(props) {
@@ -15,31 +15,15 @@ class AllUsers extends React.Component {
 
   render() {
     console.log("admin props", this.props);
-    this.props.fetchUsers();
     return (
       <div>
       <h1>Render!!</h1>
         { this.props.users &&
-          this.props.users.map(user => {
+          this.props.users.map(person => {
             return (
-              <Card key={user.id}>
-                <Card.Content>
-                  <Card.Header>{user.email}</Card.Header>
-                  <Card.Meta>Name</Card.Meta>
-                </Card.Content>
-                <Card.Content extra>
-                  <div className="ui two buttons">
-                    <Button basic color="green">
-                      Show Orders
-                    </Button>
-                    <Button basic color="red">
-                      Delete
-                    </Button>
-                  </div>
-                </Card.Content>
-              </Card>
-            );
-          })}
+            <SingleUser key={person.id} curUser={person} />
+            )
+        })}
       </div>
     );
   }
@@ -47,7 +31,7 @@ class AllUsers extends React.Component {
 
 // const mapState = state => state;
 const mapState = state => ({
-  users: state.users,
+  users: state.users.users,
   products: state.products.products
 });
 

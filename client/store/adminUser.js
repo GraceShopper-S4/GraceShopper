@@ -11,7 +11,7 @@ const initialState = {
 //Action Types
 const GET_ALL_USERS = 'GET_ALL_USERS';
 const GET_SINGLE_USER = 'GET_SINGLE_USER';
-const REMOVE_USER = 'REMOVE_USER';
+const REMOVE_THIS_USER = 'REMOVE_THIS_USER';
 const ALLOW_RESET = 'ALLOW_RESET';
 const UPDATE_USER = 'UPDATE_USER';
 
@@ -25,12 +25,13 @@ const getSingleUser = (singleUser) => ({
     type: GET_SINGLE_USER,
     singleUser
 });
-const removeUser = (userId) => ({
-    type: REMOVE_USER,
-    userId
-});
-const updateUser = (userId) => ({
+
+const updateUser = () => ({
     type: UPDATE_USER,
+    
+})
+const deleteThisUser = (userId) => ({
+    type: REMOVE_THIS_USER,
     userId
 })
 
@@ -46,15 +47,16 @@ export const retrieveSingleUser = (id) => dispatch => {
     .then(res => res.data) 
     .then(user => dispatch(getSingleUser(user)))
 };
-export const deleteUser = (id) => dispatch => {
+export const deleteAUser = (id) => dispatch => {
     axios.delete(`/api/users/${id}`)
     .then(res => res.data)
-    .then(user => dispatch(removeUser(user)))
+    .then(user => dispatch(deleteThisUser(id)))
 };
-export const updateExistingUser = (id) => dispatch => {
-    axios.put(`/api/users/${id}`)
+export const updateExistingUser = (id, toChange) => dispatch => {
+    console.log(toChange, 'this is the value we are passing. It is currently this')
+    axios.put(`/api/users/${id}`, toChange)
     .then(res => res.data) 
-    .then(user => dispatch(updateUser(user)))
+    .then(() => dispatch(updateUser()))
 };
 
 //Reducer
@@ -69,15 +71,15 @@ export const AdminUserReducer = (state = initialState, action) => {
             users: [...state.users],
             singleUser: action.user 
         }
-        case REMOVE_USER:
+        case REMOVE_THIS_USER:
         return {
-            users: state.users.filter(user => user.id !== action.user.id),
+            users: state.users.filter(user => user.id !== action.userId),
             singleUser: {}
         }
         case UPDATE_USER:
         return {
-            users: state.users,
-            singleUser: action.user
+            users: [...state.users],
+            singleUser: {}
         }
         default: return state
     }

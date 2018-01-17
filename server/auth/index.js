@@ -23,7 +23,6 @@ router.post('/signup', (req, res, next) => {
         if(err) {
           next(err)
         } else {
-          console.log(user)
           res.json(user)
         }
       })

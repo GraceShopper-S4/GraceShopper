@@ -9,7 +9,7 @@ router.get('/', (req, res, next) => {
       // explicitly select only the id and email fields - even though
       // users' passwords are encrypted, it won't help if we just
       // send everything to anyone who asks!
-      attributes: ['id', 'email']
+      attributes: ['id', 'email', 'isAdmin']
     })
       .then(users => res.json(users))
       .catch(next)
@@ -36,5 +36,22 @@ router.get('/:id', (req, res, next) => {
     .catch(next)
   //} 
  
+})
+router.delete('/:id', (req, res, next) => {
+  User.destroy({where: {id: req.params.id}})
+  .then(() => res.send(req.params.id))
+  .catch(next)
+})
+
+router.put('/:id', (req, res, next) => {
+  console.log(req.body, 'this is the input to put')
+  User.update(req.body, {
+    where: {
+      id: req.params.id
+    }
+  }).spread((numRows, rows) => {
+    console.log(rows, 'rows')
+    res.send(rows)
+  })
 })
 

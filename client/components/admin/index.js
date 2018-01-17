@@ -9,9 +9,9 @@ class AdminIndex extends React.Component {
     constructor(props) {
         super(props)
     }
-    componentDidMount() {
-        this.props.fetchUsers()
-    }
+    // componentDidMount() {
+    //     this.props.fetchUsers()
+    // }
     render() {
         console.log(this.props)
         return (
@@ -28,10 +28,10 @@ const mapState = state => ({
     users: state.users,
     products: state.products.products
 })
- const mapDispatch = dispatch => ({
-     fetchUsers() {
-        dispatch(retrieveUsers())
-    }
- })
-export default withRouter(connect( mapState, mapDispatch)(AdminIndex));
+//  const mapDispatch = dispatch => ({
+//      fetchUsers() {
+//         dispatch(retrieveUsers())
+//     }
+//  })
+export default withRouter(connect( mapState, null)(AdminIndex));
 

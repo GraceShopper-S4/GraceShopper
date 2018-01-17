@@ -14,7 +14,7 @@ import {AdminUserReducer} from './adminUser'
 import {OrderReducer} from './orders'
 //const reducer = combineReducers({user, review})
 
-const reducer = combineReducers({user, products: ProductsReducer , reviews: ReviewReducer, lineItems: LineItemReducer, orders: OrderReducer , genres: Genres})
+const reducer = combineReducers({user, products: ProductsReducer , reviews: ReviewReducer, lineItems: LineItemReducer, orders: OrderReducer , genres: Genres, users: AdminUserReducer})
 const middleware = composeWithDevTools(applyMiddleware(
   thunkMiddleware,
   createLogger({collapsed: true})

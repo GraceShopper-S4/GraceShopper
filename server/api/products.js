@@ -3,6 +3,8 @@ const app = require("express").Router();
 module.exports = app;
 
 app.get('/', (req, res, next) => {
+  req.session.cart = []
+  console.log(req.session)
   Product.findAll({include: [Genre]})
     .then(products => res.json(products))
     .catch(next)

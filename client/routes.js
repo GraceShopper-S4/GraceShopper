@@ -40,13 +40,9 @@ class Routes extends Component {
                  <Route path="/home" component={UserHome} />
                  <Route exact path="/admin/users" component={AllUsers} />
                  <Route exact path='/admin' component={Admin} />
-                  <Route path="/home" component={UserHome} />
-                  <Route exact path='/products/:productId' component={SingleProduct} />
-                  <Route exact path='/cart' component={Cart} />
-                  <Route exact path='/products'  render={()=><DefaultHome products={this.props.products} orders={this.props.orders} /> } />
-                  <Route  path='/genres/*' component={SingleGenre} />
                 </Switch>
             }
+            
             {/* Displays our Login component as a fallback */}
             <Route component={Login} />
             
