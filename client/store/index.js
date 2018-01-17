@@ -8,9 +8,10 @@ import {ReviewReducer} from './review'
 import {LineItemReducer} from './lineItem'
 import Genres from './genres'
 import {OrderReducer} from './orders'
+import {AddressReducer} from './addresses'
 //const reducer = combineReducers({user, review})
 
-const reducer = combineReducers({user, products: ProductsReducer , reviews: ReviewReducer, lineItems: LineItemReducer, orders: OrderReducer , genres: Genres})
+const reducer = combineReducers({user, products: ProductsReducer , reviews: ReviewReducer, lineItems: LineItemReducer, orders: OrderReducer , genres: Genres, addresses: AddressReducer})
 const middleware = composeWithDevTools(applyMiddleware(
   thunkMiddleware,
   createLogger({collapsed: true})
@@ -24,3 +25,4 @@ export * from './review'
 export * from './lineItem'
 export * from './genres'
 export * from './orders'
+export * from './addresses'

@@ -3,7 +3,7 @@ const { Order, User, LineItem } = require('../db/models')
 
 // Get orders by userId
 router.get('/', (req, res, next) => {
-    if (req.user.id) {
+    if (req.user) {
         Order.findAll({where: {userId: req.user.id}})
         .then(orders => {
             //console.log('api routes orders', orders)
@@ -11,7 +11,11 @@ router.get('/', (req, res, next) => {
         .catch(next);
     }
     else {
-        res.send('Please login to view orders')
+        Order.findAll({where: {userId: req.session.orderId}})
+        .then(orders => {
+            console.log('api routes orders', orders)
+            res.json(orders)})
+        .catch(next);
     }
 });
 
@@ -40,16 +44,30 @@ router.get('/:id', (req, res, next) => {
 router.post('/', (req, res, next) => {
     //Update once front end cart population is done with line items
     //where = {}
-    Order.findOrCreate({where: {userId: req.user.id, status: 'Cart'}, defaults: {totalPrice: req.body.totalPrice}})
-    .then((instance, wasCreated) => {
-        console.log('instance is', instance)
-        /*if(!wasCreated) {
-            console.log('exists', instance)
-        } else {
-            console.log('created', instance)
-        }*/res.json(instance)
-    })
-    .catch(next)
+    let randomId = Math.floor(Math.random()*200+1000)
+    // if (!req.session.cart){
+    //     req.session.cart = []
+    // }
+    if (req.user) {
+        Order.findOrCreate({where: {userId: req.user.id , status: 'Cart'}, defaults: {totalPrice: req.body.totalPrice}})
+        .then((instance, wasCreated) => {
+            console.log('instance is', instance)
+            res.json(instance)
+        })
+        .catch(next)
+    }
+    else {
+        console.log('randomId is', randomId);
+        req.session.orderId =randomId
+        Order.findOrCreate({where: {userId: randomId, status: 'Cart'}, defaults: {totalPrice: req.body.totalPrice}})
+        .then((instance, wasCreated) => {
+            console.log('instance is', instance)
+            res.json(instance)
+        })
+        .catch(next)
+    }
+   
+    
 })
 
 

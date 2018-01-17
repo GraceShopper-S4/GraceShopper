@@ -12,7 +12,9 @@ import {me, getOrdersByUser, newOrder} from './store'
 class Routes extends Component {
   componentDidMount () {
     this.props.loadInitialData()
-    this.props.initializeCart()
+    if (this.props.isLoggedIn){
+      this.props.initializeCart()
+    }
   }
 
   render () {
@@ -26,6 +28,7 @@ class Routes extends Component {
             <Route path="/login" component={Login} />
             <Route path="/signup" component={Signup} />
             <Route exact path='/products/:productId' component={SingleProduct} />
+            {/*  Here is where you can handle unauthenticated users cart*/ }
             <Route exact path='/cart' render={()=><Cart orders={this.props.orders} /> } />
             <Route exact path='/products'  render={()=><DefaultHome products={this.props.products} orders={this.props.orders} /> } />
             <Route  path='/genres/*' component={SingleGenre} />
@@ -35,10 +38,6 @@ class Routes extends Component {
                 <Switch>
                   {/* Routes placed here are only available after logging in */}
                   <Route path="/home" render={()=><DefaultHome products={this.props.products} orders={this.props.orders} /> } />
-                  <Route exact path='/products/:productId' component={SingleProduct} />
-                  <Route exact path='/cart' render={()=><Cart orders={this.props.orders} /> } />
-                  <Route exact path='/products'  render={()=><DefaultHome products={this.props.products} orders={this.props.orders} /> } />
-                  <Route  path='/genres/*' component={SingleGenre} />
                 </Switch>
             }
             {/* Displays our Login component as a fallback */}

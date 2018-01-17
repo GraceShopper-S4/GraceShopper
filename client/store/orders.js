@@ -35,6 +35,7 @@ dispatch => {
 
 export const getOrdersByUser = () => 
 dispatch => {
+    console.log('right before axios'    )
     axios.get('/api/orders')
     .then(res => res.data)
     .then(orders => {
