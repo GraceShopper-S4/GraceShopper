@@ -3,7 +3,10 @@ import {connect} from 'react-redux'
 import { BrowserRouter as Router, withRouter, Link, Switch, Route } from 'react-router-dom';
 import SingleUser from './singleUser'
 import AllUsers from './allUsers'
-import {retrieveUsers} from '../../store';
+import {retrieveUsers, showForm} from '../../store';
+
+import SingleProduct from "./singleProduct";
+import AllProducts from "./allProducts";
 
 class AdminIndex extends React.Component {
     constructor(props) {
@@ -19,7 +22,8 @@ class AdminIndex extends React.Component {
             <div>
                 <h1>All users here</h1>
                   <Link to="/admin/users">All Users</Link>
-            
+                <h1>All Products</h1>
+                <Link to="/admin/products">All Products</Link>
             </div>
         )
     }
