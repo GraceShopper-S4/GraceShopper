@@ -4,8 +4,6 @@ const { Order, User, LineItem , Product} = require('../db/models');
 router.post('/', (req, res, next) => {
     LineItem.findOrCreate({
         where: {
-            // 'userId': req.user.id,
-           // 'orderKeyHash': req.body.orderKeyHash, // should be names orderKeyHash and should come from user which will be avalible globally!! 
             'productId': req.body.productId,
             'orderId': req.body.orderId,
             'price':req.body.price,

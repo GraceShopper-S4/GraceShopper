@@ -10,7 +10,7 @@ class CampusEdit extends Component {
   }
 
   componentWillMount(){
-      this.props.
+      
   }
 
   render() {

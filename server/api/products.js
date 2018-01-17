@@ -16,9 +16,6 @@ app.get("/:id", (req, res, next) => {
     include: [
       {
         model: Review
-        // where: {
-        //   productId: req.params.id 
-        // }
       }
     ]
   })
