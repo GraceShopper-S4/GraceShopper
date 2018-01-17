@@ -123,7 +123,7 @@ export class DefaultHome extends Component {
                             <Button.Content hidden onClick={() => {
                                let productPrice;
                                this.props.products.forEach((eachProduct) => { if (product.id === eachProduct.id) productPrice = eachProduct.price})
-                               this.props.addToCart(product.id, productPrice, this.props.orders[0].id, this.state.quantity) }}
+                               this.props.addToCart(product.id, productPrice, this.props.order.id, this.state.quantity) }}
                                >ADD</Button.Content>
                             <Button.Content visible>
                               <Icon name="shop" />
@@ -147,7 +147,8 @@ const mapStateToProps = state => {
     product: state.products.product,
     products: state.products.products,
     item: state.lineItems.singleItem,
-    orders: state.orders.orders
+    orders: state.orders.orders,
+    order: state.orders.order
   };
 };
 

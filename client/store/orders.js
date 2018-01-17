@@ -18,7 +18,8 @@ export const getOrders = (orders) => ({
 
 //InitialState 
 const initialState = {
-    orders: []
+    orders: [],
+    order: {}
 }
 //Thunk Creators/Thunks
 export const newOrder = (order) =>

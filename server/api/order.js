@@ -57,18 +57,16 @@ router.post('/', (req, res, next) => {
         .catch(next)
     }
     else {
-        console.log('randomId is', randomId);
         req.session.orderId =randomId
         Order.findOrCreate({where: {userId: randomId, status: 'Cart'}, defaults: {totalPrice: req.body.totalPrice}})
         .then((instance, wasCreated) => {
-            console.log('instance is', instance)
             res.json(instance)
         })
         .catch(next)
     }
-   
-    
 })
+
+router.put('')
 
 
 module.exports = router

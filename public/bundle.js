@@ -12354,8 +12354,13 @@ var Cart = function (_Component) {
     _createClass(Cart, [{
         key: 'componentDidMount',
         value: function componentDidMount() {
-            console.log(this.props, 'cart props again');
-            this.props.getAllYourItems(this.props.orders[0].id); // needs to be this.props.orders.id
+            Promise.all([this.props.initializeCart(),
+            //console.log('comp did mount props is', this.props),
+            this.props.getAllYourItems(this.props.order.id)]);
+
+            // this.props.initializeCart();
+            // console.log(this.props, 'cart props again')
+            // this.props.getAllYourItems(this.props.orders[0].id) // needs to be this.props.orders.id
         }
     }, {
         key: 'onChange',
@@ -12384,14 +12389,13 @@ var Cart = function (_Component) {
                 billingCity: this.state.billingCity,
                 billingState: this.state.billingState,
                 billingZipCode: this.state.billingZipCode
-            };
-            console.log('address before dispatch', address);
-            _store2.default.dispatch((0, _store.postNewAddress)(address));
-            console.log('hit on submit');
+                //console.log('address before dispatch', address)
+            };_store2.default.dispatch((0, _store.postNewAddress)(address));
         }
     }, {
         key: 'render',
         value: function render() {
+            var totalPrice = 0;
             console.log('cart props', this.props);
             return _react2.default.createElement(
                 'div',
@@ -12404,6 +12408,7 @@ var Cart = function (_Component) {
                         { className: 'productGrid' },
                         this.props.lineItems && this.props.lineItems.map(function (lineItem) {
                             // this.props.getProduct(lineItem.productId)
+                            totalPrice += lineItem.quantity * lineItem.price;
                             return _react2.default.createElement(
                                 'div',
                                 { className: 'productCell', key: lineItem.id },
@@ -12435,6 +12440,13 @@ var Cart = function (_Component) {
                 _react2.default.createElement(
                     'div',
                     null,
+                    _react2.default.createElement(
+                        'h3',
+                        null,
+                        ' Total Price: ',
+                        totalPrice,
+                        '\xA2'
+                    ),
                     _react2.default.createElement(
                         'form',
                         { onSubmit: this.onSubmit },
@@ -12504,6 +12516,7 @@ var mapState = function mapState(state) {
     return {
         isLoggedIn: !!state.user.id,
         orders: state.orders.orders,
+        order: state.orders.order,
         products: state.products.products,
         product: state.products.product,
         lineItems: state.lineItems.lineItems
@@ -12517,6 +12530,12 @@ var mapDispatch = function mapDispatch(dispatch) {
         },
         getProduct: function getProduct(id) {
             dispatch((0, _store.getSingleProduct)(id));
+        },
+        initializeCart: function initializeCart() {
+            var totalPrice = 0;
+            var order = { totalPrice: totalPrice };
+            dispatch((0, _store.newOrder)(order));
+            dispatch((0, _store.getOrdersByUser)());
         }
     };
 };
@@ -12726,7 +12745,7 @@ var DefaultHome = exports.DefaultHome = function (_Component) {
                                   _this2.props.products.forEach(function (eachProduct) {
                                     if (product.id === eachProduct.id) productPrice = eachProduct.price;
                                   });
-                                  _this2.props.addToCart(product.id, productPrice, _this2.props.orders[0].id, _this2.state.quantity);
+                                  _this2.props.addToCart(product.id, productPrice, _this2.props.order.id, _this2.state.quantity);
                                 }
                               },
                               "ADD"
@@ -12758,7 +12777,8 @@ var mapStateToProps = function mapStateToProps(state) {
     product: state.products.product,
     products: state.products.products,
     item: state.lineItems.singleItem,
-    orders: state.orders.orders
+    orders: state.orders.orders,
+    order: state.orders.order
   };
 };
 
@@ -28251,7 +28271,7 @@ var Routes = function (_Component) {
 
       var isLoggedIn = this.props.isLoggedIn;
 
-
+      console.log('routes props', this.props);
       return _react2.default.createElement(
         _reactRouterDom.Router,
         { history: _history2.default },
@@ -30263,7 +30283,8 @@ var getOrders = exports.getOrders = function getOrders(orders) {
 
 //InitialState 
 var initialState = {
-    orders: []
+    orders: [],
+    order: {}
     //Thunk Creators/Thunks
 };var newOrder = exports.newOrder = function newOrder(order) {
     return function (dispatch) {

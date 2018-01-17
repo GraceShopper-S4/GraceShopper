@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
-import store,{lineItems, getItemsByUserId, getSingleProduct, postNewAddress} from '../store';
+import store,{lineItems, getItemsByUserId, getSingleProduct, postNewAddress,newOrder,getOrdersByUser} from '../store';
 
 
 class Cart extends Component {
@@ -13,8 +13,15 @@ class Cart extends Component {
     }
 
     componentDidMount(){
-        console.log(this.props, 'cart props again')
-        this.props.getAllYourItems(this.props.orders[0].id) // needs to be this.props.orders.id
+        Promise.all([
+            this.props.initializeCart(),
+            //console.log('comp did mount props is', this.props),
+            this.props.getAllYourItems(this.props.order.id)
+        ])
+        
+        // this.props.initializeCart();
+        // console.log(this.props, 'cart props again')
+        // this.props.getAllYourItems(this.props.orders[0].id) // needs to be this.props.orders.id
     }
 
     onChange (event) {
@@ -42,12 +49,13 @@ class Cart extends Component {
             billingState: this.state.billingState,
             billingZipCode: this.state.billingZipCode
          }
-        console.log('address before dispatch', address)
+        //console.log('address before dispatch', address)
         store.dispatch(postNewAddress(address));
-        console.log('hit on submit');
+   
     }
 
     render() {
+        let totalPrice = 0;
         console.log('cart props', this.props)
         return (
             <div>
@@ -57,6 +65,7 @@ class Cart extends Component {
                     this.props.lineItems &&
                     this.props.lineItems.map((lineItem)=> {
                     // this.props.getProduct(lineItem.productId)
+                        totalPrice += lineItem.quantity * lineItem.price;
                         return (
                         <div className="productCell" key={lineItem.id}>
                             <h3> Book Title: {lineItem.product.title} </h3>
@@ -69,6 +78,7 @@ class Cart extends Component {
                 </div>
                 </div>
                 <div>
+                <h3> Total Price: {totalPrice}¢</h3>
                 <form onSubmit={ this.onSubmit}>
                     <input
                     type="text"
@@ -130,6 +140,7 @@ const mapState = (state) => {
     return {
       isLoggedIn: !!state.user.id,
       orders: state.orders.orders,
+      order: state.orders.order,
       products: state.products.products,
       product: state.products.product,
       lineItems: state.lineItems.lineItems
@@ -144,6 +155,11 @@ const mapState = (state) => {
       },
       getProduct(id) {
         dispatch(getSingleProduct(id));
+      },initializeCart() {
+        let totalPrice = 0;
+        let order = {totalPrice}
+        dispatch(newOrder(order));
+        dispatch(getOrdersByUser());
       }
       
     }
