@@ -1,20 +1,15 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import {
-  BrowserRouter as Router,
-  withRouter,
-  Link,
-  Switch,
-  Route
-} from "react-router-dom";
-import { logout } from "../store";
-import { retrieveProducts, newOrder, getOrdersByUser } from "../store";
-import DefaultHome from "./DefaultHome";
-import SingleProduct from "./SingleProduct";
-import Cart from "./Cart";
-import SingleGenre from "./singleGenre";
-
+import React from 'react'
+import PropTypes from 'prop-types'
+import {connect} from 'react-redux'
+import { BrowserRouter as Router, withRouter, Link, Switch, Route } from "react-router-dom";
+import {logout} from '../store'
+import {retrieveProducts, newOrder, getOrdersByUser} from '../store'
+import DefaultHome from './DefaultHome'
+import SingleProduct  from './SingleProduct'
+import Cart from './Cart'
+import SingleGenre from './singleGenre'
+import AdminHome from './admin'
+ 
 /**
  * COMPONENT
  *  The Main component is our 'picture frame' - it displays the navbar and anything
@@ -55,6 +50,14 @@ class Main extends React.Component {
           {children}
         </nav>
         <hr />
+        <Router>
+          <Switch>
+            <Route exact path='/products/:productId' component={SingleProduct} />
+            <Route exact path='/products'  render={()=><DefaultHome products={this.props.products} /> } />
+            <Route exact path='/cart' component={Cart} />
+            <Route  path='/genres/*' component={SingleGenre} />
+          </Switch> 
+        </Router>
       </div>
     );
   }
@@ -66,10 +69,11 @@ class Main extends React.Component {
 const mapState = state => {
   return {
     isLoggedIn: !!state.user.id,
+    products: state.products.products,
+    user: state.user,
     orders: state.orders.orders,
-    products: state.products.products
-  };
-};
+  }
+}
 
 const mapDispatch = (dispatch, ownProps) => {
   return {

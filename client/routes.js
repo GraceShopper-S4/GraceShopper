@@ -1,19 +1,15 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { Route, Switch, Router } from "react-router-dom";
-import PropTypes from "prop-types";
-import history from "./history";
-import {
-  Main,
-  Login,
-  Signup,
-  UserHome,
-  Cart,
-  SingleProduct,
-  SingleGenre,
-  DefaultHome
-} from "./components";
-import { me, getOrdersByUser, newOrder } from "./store";
+
+import React, {Component} from 'react'
+import {connect} from 'react-redux'
+import {Route, Switch, Router} from 'react-router-dom'
+import PropTypes from 'prop-types'
+import history from './history'
+import {Main, Login, Signup, UserHome, Cart, SingleProduct, SingleGenre, DefaultHome} from './components'
+import {me, getOrdersByUser, newOrder} from './store'
+import AllUsers from './components/admin/allUsers'
+import AllProducts from './components/admin/allProducts'
+import Admin from './components/admin'
+import EditProduct from './components/admin/editProduct'
 
 /**
  * COMPONENT
@@ -35,43 +31,21 @@ class Routes extends Component {
             {/* Routes placed here are available to all visitors */}
             <Route path="/login" component={Login} />
             <Route path="/signup" component={Signup} />
-            <Route
-              exact
-              path="/products/:productId"
-              component={SingleProduct}
-            />
-            {/*  Here is where you can handle unauthenticated users cart*/}
-            <Route
-              exact
-              path="/cart"
-              render={() => <Cart orders={this.props.orders} />}
-            />
-            <Route
-              exact
-              path="/products"
-              render={() => (
-                <DefaultHome
-                  products={this.props.products}
-                  orders={this.props.orders}
-                />
-              )}
-            />
-            <Route path="/genres/*" component={SingleGenre} />
-
-            {isLoggedIn && (
-              <Switch>
-                {/* Routes placed here are only available after logging in */}
-                <Route
-                  path="/home"
-                  render={() => (
-                    <DefaultHome
-                      products={this.props.products}
-                      orders={this.props.orders}
-                    />
-                  )}
-                />
-              </Switch>
-            )}
+            <Route exact path="/products/:productId" component={SingleProduct} />
+            <Route exact path="/cart" render={() => <Cart orders={this.props.orders} />}/>
+            <Route exact path="/products"  render={() => <DefaultHome products={this.props.products} orders={this.props.orders} /> } />
+            <Route  path="/genres/*" component={SingleGenre} />
+            {
+              isLoggedIn &&
+                <Switch>
+                  {/* Routes placed here are only available after logging in */}
+                 <Route path="/home" render={() => (<DefaultHome products={this.props.products} orders={this.props.orders} /> )}/>
+                 <Route exact path="/admin/users" component={AllUsers} />
+                 <Route exact path="/admin" component={Admin} />
+                 <Route exact path="/admin/products" component={AllProducts} />
+                 <Route exact path="/admin/products/:id" component={ EditProduct } />
+                </Switch>
+            }
             {/* Displays our Login component as a fallback */}
             <Route component={Login} />
           </Switch>
